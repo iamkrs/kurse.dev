@@ -1,8 +1,20 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import Head from "next/head";
+import { Provider } from "react-redux";
+import GlobalStyle from "../src/components/GlobalStyle";
+import { initialiseStore } from "../src/store";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const reduxStore = initialiseStore(pageProps.initialReduxState);
+
+  return (
+    <>
+      <Provider store={reduxStore}>
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </Provider>
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;
