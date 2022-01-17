@@ -18,6 +18,12 @@ const StyledGlobalStyle = createGlobalStyle<GlobalStyleProps>`
 
   html {
     box-sizing: border-box;
+    overflow-x: hidden;
+
+    @media screen and (min-width: 771px) {
+      overflow-y: hidden;
+      overflow-x: initial;
+    }
   }
 
   *, *:before, *:after {

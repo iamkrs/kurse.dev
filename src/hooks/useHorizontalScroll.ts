@@ -6,12 +6,14 @@ export function useHorizontalScroll() {
     const el: any = elRef.current;
     if (el) {
       const onWheel = (e: any) => {
-        if (e.deltaY == 0) return;
-        e.preventDefault();
-        el.scrollTo({
-          left: el.scrollLeft + e.deltaY,
-          behavior: "smooth",
-        });
+        if (window.innerWidth > 771) {
+          if (e.deltaY == 0) return;
+          e.preventDefault();
+          el.scrollTo({
+            left: el.scrollLeft + e.deltaY,
+            behavior: "smooth",
+          });
+        }
       };
       el.addEventListener("wheel", onWheel);
       return () => el.removeEventListener("wheel", onWheel);

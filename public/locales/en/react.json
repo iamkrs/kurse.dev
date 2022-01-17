@@ -1,0 +1,11 @@
+{
+  "description": "Apps built with React and SEO for using NextJS",
+  "projectsTitle:": "Projects",
+  "projectsTotemTitle": "self service totem",
+  "projectsTotemDescription": "With the need to create a self-service point for customers, an application was designed to run on an interactive display.",
+  "projectsTotemButton": "check out",
+  "projectsCabinTitle": "telemedicine cabin",
+  "projectsCabinDescription": "UTFPR research project in partnership with ICI from Curitiba, aiming at the creation of medical cabins for public health care.",
+  "projectsCabinButton": "check out",
+  "checkOutReactNativeProjects": "Check out React Native projects"
+}

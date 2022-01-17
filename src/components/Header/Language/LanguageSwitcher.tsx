@@ -1,8 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC } from "react";
 import styled from "styled-components";
-import { useAppSelector } from "../../../hooks";
+import { useAppDispatch, useAppSelector } from "../../../hooks";
+import { toggleLanguageSwitcher } from "../../../store/slices/app";
 import Item from "../Item";
 import BrazilFlag from "./BrazilFlag";
 import UsaFlag from "./UsaFlag";
@@ -22,6 +24,7 @@ const SelectContext = styled.div`
 `;
 
 const Language: FC = () => {
+  const dispatch = useAppDispatch();
   const router = useRouter();
   const { locale } = router;
   const showLanguageSwitcher = useAppSelector((store) => store.app.showLanguageSwitcher);
@@ -30,11 +33,29 @@ const Language: FC = () => {
     <AnimatePresence>
       {showLanguageSwitcher && (
         <SelectContext initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} as={motion.div}>
-          <Item borderLeft>
-            <UsaFlag />
+          <Item
+            borderLeft
+            onClick={() => {
+              dispatch(toggleLanguageSwitcher());
+            }}
+          >
+            <Link href="/en" locale="en" scroll={false}>
+              <a>
+                <UsaFlag />
+              </a>
+            </Link>
           </Item>
-          <Item borderLeft>
-            <BrazilFlag />
+          <Item
+            borderLeft
+            onClick={() => {
+              dispatch(toggleLanguageSwitcher());
+            }}
+          >
+            <Link href="/br" locale="br" scroll={false}>
+              <a>
+                <BrazilFlag />
+              </a>
+            </Link>
           </Item>
         </SelectContext>
       )}

@@ -1,0 +1,11 @@
+{
+  "description": "Apps criados com React e SEO amigável utilizando NextJS",
+  "projectsTitle:": "Projetos",
+  "projectsTotemTitle": "totem de auto atendimento",
+  "projectsTotemDescription": "Com a necessidade de criar um ponto de autoatendimento para clientes foi projetado um aplicativo para rodar em um display interativo.",
+  "projectsTotemButton": "conferir",
+  "projectsCabinTitle": "cabine de telemedicina",
+  "projectsCabinDescription": "Projeto de pesquisa da UTFPR em parceria com ICI de Curitiba, visando a criação de cabines médicas para o atendimento público de saúde.",
+  "projectsCabinButton": "conferir",
+  "checkOutReactNativeProjects": "Confira os projetos React Native"
+}

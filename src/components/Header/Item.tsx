@@ -9,14 +9,22 @@ type ItemProps = {
 };
 
 const StyledItem = styled.div<ItemProps>`
+  height: 100%;
   position: relative;
   display: flex;
-  height: 100%;
-  width: ${({ chevronDown }) => (chevronDown ? "137px" : "137px")};
   align-items: center;
   justify-content: center;
+  width: ${({ chevronDown }) => (chevronDown ? "137px" : "137px")};
   ${({ borderLeft }) => (borderLeft ? "border-left" : "border-right")}: 2px solid var(--primary-color);
   cursor: pointer;
+
+  a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const Item: FC<ItemProps> = ({ children, ...props }) => {

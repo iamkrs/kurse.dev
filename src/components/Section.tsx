@@ -2,12 +2,17 @@ import styled from "styled-components";
 
 type SectionProps = {
   width?: string;
+  paddingRight?: string;
   primaryColor?: boolean;
 };
 
 const StyledSection = styled.section<SectionProps>`
   position: relative;
-  padding: 130px 190px;
+  padding: 90px 30px 75px 30px;
+
+  @media screen and (min-width: 771px) {
+    padding: 130px 190px;
+  }
 
   ${({ primaryColor }) =>
     primaryColor &&
@@ -27,6 +32,7 @@ const StyledSection = styled.section<SectionProps>`
   @media screen and (min-width: 771px) {
     height: 100%;
     ${({ width }) => width && `width: ${width};`}
+    ${({ paddingRight }) => paddingRight && `padding-right: ${paddingRight};`}
   }
 `;
 
