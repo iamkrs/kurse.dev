@@ -4,20 +4,27 @@ import styled from "styled-components";
 
 type CheckOutLinkProps = {
   href: string;
+  primaryColor?: boolean;
 };
 
-const StyledCheckOutLink = styled.a`
+const StyledCheckOutLink = styled.a<{ primaryColor?: boolean }>`
   font-size: 29px;
   text-decoration: none;
   color: #1c1c1c;
   font-weight: 700;
   margin: 0 auto;
+  ${({ primaryColor }) =>
+    primaryColor &&
+    `
+    color: var(--primary-color);
+    svg path { fill: var(--primary-color); }
+  `}
 `;
 
 const CheckOutLink: FC<CheckOutLinkProps> = ({ children, href, ...props }) => {
   return (
     <Link href={href} passHref {...props}>
-      <StyledCheckOutLink>
+      <StyledCheckOutLink {...props}>
         {children}
         <svg style={{ marginLeft: 12 }} width="44" height="24" viewBox="0 0 44 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path

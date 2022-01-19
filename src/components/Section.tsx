@@ -24,7 +24,7 @@ const StyledSection = styled.section<SectionProps>`
       background-image: radial-gradient(#1C1C1C 20%, transparent 20%) !important;
     }
 
-    svg *{
+    .title svg *{
       fill: #1C1C1C !important;
     }
   `}

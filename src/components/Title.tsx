@@ -16,7 +16,7 @@ const StyledTitle = styled.h1<TitleProps>`
 
 const Title: FC<TitleProps> = ({ children, style, ...props }) => {
   return (
-    <Flex column style={{ marginBottom: 33, ...style }}>
+    <Flex column style={{ marginBottom: 33, ...style }} className="title">
       <StyledTitle {...props}>{children}</StyledTitle>
       {!(props.small || props.medium) && (
         <svg width="67" height="8" viewBox="0 0 67 8" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,6 +1,6 @@
 {
-  "description": "Apps built with React and SEO for using NextJS",
-  "projectsTitle:": "Projects",
+  "description": "Apps built with React and SEO friendly using NextJS",
+  "projectsTitle": "Projects",
   "projectsTotemTitle": "self service totem",
   "projectsTotemDescription": "With the need to create a self-service point for customers, an application was designed to run on an interactive display.",
   "projectsTotemButton": "check out",

@@ -4,6 +4,7 @@ import styled from "styled-components";
 type ButtonProps = {
   style?: CSSProperties;
   fontRegular?: boolean;
+  filled?: boolean;
 };
 
 const Button: FC<ButtonProps> = ({ children, fontRegular, ...props }) => {
@@ -27,13 +28,26 @@ const ButtonText = styled.div<ButtonProps>`
   font-size: ${({ fontRegular }) => (fontRegular ? "18px" : "23px")}; ;
 `;
 
-const StyledButton = styled.div`
+const StyledButton = styled.div<ButtonProps>`
   position: relative;
   display: flex;
   align-items: flex-start;
   border: 2px solid var(--primary-color);
   padding: 20px calc(26px + 15px) 20px 26px;
   cursor: pointer;
+
+  ${({ filled }) =>
+    filled &&
+    `
+    border-color: #1C1C1C;
+    background-color: #1C1C1C;
+    color: var(--primary-color);
+
+    svg path{
+      stroke: var(--primary-color) !important;
+      fill: var(--primary-color) !important;
+    }
+  `}
 `;
 
 const ArrowIcon = styled.svg`
