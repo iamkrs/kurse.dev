@@ -39,7 +39,7 @@ const Language: FC = () => {
               dispatch(toggleLanguageSwitcher());
             }}
           >
-            <Link href="/en" locale="en" scroll={false}>
+            <Link href={router.pathname} locale="en" scroll={false}>
               <a>
                 <UsaFlag />
               </a>
@@ -51,7 +51,7 @@ const Language: FC = () => {
               dispatch(toggleLanguageSwitcher());
             }}
           >
-            <Link href="/br" locale="br" scroll={false}>
+            <Link href={router.pathname} locale="br" scroll={false}>
               <a>
                 <BrazilFlag />
               </a>
@@ -71,7 +71,8 @@ export const ActiveLanguage: FC = () => {
 
   return (
     <>
-      <BrazilFlag />
+      {locale === "en" && <UsaFlag />}
+      {locale === "br" && <BrazilFlag />}
     </>
   );
 };

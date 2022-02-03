@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const ScrollDown: FC = () => {
   return (
-    <StyledScrollDown width="25" height="55" viewBox="0 0 25 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <StyledScrollDown className="scrollDown" width="25" height="55" viewBox="0 0 25 55" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M12.1849 0C5.46021 0 0 5.46011 0 12.1849V23.795C0 30.5197 5.46011 35.9799 12.1849 35.9799C18.9097 35.9799 24.3698 30.5198 24.3698 23.795V12.1849C24.3698 5.46021 18.9097 0 12.1849 0ZM20.9213 23.795C20.9213 28.6229 17.0132 32.5315 12.1849 32.5315C7.35702 32.5315 3.44845 28.6233 3.44845 23.795V12.1849C3.44845 7.35702 7.35661 3.44845 12.1849 3.44845C17.0128 3.44845 20.9213 7.35661 20.9213 12.1849V23.795Z"
         style={{ fill: "var(--primary-color)" }}

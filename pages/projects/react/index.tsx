@@ -1,29 +1,29 @@
 import type { NextPage } from "next";
+import { i18n, useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
-import Image from "next/image";
-import { darken } from "polished";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { FC, useEffect } from "react";
 import styled from "styled-components";
 import Button from "../../../src/components/Button";
+import CheckOutLink from "../../../src/components/CheckOutLink";
 import DotsStripe from "../../../src/components/DotsStripe";
 import Flex from "../../../src/components/Flex";
 import Header from "../../../src/components/Header/Header";
 import Main from "../../../src/components/Main";
 import MainTitle from "../../../src/components/MainTitle";
+import Project from "../../../src/components/Projects/Project";
+import ProjectDescription from "../../../src/components/Projects/ProjectDescription";
+import SelfServiceTotemSvg from "../../../src/components/Projects/SelfServiceTotemSvg";
+import TelemedicineCabinSvg from "../../../src/components/Projects/TelemedicineCabinSvg";
 import ScrollDown from "../../../src/components/ScrollDown";
 import Section from "../../../src/components/Section";
 import Text from "../../../src/components/Text";
 import Title from "../../../src/components/Title";
-import { useAppDispatch, useAppSelector } from "../../../src/hooks";
+import { useAppDispatch } from "../../../src/hooks";
 import { useHorizontalScroll } from "../../../src/hooks/useHorizontalScroll";
-import { setPrimaryColor } from "../../../src/store/slices/app";
-import { i18n, useTranslation, Trans } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useRouter } from "next/router";
-import CheckOutLink from "../../../src/components/CheckOutLink";
-import ReactTooltip from "react-tooltip";
-import Tooltip from "../../../src/components/Tooltip";
-import Spacing from "../../../src/components/Spacing";
+import urlRewrites from "../../../next.url-rewrites.config";
 
 const tooltipParams = {
   position: "bottom",
@@ -70,9 +70,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Welcome to Kurse's portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Header />
-
       <Main ref={scrollRef}>
         <Section width="1100px" paddingRight="270px">
           <Flex column justifyCenter fullHeight>
@@ -105,105 +103,41 @@ const Home: NextPage = () => {
         </Section>
         <Section width="2093px" primaryColor>
           <DotsStripe left width="32px" />
-
           <Flex column justifyCenter fullHeight>
             <Title style={{ marginBottom: 77 }}>{t("react:projectsTitle")}</Title>
-            <Flex style={{ margin: "auto 0" }}>
-              <Flex style={{ marginRight: 50 }}>
-                <svg style={{ width: "100%", marginLeft: 30, marginRight: 60, marginTop: 15 }} width="156" height="287" viewBox="0 0 156 287" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="1.5" y="1.5" width="153" height="283.929" rx="3.76829" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="15.883" y="18.2144" width="124.234" height="183.643" rx="3.76829" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="15.883" y="18.2144" width="124.234" height="183.643" rx="3.76829" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <path d="M40.5 159.357H139.643V198.089C139.643 200.17 137.956 201.857 135.875 201.857H40.5V159.357Z" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="51.6429" y="39.5715" width="59.2143" height="5.35714" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="51.6429" y="57.2139" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="72.7041" y="57.2139" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="93.7653" y="57.2139" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="114.827" y="57.2139" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="51.6429" y="81.0271" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="72.7041" y="81.0271" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="93.7653" y="81.0271" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="114.827" y="81.0271" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="51.6429" y="104.84" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="72.7041" y="104.84" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="93.7653" y="104.84" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="114.827" y="104.84" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="51.6429" y="128.653" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="72.704" y="128.653" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="93.7653" y="128.653" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="114.827" y="128.653" width="13.6735" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="102.5" y="229.5" width="34" height="16.5607" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <path
-                    d="M15.883 22.7143C15.883 20.2291 17.8977 18.2144 20.383 18.2144H40.2851V201.857H20.383C17.8977 201.857 15.883 199.842 15.883 197.357V22.7143Z"
-                    stroke="#1C1C1C"
-                    strokeWidth="3"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-
-                <Flex column>
+            <Flex style={{ margin: "auto 0" }} columnOnMobile>
+              <Project>
+                <SelfServiceTotemSvg />
+                <ProjectDescription>
                   <Title medium style={{ marginRight: 15, marginBottom: 20, maxWidth: 280 }}>
                     {t("react:projectsTotemTitle")}
                   </Title>
                   <Text style={{ marginRight: 15, marginBottom: 33 }}>{t("react:projectsTotemDescription")}</Text>
-                  <Button filled>{t("react:projectsTotemButton")}</Button>
-                </Flex>
-              </Flex>
-              <Flex>
-                <svg style={{ width: "100%", marginLeft: 30, marginRight: 60, marginTop: 15 }} width="226" height="274" viewBox="0 0 226 274" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M152.904 1.38273H71.0957C70.2735 1.38468 69.4862 1.71345 68.9059 2.29513C68.3255 2.87745 68 3.66534 68 4.48759V28.3429C68 29.1651 68.3255 29.953 68.9059 30.5354C69.4863 31.117 70.2735 31.4458 71.0957 31.4478H152.904C153.727 31.4458 154.514 31.117 155.094 30.5354C155.674 29.953 156 29.1651 156 28.3429V4.48759C156 3.66534 155.674 2.87745 155.094 2.29513C154.514 1.71345 153.726 1.38468 152.904 1.38273ZM71.0957 29.5874C70.7656 29.5874 70.4498 29.4558 70.2177 29.2224C69.9855 28.9883 69.8565 28.6712 69.8591 28.3417V4.48643C69.8565 4.157 69.9855 3.83991 70.2177 3.60581C70.4498 3.37237 70.7656 3.24072 71.0957 3.24072H152.904C153.234 3.24072 153.55 3.37236 153.782 3.60581C154.014 3.83991 154.144 4.157 154.141 4.48643V28.3417C154.144 28.6712 154.014 28.9883 153.782 29.2224C153.55 29.4558 153.234 29.5874 152.904 29.5874H71.0957Z"
-                    fill="#1C1C1C"
-                    stroke="#1C1C1C"
-                  />
-                  <path
-                    d="M139.257 1.38273C139.109 1.38532 138.963 1.42034 138.829 1.48454C138.61 1.59802 138.444 1.79386 138.369 2.02924C138.294 2.26464 138.316 2.52013 138.429 2.73995C140.611 6.968 141.748 11.6571 141.748 16.4148C141.748 21.1726 140.611 25.8617 138.429 30.0897C138.316 30.3096 138.294 30.5651 138.37 30.8004C138.444 31.0358 138.61 31.2317 138.829 31.3451C139.286 31.5812 139.848 31.4022 140.084 30.945C142.4 26.4519 143.608 21.4696 143.608 16.4149C143.608 11.3601 142.4 6.37788 140.084 1.88472C139.924 1.57539 139.605 1.38216 139.257 1.38281V1.38273Z"
-                    fill="#1C1C1C"
-                    stroke="#1C1C1C"
-                  />
-                  <path
-                    d="M84.7432 1.38282C84.395 1.38217 84.0759 1.57542 83.9158 1.88472C81.6001 6.37789 80.3919 11.3601 80.3919 16.4149C80.3919 21.4696 81.6 26.4519 83.9158 30.945C84.1518 31.4022 84.714 31.5812 85.1705 31.3451C85.6277 31.1085 85.8067 30.5469 85.5706 30.0897C83.3891 25.8617 82.2518 21.1726 82.2518 16.4148C82.2518 11.657 83.3892 6.96799 85.5706 2.73995C85.6841 2.52012 85.7062 2.26462 85.631 2.02924C85.5564 1.79384 85.3904 1.598 85.1705 1.48453C85.037 1.42033 84.8911 1.38532 84.7432 1.38272L84.7432 1.38282Z"
-                    fill="#1C1C1C"
-                    stroke="#1C1C1C"
-                  />
-                  <path
-                    d="M112 10.1398C110.336 10.1398 108.739 10.8012 107.563 11.9775C106.386 13.1544 105.725 14.751 105.725 16.4149C105.725 18.0787 106.386 19.6754 107.563 20.8522C108.74 22.0285 110.336 22.6899 112 22.6899C113.664 22.6899 115.261 22.0285 116.437 20.8522C117.614 19.6753 118.275 18.0787 118.275 16.4149C118.272 14.7515 117.61 13.1569 116.434 11.9806C115.258 10.8043 113.663 10.1423 112 10.1396L112 10.1398ZM112 20.8303V20.831C110.829 20.831 109.706 20.3654 108.878 19.5373C108.049 18.7092 107.584 17.586 107.584 16.4148C107.584 15.2437 108.049 14.1206 108.878 13.2924C109.706 12.4643 110.829 11.9987 112 11.9987C113.171 11.9987 114.294 12.4643 115.122 13.2924C115.951 14.1205 116.416 15.2437 116.416 16.4148C116.416 17.586 115.951 18.7091 115.122 19.5373C114.294 20.3654 113.171 20.831 112 20.831V20.8303Z"
-                    fill="#1C1C1C"
-                    stroke="#1C1C1C"
-                  />
-                  <path
-                    d="M164.5 99.5C166.953 99.5 169.306 100.475 171.041 102.209C172.775 103.944 173.75 106.297 173.75 108.75C173.75 111.203 172.775 113.556 171.041 115.291C169.306 117.025 166.953 118 164.5 118C162.047 118 159.694 117.025 157.959 115.291C156.225 113.556 155.25 111.203 155.25 108.75C155.25 106.297 156.225 103.944 157.959 102.209C159.694 100.475 162.047 99.5 164.5 99.5ZM164.5 123.375C169.985 123.375 175.02 125.878 178.71 129.146C180.549 130.775 182.018 132.563 183.018 134.263C183.995 135.924 184.465 137.396 184.498 138.5H144.502C144.535 137.396 145.005 135.924 145.982 134.263C146.982 132.563 148.451 130.775 150.29 129.146C153.98 125.878 159.015 123.375 164.5 123.375Z"
-                    stroke="#1C1C1C"
-                    strokeWidth="3"
-                  />
-                  <rect x="42.5" y="59.5" width="160" height="12" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="42.5" y="84.5" width="73" height="33" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="42.5" y="128.5" width="73" height="55" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="126.5" y="84.5" width="76" height="54" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="126.5" y="151.5" width="76" height="32" rx="1.77" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="1.5" y="44.5" width="223" height="155" rx="3.76829" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="1.5" y="220.5" width="223" height="52" rx="3.76829" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="11.5" y="229.5" width="152" height="33" rx="3.76829" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <rect x="172.5" y="229.5" width="41" height="33" rx="3.76829" stroke="#1C1C1C" strokeWidth="3" strokeLinejoin="round" />
-                  <line x1="24.5" y1="43" x2="24.5" y2="201" stroke="#1C1C1C" strokeWidth="3" />
-                </svg>
-
-                <Flex column>
+                  <Link href="/projects/react/selfservicetotem" passHref>
+                    <Button filled>{t("react:projectsTotemButton")}</Button>
+                  </Link>
+                </ProjectDescription>
+              </Project>
+              <Project last>
+                <TelemedicineCabinSvg />
+                <ProjectDescription>
                   <Title medium style={{ marginRight: 15, marginBottom: 20, maxWidth: 280 }}>
                     {t("react:projectsCabinTitle")}
                   </Title>
                   <Text style={{ marginRight: 15, marginBottom: 33 }}>{t("react:projectsCabinDescription")}</Text>
-                  <Button filled>{t("react:projectsCabinButton")}</Button>
-                </Flex>
-              </Flex>
+                  <Link href="/projects/react/telemedicinecabin" passHref>
+                    <Button filled>{t("react:projectsCabinButton")}</Button>
+                  </Link>
+                </ProjectDescription>
+              </Project>
             </Flex>
           </Flex>
           <DotsStripe right />
         </Section>
-        <Section width="1313px">
+        <Section width="1013px">
           <DotsStripe left width="32px" />
           <Flex column justifyCenter fullHeight>
-            <CheckOutLink primaryColor href="/projects/react">
+            <CheckOutLink primaryColor href="/projects/reactnative">
               {t("react:checkOutReactNativeProjects")}
             </CheckOutLink>
           </Flex>
@@ -212,89 +146,5 @@ const Home: NextPage = () => {
     </div>
   );
 };
-
-const CheckedIcon = styled.svg`
-  margin-left: 5px;
-`;
-
-const SocialIcon = styled.a`
-  margin: 0 8px;
-`;
-
-const GithubIcon: FC = () => {
-  return (
-    <svg width="35" height="38" viewBox="0 0 35 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M34.7006 14.2337C34.6919 11.9568 33.9063 9.75145 32.4741 7.98149C32.9605 5.95845 32.8085 3.83416 32.0401 1.90034C31.8886 1.52807 31.578 1.24346 31.1944 1.12442C30.6512 0.938284 28.5956 0.589291 24.4071 3.30384V3.30438C22.6053 2.82877 20.7472 2.60422 18.8843 2.63723C17.0186 2.60368 15.1574 2.82823 13.3534 3.30438C9.05615 0.527541 6.82202 0.977167 6.3724 1.10917C5.9866 1.23308 5.67658 1.52364 5.52669 1.90023C4.75619 3.82754 4.59873 5.94588 5.07704 7.96628C3.59769 9.72696 2.80939 11.9654 2.85857 14.2645C2.85857 22.8439 7.76828 25.4346 12.2674 26.35C12.0364 26.9149 11.8773 27.5063 11.7945 28.1107C11.7864 28.1751 11.7864 28.2406 11.7945 28.305V30.6782C7.69915 31.0196 6.82248 28.6226 6.73702 28.351V28.3515C6.717 28.2882 6.69373 28.226 6.66668 28.1648C5.87562 26.5514 4.48338 25.3117 2.78821 24.7133C2.07724 24.4757 1.30775 24.8594 1.07033 25.5703C0.832802 26.2813 1.21642 27.0508 1.9274 27.2888C2.86671 27.628 3.65027 28.2979 4.13065 29.1733C4.67389 30.934 6.89239 33.7188 11.7788 33.4083V35.6424C11.7788 36.3924 12.3865 37 13.1364 37C13.8858 37 14.494 36.3924 14.494 35.6424V28.4055C14.5968 27.615 14.9409 26.8759 15.4787 26.2877C15.864 25.9274 16.0036 25.376 15.8369 24.8755C15.6703 24.3756 15.2271 24.0179 14.7034 23.9606C9.97165 23.4097 5.59702 21.851 5.59702 14.2103H5.59648C5.53318 12.3457 6.25336 10.5396 7.58225 9.23017C7.94262 8.84276 8.06164 8.28923 7.89283 7.78766C7.43562 6.45986 7.40587 5.02218 7.80734 3.67649C9.47273 4.05254 11.037 4.78571 12.3914 5.82516C12.7442 6.05837 13.1841 6.11843 13.5861 5.98803C15.3099 5.46318 17.1064 5.21969 18.9076 5.26677C20.7056 5.2197 22.4999 5.46319 24.221 5.98803C24.623 6.11951 25.0635 6.05945 25.4157 5.82516C26.7202 4.82524 28.2136 4.09966 29.806 3.69173C30.2015 5.05254 30.1663 6.50209 29.7048 7.84182C29.5506 8.29688 29.6512 8.80008 29.9688 9.16043C31.2528 10.5315 31.9801 12.3322 32.0088 14.2103C32.0088 21.8352 27.4091 23.4179 22.9024 23.9606C22.35 24.0223 21.8917 24.4157 21.7478 24.9524C21.6038 25.4892 21.8035 26.059 22.251 26.389C22.732 26.7537 23.2904 27.7774 23.2904 29.4915V35.635C23.2904 36.3849 23.898 36.9925 24.6474 36.9925C25.3974 36.9925 26.005 36.3849 26.005 35.635V29.4915C26.0191 28.411 25.8216 27.3385 25.4233 26.3343C29.0691 25.5589 34.7007 23.162 34.7007 14.2336L34.7006 14.2337Z"
-        style={{ fill: "var(--primary-color)", stroke: "var(--primary-color)" }}
-        strokeWidth="0.5"
-      />
-    </svg>
-  );
-};
-
-const InstagramIcon: FC<{ width?: number }> = ({ width }) => {
-  return (
-    <svg width={width || 35} height={width || 35} viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M29.1668 0H5.83321C4.28609 0 2.80248 0.614496 1.70849 1.70849C0.614496 2.80248 0 4.28609 0 5.83321V29.1668C0 30.7139 0.614496 32.1975 1.70849 33.2915C2.80248 34.3855 4.28609 35 5.83321 35H29.1668C30.7139 35 32.1975 34.3855 33.2915 33.2915C34.3855 32.1975 35 30.7139 35 29.1668V5.83321C35 4.28609 34.3855 2.80248 33.2915 1.70849C32.1975 0.614496 30.7139 0 29.1668 0V0ZM32.0835 29.1667H32.0833C32.0833 29.9401 31.7761 30.682 31.229 31.2289C30.6822 31.776 29.9402 32.0831 29.1668 32.0831H5.83321C5.05978 32.0831 4.31785 31.776 3.77098 31.2289C3.22386 30.682 2.91673 29.9401 2.91673 29.1667V5.83308C2.91673 5.05965 3.22386 4.31772 3.77098 3.77085C4.31785 3.22373 5.05978 2.9166 5.83321 2.9166H29.1668C29.9402 2.9166 30.6822 3.22373 31.229 3.77085C31.7761 4.31772 32.0833 5.05965 32.0833 5.83308L32.0835 29.1667Z"
-        style={{ fill: "var(--primary-color)" }}
-      />
-      <path
-        d="M17.5001 8.75C15.1795 8.75 12.954 9.67187 11.3129 11.3127C9.67199 12.9538 8.75012 15.1794 8.75012 17.4999C8.75012 19.8205 9.67199 22.046 11.3129 23.6871C12.954 25.328 15.1795 26.2499 17.5001 26.2499C19.8206 26.2499 22.0462 25.328 23.6873 23.6871C25.3281 22.046 26.25 19.8205 26.25 17.4999C26.25 15.1794 25.3281 12.9538 23.6873 11.3127C22.0462 9.67187 19.8206 8.75 17.5001 8.75ZM17.5001 23.333C15.9529 23.333 14.4693 22.7185 13.3753 21.6245C12.2813 20.5305 11.6669 19.0469 11.6669 17.4998C11.6669 15.9527 12.2813 14.4691 13.3753 13.3751C14.4693 12.2811 15.9529 11.6666 17.5001 11.6666C19.0472 11.6666 20.5308 12.2811 21.6248 13.3751C22.7188 14.4691 23.3333 15.9527 23.3333 17.4998C23.3333 19.0469 22.7188 20.5305 21.6248 21.6245C20.5308 22.7185 19.0472 23.333 17.5001 23.333Z"
-        style={{ fill: "var(--primary-color)" }}
-      />
-      <path
-        d="M29.1667 8.02025C29.1667 9.22849 28.1872 10.2077 26.9792 10.2077C25.771 10.2077 24.7917 9.22849 24.7917 8.02025C24.7917 6.81226 25.771 5.83276 26.9792 5.83276C28.1872 5.83276 29.1667 6.81226 29.1667 8.02025Z"
-        style={{ fill: "var(--primary-color)" }}
-      />
-    </svg>
-  );
-};
-
-const StyledHobbiesTriangles = styled.svg`
-  @media screen and (max-width: 771px) {
-    margin-bottom: 43px;
-  }
-`;
-
-const HobbiesTriangles: FC = () => {
-  return (
-    <StyledHobbiesTriangles style={{ minWidth: 317, marginRight: 77 }} width="317" height="183" viewBox="0 0 317 183" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="3.30642" y="91.4775" width="124.693" height="124.693" transform="rotate(-45 3.30642 91.4775)" fill="#1C1C1C" style={{ stroke: "var(--primary-color)" }} strokeWidth="4.67598" />
-      <rect x="70.3288" y="91.4775" width="124.693" height="124.693" transform="rotate(-45 70.3288 91.4775)" fill="#1C1C1C" style={{ stroke: "var(--primary-color)" }} strokeWidth="4.67598" />
-      <rect x="137.351" y="91.4775" width="124.693" height="124.693" transform="rotate(-45 137.351 91.4775)" fill="#1C1C1C" style={{ stroke: "var(--primary-color)" }} strokeWidth="4.67598" />
-    </StyledHobbiesTriangles>
-  );
-};
-
-const Hobbie = styled.strong`
-  font-weight: 700;
-  font-size: 24px;
-  margin: 3px 0;
-`;
-
-const SpotifyIcon: FC = () => {
-  return (
-    <svg style={{ margin: "-10px 10px -7px -10px" }} width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M14.9882 0.661621C6.89108 0.661621 0.326782 7.2259 0.326782 15.3232C0.326782 23.4208 6.89108 29.9846 14.9882 29.9846C23.0861 29.9846 29.6497 23.4208 29.6497 15.3232C29.6497 7.22643 23.0861 0.662321 14.988 0.662321L14.9882 0.661621ZM21.7118 21.8078C21.4492 22.2385 20.8854 22.3751 20.4547 22.1107C17.0124 20.008 12.6789 19.5318 7.57545 20.6978C7.08367 20.8099 6.59345 20.5017 6.48141 20.0097C6.36883 19.5178 6.67574 19.0275 7.16875 18.9155C12.7537 17.6395 17.5443 18.1889 21.4089 20.5507C21.8396 20.8151 21.9762 21.3771 21.7118 21.8078ZM23.5063 17.8156C23.1754 18.3535 22.4716 18.5233 21.9341 18.1924C17.9932 15.77 11.9858 15.0684 7.3244 16.4834C6.71986 16.6661 6.08136 16.3253 5.89788 15.7218C5.7158 15.1173 6.05667 14.48 6.66016 14.2962C11.9847 12.6805 18.6042 13.4631 23.1299 16.2443C23.6674 16.5752 23.8372 17.2788 23.5063 17.8156ZM23.6604 13.6585C18.9351 10.8518 11.139 10.5937 6.62742 11.963C5.90295 12.1828 5.13682 11.7738 4.91728 11.0493C4.69773 10.3245 5.10636 9.55885 5.83135 9.3386C11.0103 7.76638 19.6196 8.07014 25.0599 11.2998C25.713 11.6866 25.9266 12.5282 25.5397 13.179C25.1545 13.8306 24.3106 14.0455 23.6611 13.6585H23.6604Z"
-        style={{ fill: "var(--primary-color)" }}
-      />
-    </svg>
-  );
-};
-
-const DoubleArrow: FC = () => {
-  return (
-    <svg width="37" height="17" viewBox="0 0 37 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M27.79 0L26.39 1.4L32.42 7.45H3.81L9.84 1.4L8.44 0L0 8.44L8.44 16.88L9.84 15.48L3.81 9.43H32.42L26.39 15.48L27.79 16.88L36.23 8.44L27.79 0Z" fill="#1B1B1B" />
-    </svg>
-  );
-};
-
-const Skill = styled.div`
-  margin: 10px;
-`;
 
 export default Home;

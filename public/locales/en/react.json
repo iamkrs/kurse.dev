@@ -7,5 +7,21 @@
   "projectsCabinTitle": "telemedicine cabin",
   "projectsCabinDescription": "UTFPR research project in partnership with ICI from Curitiba, aiming at the creation of medical cabins for public health care.",
   "projectsCabinButton": "check out",
-  "checkOutReactNativeProjects": "Check out React Native projects"
+  "checkOutReactNativeProjects": "Check out React Native projects",
+  "projectsAboutTitle": "About",
+  "projectsHowWasItDoneTitle": "How was it done?",
+  "projectsGalleryTitle": "Gallery",
+  "projectsTotemAboutText": "Grupo Risotolândia has a food ordering app and had to install self-service points in some establishments that offer the service. <1/><1/> The project included the development of the interface and its usability, and the implementation of its functionalities.",
+  "projectsTotemAboutCredits": "Partnership with",
+  "projectsTotemHowWasItDoneText": "It was built using <1>React</1> in <1>typescript</1>, with <1>Redux</1> to control application state. And the styling of the components is done with <1>emotion</1>.",
+  "projectsTotemGalleryCategory": "Category",
+  "projectsTotemGalleryProduct": "Product",
+  "projectsTotemGalleryCheckout": "Checkout",
+  "checkOutMoreProjects": "Check out more projects",
+  "projectsCabinAboutText": "The Maria project is the first medical cabin prototype for telemedicine use in Brazil. Its objective is to bring quality basic health care to remote areas (rural, interior, northeast, border) where there is a shortage of doctors or difficulties in the performance of the unified health system (SUS). <1/><1/> In short, the cabin replaces a health post and brings a virtual doctor to the community. The project is a partnership between UTFPR & ICI",
+  "projectsCabinAboutCredits": "Partnership between",
+  "projectsCabinHowWasItDoneText": "It was built using <1>React</1> and <1>NextJS</1> in <1>typescript</1>, with <1>Redux</1> to control the application state. And the styling of the components is done with <1>emotion</1>. <br/><br/> Makes use of websockets for exchanging messages and other functionality using <1>Socket.IO</1>. And for real-time communication, <1>WebRTC</1> is used. <br/><br/> And <1>MongoDB</1> as database.",
+  "projectsCabinGalleryLogin": "Login",
+  "projectsCabinGalleryDashboard": "Dashboard",
+  "projectsCabinGalleryConsultation": "Consultation"
 }

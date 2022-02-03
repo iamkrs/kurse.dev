@@ -27,6 +27,10 @@ const StyledSection = styled.section<SectionProps>`
     .title svg *{
       fill: #1C1C1C !important;
     }
+    
+    .scrollDown *{
+      fill: #1C1C1C !important;
+    }
   `}
 
   @media screen and (min-width: 771px) {

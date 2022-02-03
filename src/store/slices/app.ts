@@ -4,12 +4,14 @@ export interface AppState {
   primaryColor: string;
   headerHeight: string;
   showLanguageSwitcher: boolean;
+  preventScroll: boolean;
 }
 
 const initialState: AppState = {
   primaryColor: "#EBFF00",
   headerHeight: "137px",
   showLanguageSwitcher: false,
+  preventScroll: false,
 };
 
 export const appSlice = createSlice({
@@ -25,8 +27,11 @@ export const appSlice = createSlice({
     toggleLanguageSwitcher: (state) => {
       state.showLanguageSwitcher = !state.showLanguageSwitcher;
     },
+    setPreventScroll: (state, action: PayloadAction<boolean>) => {
+      state.preventScroll = action.payload;
+    },
   },
 });
 
-export const { setPrimaryColor, setShowLanguageSwitcher, toggleLanguageSwitcher } = appSlice.actions;
+export const { setPrimaryColor, setShowLanguageSwitcher, toggleLanguageSwitcher, setPreventScroll } = appSlice.actions;
 export default appSlice.reducer;

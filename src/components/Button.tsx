@@ -1,15 +1,16 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, FC, forwardRef } from "react";
 import styled from "styled-components";
 
 type ButtonProps = {
+  displayName?: string;
   style?: CSSProperties;
   fontRegular?: boolean;
   filled?: boolean;
 };
 
-const Button: FC<ButtonProps> = ({ children, fontRegular, ...props }) => {
+const Button: FC<ButtonProps> = forwardRef<HTMLAnchorElement, ButtonProps>(({ children, fontRegular, ...props }, ref) => {
   return (
-    <StyledButton {...props}>
+    <StyledButton ref={ref} {...props}>
       <ButtonText fontRegular={fontRegular}>{children}</ButtonText>
       <ArrowIcon width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -19,7 +20,9 @@ const Button: FC<ButtonProps> = ({ children, fontRegular, ...props }) => {
       </ArrowIcon>
     </StyledButton>
   );
-};
+});
+
+Button.displayName = "Button";
 
 export default Button;
 
@@ -28,13 +31,14 @@ const ButtonText = styled.div<ButtonProps>`
   font-size: ${({ fontRegular }) => (fontRegular ? "18px" : "23px")}; ;
 `;
 
-const StyledButton = styled.div<ButtonProps>`
+const StyledButton = styled.a<ButtonProps>`
   position: relative;
   display: flex;
   align-items: flex-start;
   border: 2px solid var(--primary-color);
   padding: 20px calc(26px + 15px) 20px 26px;
   cursor: pointer;
+  text-decoration: none;
 
   ${({ filled }) =>
     filled &&

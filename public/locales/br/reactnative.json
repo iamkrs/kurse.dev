@@ -1,0 +1,19 @@
+{
+  "description": "Apps nativos criados com React",
+  "projectsTitle": "Projetos",
+  "projectsCustomerTitle": "app de fidelização de usuário",
+  "projectsCustomerDescription": "Visando a fidelização de clientes de um ecommerce, app oferece um sistema de pontuação e acesso as informações da conta.",
+  "projectsCustomerButton": "conferir",
+  "checkOutReactProjects": "Confira os projetos React",
+  "checkOutExperiments": "Confira os Experimentos",
+  "projectsAboutTitle": "Sobre",
+  "projectsHowWasItDoneTitle": "Como foi feito?",
+  "projectsGalleryTitle": "Galeria",
+  "projectsCustomerAboutText": "A Morifarma precisava de um app voltado aos seus usuários de ecommerce, com funcionalidades para conferir o andamento de suas compras, atualizar informações e também para participar do programa de pontuação da loja, onde conseguem converter seus pontos adquiridos por vale-compras.",
+  "projectsCustomerAboutCredits": "Em parceiria com",
+  "projectsCustomerHowWasItDoneText": "Foi construido utilizando <1>React Native</1> em <1>typescript</1>, utilizando o framework <1>Expo</1>, com <1>Redux</1> para controlar o estado da aplicação. E a estilização dos componentes feita com <1>styled components</1>.",
+  "projectsCustomerGalleryMyPoints": "Meus pontos",
+  "projectsCustomerGalleryCreateGiftCard": "Trocar vale-compra",
+  "projectsCustomerGalleryOrder": "Pedido",
+  "projectsCheckOutMoreProjects": "Confira mais projetos"
+}
