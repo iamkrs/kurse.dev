@@ -69,7 +69,7 @@ const SelfServiceTotem: NextPage = () => {
               <ProjectDescription>
                 <MainTitle>{t("react:projectsTotemTitle")}</MainTitle>
                 <Text style={{ marginRight: 15, marginBottom: 33 }}>{t("react:projectsTotemDescription")}</Text>
-                <Button filled>Demo</Button>
+                {/* <Button filled>Demo</Button> */}
               </ProjectDescription>
             </Project>
           </Flex>

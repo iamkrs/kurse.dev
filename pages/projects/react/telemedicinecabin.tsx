@@ -74,7 +74,7 @@ const TelemedicineCabin: NextPage = () => {
               <ProjectDescription>
                 <MainTitle>{t("react:projectsCabinTitle")}</MainTitle>
                 <Text style={{ marginRight: 15, marginBottom: 33 }}>{t("react:projectsCabinDescription")}</Text>
-                <Button filled>Demo</Button>
+                {/* <Button filled>Demo</Button> */}
               </ProjectDescription>
             </Project>
           </Flex>
