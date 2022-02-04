@@ -35,6 +35,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
 
 const Home: NextPage = () => {
   const router = useRouter();
+  const { locale } = router;
   const dispatch = useAppDispatch();
   const scrollRef = useHorizontalScroll();
   const { t } = useTranslation();
@@ -71,7 +72,11 @@ const Home: NextPage = () => {
             </Flex>
             <Text style={{ marginBottom: 47 }}>{t("home:aboutMeText")}</Text>
             <Flex alignCenter>
-              <Button style={{ marginRight: 20 }}>{t("home:resumeButton")}</Button>
+              <Link href={locale === "en" ? "/kurse-resume.pdf" : "/kurse-cv.pdf"} passHref locale={false}>
+                <Button target="_blank" style={{ marginRight: 20 }}>
+                  {t("home:resumeButton")}
+                </Button>
+              </Link>
               <SocialIcon href="https://github.com/iamkrs" target="_blank">
                 <GithubIcon />
               </SocialIcon>

@@ -41,10 +41,6 @@ const GlobalStyle = () => {
   const appState = useAppSelector((store) => store.app);
   const { primaryColor, headerHeight } = appState;
 
-  useEffect(() => {
-    console.log("global style rendered");
-  }, []);
-
   return <StyledGlobalStyle primaryColor={primaryColor} headerHeight={headerHeight} />;
 };
 
