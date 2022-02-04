@@ -64,8 +64,7 @@ const SelfServiceTotem: NextPage = () => {
     <div>
       <Head>
         <title>Kurse.dev</title>
-        <meta name="description" content="Welcome to Kurse's portfolio" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Kurse is a full stack developer and designer" />
       </Head>
       <Header />
       <Main ref={scrollRef}>

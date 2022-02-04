@@ -3,11 +3,10 @@ import { i18n, Trans, useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { FC, useEffect } from "react";
-import styled from "styled-components";
-import loginImage from "../../../public/images/telemedicinecabin/login.png";
-import dashboardImage from "../../../public/images/telemedicinecabin/dashboard.png";
+import { useEffect } from "react";
 import consultantImage from "../../../public/images/telemedicinecabin/consultant.png";
+import dashboardImage from "../../../public/images/telemedicinecabin/dashboard.png";
+import loginImage from "../../../public/images/telemedicinecabin/login.png";
 import Button from "../../../src/components/Button";
 import CheckOutLink from "../../../src/components/CheckOutLink";
 import DotsStripe from "../../../src/components/DotsStripe";
@@ -16,10 +15,11 @@ import Header from "../../../src/components/Header/Header";
 import Main from "../../../src/components/Main";
 import MainTitle from "../../../src/components/MainTitle";
 import About from "../../../src/components/Projects/About";
+import Credits from "../../../src/components/Projects/Credits";
 import GalleryItem from "../../../src/components/Projects/GalleryItem";
 import Project from "../../../src/components/Projects/Project";
 import ProjectDescription from "../../../src/components/Projects/ProjectDescription";
-import SelfServiceTotemSvg from "../../../src/components/Projects/SelfServiceTotemSvg";
+import CreditsSvg from "../../../src/components/Projects/TelemedicineCabin/CreditsSvg";
 import TelemedicineCabinSvg from "../../../src/components/Projects/TelemedicineCabinSvg";
 import ScrollDown from "../../../src/components/ScrollDown";
 import Section from "../../../src/components/Section";
@@ -27,8 +27,6 @@ import Text from "../../../src/components/Text";
 import Title from "../../../src/components/Title";
 import { useAppDispatch } from "../../../src/hooks";
 import { useHorizontalScroll } from "../../../src/hooks/useHorizontalScroll";
-import Credits from "../../../src/components/Projects/Credits";
-import CreditsSvg from "../../../src/components/Projects/TelemedicineCabin/CreditsSvg";
 
 const galleryDimensions = {
   width: 403,
@@ -65,8 +63,7 @@ const TelemedicineCabin: NextPage = () => {
     <div>
       <Head>
         <title>Kurse.dev</title>
-        <meta name="description" content="Welcome to Kurse's portfolio" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Kurse is a full stack developer and designer" />
       </Head>
       <Header />
       <Main ref={scrollRef}>

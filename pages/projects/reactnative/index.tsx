@@ -16,7 +16,6 @@ import CustomerLoyaltyAppSvg from "../../../src/components/Projects/CustomerLoya
 import Project from "../../../src/components/Projects/Project";
 import ProjectDescription from "../../../src/components/Projects/ProjectDescription";
 import ReactNativeLogos from "../../../src/components/Projects/ReactNativeLogos";
-import TelemedicineCabinSvg from "../../../src/components/Projects/TelemedicineCabinSvg";
 import ScrollDown from "../../../src/components/ScrollDown";
 import Section from "../../../src/components/Section";
 import Text from "../../../src/components/Text";
@@ -56,8 +55,7 @@ const ReactNative: NextPage = () => {
     <div>
       <Head>
         <title>Kurse.dev</title>
-        <meta name="description" content="Welcome to Kurse's portfolio" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Kurse is a full stack developer and designer" />
       </Head>
       <Header />
       <Main ref={scrollRef}>

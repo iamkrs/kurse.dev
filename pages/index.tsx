@@ -64,8 +64,7 @@ const Home: NextPage = () => {
     <div>
       <Head>
         <title>Kurse.dev</title>
-        <meta name="description" content="Welcome to Kurse's portfolio" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Kurse is a full stack developer and designer" />
       </Head>
 
       <Header />
@@ -133,7 +132,7 @@ const Home: NextPage = () => {
                   {t("home:hobbiesCheckOut")}
                 </Title>
                 <Flex flexWrap>
-                  <Link href="/projects/react/telemedicinecabin" passHref>
+                  {/* <Link href="/projects/react/telemedicinecabin" passHref>
                     <Button fontRegular target="_blank" style={{ margin: "0 10px 10px 0" }}>
                       <ButtonIcon>
                         <SpotifyIcon />
@@ -141,7 +140,7 @@ const Home: NextPage = () => {
 
                       {t("home:hobbiesMusicButton")}
                     </Button>
-                  </Link>
+                  </Link> */}
                   <Link href="https://www.instagram.com/kurserino/" passHref>
                     <Button fontRegular target="_blank" style={{ margin: "0 10px 10px 0" }}>
                       <ButtonIcon>

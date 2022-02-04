@@ -3,8 +3,7 @@ import { i18n, Trans, useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { FC, useEffect } from "react";
-import styled from "styled-components";
+import { useEffect } from "react";
 import categoryImage from "../../../public/images/selfservicetotem/category.png";
 import checkoutImage from "../../../public/images/selfservicetotem/checkout.png";
 import productImage from "../../../public/images/selfservicetotem/product.png";
@@ -59,8 +58,7 @@ const SelfServiceTotem: NextPage = () => {
     <div>
       <Head>
         <title>Kurse.dev</title>
-        <meta name="description" content="Welcome to Kurse's portfolio" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Kurse is a full stack developer and designer" />
       </Head>
       <Header />
       <Main ref={scrollRef}>
