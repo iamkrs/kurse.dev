@@ -1,10 +1,13 @@
 import type { NextPage } from "next";
+import { i18n, Trans, useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
-import Image from "next/image";
-import { darken } from "polished";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { FC, useEffect } from "react";
 import styled from "styled-components";
-import Button from "../src/components/Button";
+import Button, { ButtonIcon } from "../src/components/Button";
+import CheckOutLink from "../src/components/CheckOutLink";
 import DotsStripe from "../src/components/DotsStripe";
 import Flex from "../src/components/Flex";
 import Header from "../src/components/Header/Header";
@@ -12,18 +15,12 @@ import Main from "../src/components/Main";
 import MainTitle from "../src/components/MainTitle";
 import ScrollDown from "../src/components/ScrollDown";
 import Section from "../src/components/Section";
+import Spacing from "../src/components/Spacing";
 import Text from "../src/components/Text";
 import Title from "../src/components/Title";
-import { useAppDispatch, useAppSelector } from "../src/hooks";
-import { useHorizontalScroll } from "../src/hooks/useHorizontalScroll";
-import { setPrimaryColor } from "../src/store/slices/app";
-import { i18n, useTranslation, Trans } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useRouter } from "next/router";
-import CheckOutLink from "../src/components/CheckOutLink";
-import ReactTooltip from "react-tooltip";
 import Tooltip from "../src/components/Tooltip";
-import Spacing from "../src/components/Spacing";
+import { useAppDispatch } from "../src/hooks";
+import { useHorizontalScroll } from "../src/hooks/useHorizontalScroll";
 
 const tooltipParams = {
   position: "bottom",
@@ -88,10 +85,10 @@ const Home: NextPage = () => {
             <Text style={{ marginBottom: 47 }}>{t("home:aboutMeText")}</Text>
             <Flex alignCenter>
               <Button style={{ marginRight: 20 }}>{t("home:resumeButton")}</Button>
-              <SocialIcon href="#" target="_blank">
+              <SocialIcon href="https://github.com/iamkrs" target="_blank">
                 <GithubIcon />
               </SocialIcon>
-              <SocialIcon href="#" target="_blank">
+              <SocialIcon href="https://www.instagram.com/kurserino/" target="_blank">
                 <InstagramIcon />
               </SocialIcon>
             </Flex>
@@ -133,21 +130,34 @@ const Home: NextPage = () => {
                   </Trans>
                 </Text>
                 <Title small style={{ marginBottom: 18 }}>
-                  Confira:
+                  {t("home:hobbiesCheckOut")}
                 </Title>
                 <Flex flexWrap>
-                  <Button fontRegular style={{ margin: "0 10px 10px 0" }}>
-                    <SpotifyIcon />
-                    {t("home:hobbiesMusicButton")}
-                  </Button>
-                  <Button fontRegular style={{ margin: "0 10px 10px 0" }}>
-                    <SpotifyIcon />
-                    {t("home:hobbiesIllustrationButton")}
-                  </Button>
-                  <Button fontRegular style={{ margin: "0 10px 10px 0" }}>
-                    <SpotifyIcon />
-                    {t("home:hobbiesMangaButton")}
-                  </Button>
+                  <Link href="/projects/react/telemedicinecabin" passHref>
+                    <Button fontRegular target="_blank" style={{ margin: "0 10px 10px 0" }}>
+                      <ButtonIcon>
+                        <SpotifyIcon />
+                      </ButtonIcon>
+
+                      {t("home:hobbiesMusicButton")}
+                    </Button>
+                  </Link>
+                  <Link href="https://www.instagram.com/kurserino/" passHref>
+                    <Button fontRegular target="_blank" style={{ margin: "0 10px 10px 0" }}>
+                      <ButtonIcon>
+                        <InstagramIcon width={27} />
+                      </ButtonIcon>
+                      {t("home:hobbiesIllustrationButton")}
+                    </Button>
+                  </Link>
+                  <Link href="https://myanimelist.net/mangalist/kurseinsomnia?order=5&status=1" passHref>
+                    <Button fontRegular target="_blank" style={{ margin: "0 10px 10px 0" }}>
+                      <ButtonIcon>
+                        <MalIcon />
+                      </ButtonIcon>
+                      {t("home:hobbiesMangaButton")}
+                    </Button>
+                  </Link>
                 </Flex>
               </Flex>
             </Flex>
@@ -744,11 +754,35 @@ const Hobbie = styled.strong`
 
 const SpotifyIcon: FC = () => {
   return (
-    <svg style={{ margin: "-10px 10px -7px -10px" }} width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M14.9882 0.661621C6.89108 0.661621 0.326782 7.2259 0.326782 15.3232C0.326782 23.4208 6.89108 29.9846 14.9882 29.9846C23.0861 29.9846 29.6497 23.4208 29.6497 15.3232C29.6497 7.22643 23.0861 0.662321 14.988 0.662321L14.9882 0.661621ZM21.7118 21.8078C21.4492 22.2385 20.8854 22.3751 20.4547 22.1107C17.0124 20.008 12.6789 19.5318 7.57545 20.6978C7.08367 20.8099 6.59345 20.5017 6.48141 20.0097C6.36883 19.5178 6.67574 19.0275 7.16875 18.9155C12.7537 17.6395 17.5443 18.1889 21.4089 20.5507C21.8396 20.8151 21.9762 21.3771 21.7118 21.8078ZM23.5063 17.8156C23.1754 18.3535 22.4716 18.5233 21.9341 18.1924C17.9932 15.77 11.9858 15.0684 7.3244 16.4834C6.71986 16.6661 6.08136 16.3253 5.89788 15.7218C5.7158 15.1173 6.05667 14.48 6.66016 14.2962C11.9847 12.6805 18.6042 13.4631 23.1299 16.2443C23.6674 16.5752 23.8372 17.2788 23.5063 17.8156ZM23.6604 13.6585C18.9351 10.8518 11.139 10.5937 6.62742 11.963C5.90295 12.1828 5.13682 11.7738 4.91728 11.0493C4.69773 10.3245 5.10636 9.55885 5.83135 9.3386C11.0103 7.76638 19.6196 8.07014 25.0599 11.2998C25.713 11.6866 25.9266 12.5282 25.5397 13.179C25.1545 13.8306 24.3106 14.0455 23.6611 13.6585H23.6604Z"
         style={{ fill: "var(--primary-color)" }}
       />
+    </svg>
+  );
+};
+
+const MalIcon: FC = () => {
+  return (
+    <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0.494141" y="0.13623" width="28.4066" height="28.4066" fill="#EBFF00" />
+      <g clipPath="url(#clip0_229_27)">
+        <path
+          d="M6.53704 13.0241L4.64669 10.4053H2.26953V19.221C3.0477 19.221 3.80456 19.221 4.57918 19.221V13.9088L6.54415 16.4175L8.65836 13.9088V16.6342C8.65836 17.5012 8.65836 18.3682 8.65836 19.2317H10.9254V10.3982H8.56242L6.53704 13.0241Z"
+          fill="#1C1C1C"
+        />
+        <path
+          d="M16.4295 12.438C16.7653 12.3466 17.1119 12.3012 17.46 12.303C18.1706 12.2816 18.9133 12.303 19.6381 12.303H20.3843L19.7518 10.3806H16.9092C16.6242 10.3875 16.3408 10.4244 16.0635 10.4908C15.0056 10.6878 14.0327 11.2021 13.2742 11.9654C12.7233 12.5828 12.3673 13.3493 12.2508 14.1684C12.2027 14.5935 12.2027 15.0226 12.2508 15.4476C12.2112 15.8627 12.2461 16.2814 12.3539 16.6842C12.432 16.8867 12.4249 17.1568 12.4995 17.3948C12.5964 17.6328 12.676 17.8774 12.7376 18.1268C12.8869 18.9156 13.3523 19.5837 13.562 20.3476C13.5989 20.435 13.6466 20.5174 13.7041 20.5928C14.3082 20.1984 14.8518 19.8573 15.3742 19.4877C15.6407 19.2994 15.6229 19.2745 15.463 18.9192C15.2725 18.5512 15.1087 18.17 14.9726 17.7786C14.8376 17.3024 14.6173 16.8334 14.6955 16.3111H17.3924V19.3456H19.9188V12.5481C19.0554 12.5694 18.2133 12.5233 17.3498 12.5801V14.4598H15.2178C15.1148 13.8486 15.4559 13.3938 15.7579 12.9639C15.9169 12.7186 16.1533 12.5335 16.4295 12.438Z"
+          fill="#1C1C1C"
+        />
+        <path d="M24.03 10.3911H21.7452V19.1962H26.8407C26.8833 18.5388 27.196 17.9525 27.2457 17.2881H24.03V10.3911Z" fill="#1C1C1C" />
+      </g>
+      <defs>
+        <clipPath id="clip0_229_27">
+          <rect width="24.9761" height="10.2086" fill="white" transform="translate(2.26953 10.3735)" />
+        </clipPath>
+      </defs>
     </svg>
   );
 };

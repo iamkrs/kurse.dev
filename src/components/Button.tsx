@@ -6,6 +6,7 @@ type ButtonProps = {
   style?: CSSProperties;
   fontRegular?: boolean;
   filled?: boolean;
+  target?: string;
 };
 
 const Button: FC<ButtonProps> = forwardRef<HTMLAnchorElement, ButtonProps>(({ children, fontRegular, ...props }, ref) => {
@@ -27,6 +28,9 @@ Button.displayName = "Button";
 export default Button;
 
 const ButtonText = styled.div<ButtonProps>`
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
   font-weight: ${({ fontRegular }) => (fontRegular ? "600" : "900")};
   font-size: ${({ fontRegular }) => (fontRegular ? "18px" : "23px")}; ;
 `;
@@ -39,6 +43,7 @@ const StyledButton = styled.a<ButtonProps>`
   padding: 20px calc(26px + 15px) 20px 26px;
   cursor: pointer;
   text-decoration: none;
+  color: var(--primary-color);
 
   ${({ filled }) =>
     filled &&
@@ -58,4 +63,8 @@ const ArrowIcon = styled.svg`
   position: absolute;
   top: 15px;
   right: 15px;
+`;
+
+export const ButtonIcon = styled.div`
+  margin: -50% 11px -50% -12px;
 `;
