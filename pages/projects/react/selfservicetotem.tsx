@@ -41,18 +41,18 @@ export async function getStaticProps({ locale }: { locale: string }) {
 
 const SelfServiceTotem: NextPage = () => {
   const router = useRouter();
-  useEffect(() => {
-    const timer = setInterval(() => {
-      router.replace(router.asPath, undefined, {
-        scroll: false,
-      });
-    }, 5000);
-    return () => clearTimeout(timer);
-  });
-
   const dispatch = useAppDispatch();
   const scrollRef = useHorizontalScroll();
   const { t } = useTranslation();
+
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     router.replace(router.asPath, undefined, {
+  //       scroll: false,
+  //     });
+  //   }, 5000);
+  //   return () => clearTimeout(timer);
+  // });
 
   return (
     <div>

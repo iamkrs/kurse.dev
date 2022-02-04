@@ -22,18 +22,6 @@ import Tooltip from "../src/components/Tooltip";
 import { useAppDispatch } from "../src/hooks";
 import { useHorizontalScroll } from "../src/hooks/useHorizontalScroll";
 
-const tooltipParams = {
-  position: "bottom",
-  followCursor: true,
-  // trigger: "mouseenter",
-  delay: 0,
-  animation: "fade",
-  duration: 100,
-  interactive: true,
-  arrow: true,
-  hideOnClick: false,
-};
-
 export async function getStaticProps({ locale }: { locale: string }) {
   if (process.env.NODE_ENV === "development") {
     await i18n?.reloadResources();
@@ -47,18 +35,18 @@ export async function getStaticProps({ locale }: { locale: string }) {
 
 const Home: NextPage = () => {
   const router = useRouter();
-  useEffect(() => {
-    const timer = setInterval(() => {
-      router.replace(router.asPath, undefined, {
-        scroll: false,
-      });
-    }, 5000);
-    return () => clearTimeout(timer);
-  });
-
   const dispatch = useAppDispatch();
   const scrollRef = useHorizontalScroll();
   const { t } = useTranslation();
+
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     router.replace(router.asPath, undefined, {
+  //       scroll: false,
+  //     });
+  //   }, 5000);
+  //   return () => clearTimeout(timer);
+  // });
 
   return (
     <div>

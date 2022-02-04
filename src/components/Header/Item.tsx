@@ -6,6 +6,7 @@ type ItemProps = {
   style?: CSSProperties;
   borderLeft?: boolean;
   chevronDown?: boolean;
+  last?: boolean;
 };
 
 const StyledItem = styled.div<ItemProps>`
@@ -17,6 +18,10 @@ const StyledItem = styled.div<ItemProps>`
   width: ${({ chevronDown }) => (chevronDown ? "137px" : "137px")};
   ${({ borderLeft }) => (borderLeft ? "border-left" : "border-right")}: 2px solid var(--primary-color);
   cursor: pointer;
+
+  @media screen and (max-width: 771px) {
+    ${({ last }) => last && `border-left: none !important;`}
+  }
 
   a {
     height: 100%;

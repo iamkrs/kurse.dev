@@ -134,6 +134,7 @@ const Header = () => {
       </Item> */}
       <Item
         borderLeft
+        last
         chevronDown
         style={{ marginLeft: "auto" }}
         onClick={() => {
