@@ -9,4 +9,8 @@ module.exports = {
   async rewrites() {
     return urlRewrites;
   },
+  experimental: {
+    // Enables the styled-components SWC transform
+    styledComponents: true,
+  },
 };
