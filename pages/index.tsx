@@ -241,10 +241,14 @@ const Home: NextPage = () => {
             <Title style={{ marginBottom: 77 }}>{t("home:certificatesTitle")}</Title>
             <Flex column style={{ margin: "auto 0" }}>
               <Flex column>
-                <Text style={{ marginRight: 15 }}>{t("home:certificatesJsFreeCodeCampName")}</Text>
-                <Text style={{ marginRight: 15, marginBottom: 80 }}>
-                  <strong>freeCodeCamp</strong>
-                </Text>
+                <Link href="https://www.freecodecamp.org/certification/kurse/javascript-algorithms-and-data-structures" passHref>
+                  <a target="_blank" style={{ textDecoration: "none", color: "var(--color-black)" }}>
+                    <Text style={{ marginRight: 15 }}>{t("home:certificatesJsFreeCodeCampName")}</Text>
+                    <Text style={{ marginRight: 15, marginBottom: 80 }}>
+                      <strong>freeCodeCamp</strong>
+                    </Text>
+                  </a>
+                </Link>
               </Flex>
             </Flex>
           </Flex>
