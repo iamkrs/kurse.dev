@@ -9,6 +9,7 @@ import styled from "styled-components";
 import Button, { ButtonIcon } from "../src/components/Button";
 import CheckOutLink from "../src/components/CheckOutLink";
 import DotsStripe from "../src/components/DotsStripe";
+import Email from "../src/components/Email";
 import Flex from "../src/components/Flex";
 import Header from "../src/components/Header/Header";
 import Main from "../src/components/Main";
@@ -70,7 +71,8 @@ const Home: NextPage = () => {
                 />
               </CheckedIcon>
             </Flex>
-            <Text style={{ marginBottom: 47 }}>{t("home:aboutMeText")}</Text>
+            <Text style={{ marginBottom: 23 }}>{t("home:aboutMeText")}</Text>
+            <Email>lucas.kurse@hotmail.com</Email>
             <Flex alignCenter>
               <Link href={locale === "en" ? "/kurse-resume.pdf" : "/kurse-cv.pdf"} passHref locale={false}>
                 <Button target="_blank" style={{ marginRight: 20 }}>
