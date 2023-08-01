@@ -11,11 +11,10 @@ export function useHorizontalScroll() {
       const onWheel = (e: any) => {
         if (window.innerWidth > 771) {
           if (e.deltaY == 0) return;
-          e.preventDefault();
+
           if (!preventScroll) {
             el.scrollTo({
               left: el.scrollLeft + e.deltaY,
-              behavior: "smooth",
             });
           }
         } else {
@@ -23,12 +22,11 @@ export function useHorizontalScroll() {
             e.preventDefault();
             el.scrollTo({
               top: el.scrollTop,
-              behavior: "smooth",
             });
           }
         }
       };
-      el.addEventListener("wheel", onWheel);
+      el.addEventListener("wheel", onWheel, { passive: true });
       return () => el.removeEventListener("wheel", onWheel);
     }
   }, [preventScroll]);
