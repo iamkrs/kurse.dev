@@ -79,7 +79,7 @@ const Home: NextPage = () => {
                   {t("home:resumeButton")}
                 </Button>
               </Link>
-              <SocialIcon href="https://github.com/iamkrs" target="_blank">
+              <SocialIcon href="https://github.com/kurserino" target="_blank">
                 <GithubIcon />
               </SocialIcon>
               <SocialIcon href="https://www.instagram.com/kurserino/" target="_blank">
