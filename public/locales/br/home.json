@@ -1,5 +1,5 @@
 {
-  "aboutMeText": "Desenvolvedor atuando a 7 anos no mercado, especializado em aplicativos modernos com javascript e estou posicionado atualmente como desenvolvedor full stack.",
+  "aboutMeText": "Desenvolvedor atuando a {{experienceYears}} anos no mercado, especializado em aplicativos modernos com javascript e estou posicionado atualmente como desenvolvedor full stack.",
   "resumeButton": "Currículo",
   "historyTitle": "História",
   "historyText": "Formado em design gráfico em 2015, a minha <1>ambição por criar</1> não parou por ai, acabei me encontrando como <1>desenvolvedor</1> em meio ao mercado de trabalho e decidi me especializar, hoje não consigo me imaginar fora desse mundo.",
