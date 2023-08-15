@@ -73,7 +73,9 @@ const TelemedicineCabin: NextPage = () => {
               <TelemedicineCabinSvg />
               <ProjectDescription>
                 <MainTitle>{t("react:projectsCabinTitle")}</MainTitle>
-                <Text style={{ marginRight: 15, marginBottom: 33 }}>{t("react:projectsCabinDescription")}</Text>
+                <Text style={{ marginRight: 15, marginBottom: 33 }}>
+                  {t("react:projectsCabinDescription")}
+                </Text>
                 {/* <Button filled>Demo</Button> */}
               </ProjectDescription>
             </Project>
@@ -87,10 +89,13 @@ const TelemedicineCabin: NextPage = () => {
             <Title style={{ marginBottom: 55 }}>{t("react:projectsAboutTitle")}</Title>
             <Text>
               <Trans i18nKey="react:projectsCabinAboutText">
-                O projeto Maria é o primeiro protótipo de cabine médica para uso de telemedicina do Brasil. O seu objetivo é levar saúde básica de qualidade para áreas remotas (rurais, interior,
-                nordeste, fronteira) onde existe falta de médico ou dificuldade de atuação do sistema único de saúde (SUS). <br />
+                O projeto Maria é o primeiro protótipo de cabine médica para uso de telemedicina do
+                Brasil. O seu objetivo é levar saúde básica de qualidade para áreas remotas (rurais,
+                interior, nordeste, fronteira) onde existe falta de médico ou dificuldade de atuação
+                do sistema único de saúde (SUS). <br />
                 <br />
-                De maneira resumida a cabine substitui um posto de saúde e traz um médico virtual para a comunidade. O projeto é uma parceria entre UTFPR & ICI
+                De maneira resumida a cabine substitui um posto de saúde e traz um médico virtual
+                para a comunidade. O projeto é uma parceria entre UTFPR & ICI
               </Trans>
             </Text>
             <Credits>
@@ -106,11 +111,14 @@ const TelemedicineCabin: NextPage = () => {
             <Flex style={{ margin: "auto 0" }} columnOnMobile>
               <Text>
                 <Trans i18nKey="react:projectsCabinHowWasItDoneText">
-                  Foi construido utilizando <strong>React</strong> e <strong>NextJS</strong> em <strong>typescript</strong>, com <strong>Redux</strong> para controlar o estado da aplicação. E a
-                  estilização dos componentes feita com <strong>emotion</strong>. <br />
+                  Foi construido utilizando <strong>React</strong> e <strong>NextJS</strong> em{" "}
+                  <strong>typescript</strong>, com <strong>Redux</strong> para controlar o estado da
+                  aplicação. E a estilização dos componentes feita com <strong>emotion</strong>.{" "}
                   <br />
-                  Faz uso de websockets para a troca de mensagens e outras funcionalidades utilizando <strong>Socket.IO</strong>. E para a comunicação em tempo real é utilizado o{" "}
-                  <strong>WebRTC</strong>.
+                  <br />
+                  Faz uso de websockets para a troca de mensagens e outras funcionalidades
+                  utilizando <strong>Socket.IO</strong>. E para a comunicação em tempo real é
+                  utilizado o <strong>WebRTC</strong>.
                   <br />
                   <br />
                   Para o banco de dados é utilizado o <strong>MongoDB</strong>.
@@ -125,13 +133,26 @@ const TelemedicineCabin: NextPage = () => {
           <Flex column justifyCenter fullHeight>
             <Title style={{ marginBottom: 55 }}>{t("react:projectsGalleryTitle")}</Title>
             <Flex style={{ margin: "auto 0" }} columnOnMobile>
-              <GalleryItem imageSrc={loginImage} width={galleryDimensions.width} height={galleryDimensions.height}>
+              <GalleryItem
+                imageSrc={loginImage}
+                width={galleryDimensions.width}
+                height={galleryDimensions.height}
+              >
                 {t("react:projectsCabinGalleryLogin")}
               </GalleryItem>
-              <GalleryItem imageSrc={consultantImage} width={galleryDimensions.width} height={galleryDimensions.height}>
+              <GalleryItem
+                imageSrc={consultantImage}
+                width={galleryDimensions.width}
+                height={galleryDimensions.height}
+              >
                 {t("react:projectsCabinGalleryDashboard")}
               </GalleryItem>
-              <GalleryItem imageSrc={dashboardImage} width={galleryDimensions.width} height={galleryDimensions.height}>
+              <GalleryItem
+                imageSrc={dashboardImage}
+                width={galleryDimensions.width}
+                height={galleryDimensions.height}
+                isLast
+              >
                 {t("react:projectsCabinGalleryConsultation")}
               </GalleryItem>
             </Flex>
@@ -141,7 +162,9 @@ const TelemedicineCabin: NextPage = () => {
         <Section width="1013px" primaryColor>
           <DotsStripe left width="32px" />
           <Flex column justifyCenter fullHeight>
-            <CheckOutLink href="/projects/reactnative">{t("react:checkOutReactNativeProjects")}</CheckOutLink>
+            <CheckOutLink href="/projects/reactnative">
+              {t("react:checkOutReactNativeProjects")}
+            </CheckOutLink>
           </Flex>
         </Section>
       </Main>

@@ -68,7 +68,9 @@ const SelfServiceTotem: NextPage = () => {
               <SelfServiceTotemSvg />
               <ProjectDescription>
                 <MainTitle>{t("react:projectsTotemTitle")}</MainTitle>
-                <Text style={{ marginRight: 15, marginBottom: 33 }}>{t("react:projectsTotemDescription")}</Text>
+                <Text style={{ marginRight: 15, marginBottom: 33 }}>
+                  {t("react:projectsTotemDescription")}
+                </Text>
                 {/* <Button filled>Demo</Button> */}
               </ProjectDescription>
             </Project>
@@ -82,8 +84,11 @@ const SelfServiceTotem: NextPage = () => {
             <Title style={{ marginBottom: 55 }}>{t("react:projectsAboutTitle")}</Title>
             <Text>
               <Trans i18nKey="react:projectsTotemAboutText">
-                O Grupo Risotolândia possui um app de pedidos de alimentos e teve a necessidade de instalar pontos de autoatendimento em alguns estabelicimentos que oferecem o serviço. <br />
-                <br /> O projeto contou com o desenvolvimento da interface e sua usabilidade, e a implementação de suas funcionalidades.
+                O Grupo Risotolândia possui um app de pedidos de alimentos e teve a necessidade de
+                instalar pontos de autoatendimento em alguns estabelicimentos que oferecem o
+                serviço. <br />
+                <br /> O projeto contou com o desenvolvimento da interface e sua usabilidade, e a
+                implementação de suas funcionalidades.
               </Trans>
             </Text>
             <Credits>
@@ -99,8 +104,9 @@ const SelfServiceTotem: NextPage = () => {
             <Flex style={{ margin: "auto 0" }} columnOnMobile>
               <Text>
                 <Trans i18nKey="react:projectsTotemHowWasItDoneText">
-                  Foi construido utilizando <strong>React</strong> em <strong>typescript</strong>, com <strong>Redux</strong> para controlar o estado da aplicação. E a estilização dos componentes
-                  feita com <strong>emotion</strong>.
+                  Foi construido utilizando <strong>React</strong> em <strong>typescript</strong>,
+                  com <strong>Redux</strong> para controlar o estado da aplicação. E a estilização
+                  dos componentes feita com <strong>emotion</strong>.
                 </Trans>
               </Text>
             </Flex>
@@ -112,9 +118,15 @@ const SelfServiceTotem: NextPage = () => {
           <Flex column justifyCenter fullHeight>
             <Title style={{ marginBottom: 55 }}>{t("react:projectsGalleryTitle")}</Title>
             <Flex style={{ margin: "auto 0" }} columnOnMobile>
-              <GalleryItem imageSrc={categoryImage}>{t("react:projectsTotemGalleryCategory")}</GalleryItem>
-              <GalleryItem imageSrc={productImage}>{t("react:projectsTotemGalleryProduct")}</GalleryItem>
-              <GalleryItem imageSrc={checkoutImage}>{t("react:projectsTotemGalleryCheckout")}</GalleryItem>
+              <GalleryItem imageSrc={categoryImage}>
+                {t("react:projectsTotemGalleryCategory")}
+              </GalleryItem>
+              <GalleryItem imageSrc={productImage}>
+                {t("react:projectsTotemGalleryProduct")}
+              </GalleryItem>
+              <GalleryItem imageSrc={checkoutImage} isLast>
+                {t("react:projectsTotemGalleryCheckout")}
+              </GalleryItem>
             </Flex>
           </Flex>
           <DotsStripe right />

@@ -74,7 +74,9 @@ const SelfServiceTotem: NextPage = () => {
               <CustomerLoyaltyAppSvg />
               <ProjectDescription>
                 <MainTitle>{t("reactnative:projectsCustomerTitle")}</MainTitle>
-                <Text style={{ marginRight: 15, marginBottom: 33 }}>{t("reactnative:projectsCustomerDescription")}</Text>
+                <Text style={{ marginRight: 15, marginBottom: 33 }}>
+                  {t("reactnative:projectsCustomerDescription")}
+                </Text>
                 {/* <Button filled>Demo</Button> */}
               </ProjectDescription>
             </Project>
@@ -100,8 +102,9 @@ const SelfServiceTotem: NextPage = () => {
             <Flex style={{ margin: "auto 0" }} columnOnMobile>
               <Text>
                 <Trans i18nKey="reactnative:projectsCustomerHowWasItDoneText">
-                  Foi construido utilizando <strong>React</strong> em <strong>typescript</strong>, com <strong>Redux</strong> para controlar o estado da aplicação. E a estilização dos componentes
-                  feita com <strong>emotion</strong>.
+                  Foi construido utilizando <strong>React</strong> em <strong>typescript</strong>,
+                  com <strong>Redux</strong> para controlar o estado da aplicação. E a estilização
+                  dos componentes feita com <strong>emotion</strong>.
                 </Trans>
               </Text>
             </Flex>
@@ -113,13 +116,26 @@ const SelfServiceTotem: NextPage = () => {
           <Flex column justifyCenter fullHeight>
             <Title style={{ marginBottom: 55 }}>{t("reactnative:projectsGalleryTitle")}</Title>
             <Flex style={{ margin: "auto 0" }} columnOnMobile>
-              <GalleryItem width={galleryDimensions.width} height={galleryDimensions.height} imageSrc={mypointsImage}>
+              <GalleryItem
+                width={galleryDimensions.width}
+                height={galleryDimensions.height}
+                imageSrc={mypointsImage}
+              >
                 {t("reactnative:projectsCustomerGalleryMyPoints")}
               </GalleryItem>
-              <GalleryItem width={galleryDimensions.width} height={galleryDimensions.height} imageSrc={orderImage}>
+              <GalleryItem
+                width={galleryDimensions.width}
+                height={galleryDimensions.height}
+                imageSrc={orderImage}
+              >
                 {t("reactnative:projectsCustomerGalleryCreateGiftCard")}
               </GalleryItem>
-              <GalleryItem width={galleryDimensions.width} height={galleryDimensions.height} imageSrc={creategiftcardImage}>
+              <GalleryItem
+                width={galleryDimensions.width}
+                height={galleryDimensions.height}
+                imageSrc={creategiftcardImage}
+                isLast
+              >
                 {t("reactnative:projectsCustomerGalleryOrder")}
               </GalleryItem>
             </Flex>
@@ -129,7 +145,9 @@ const SelfServiceTotem: NextPage = () => {
         <Section width="1013px" primaryColor>
           <DotsStripe left width="32px" />
           <Flex column justifyCenter fullHeight>
-            <CheckOutLink href="/projects/react">{t("reactnative:checkOutReactProjects")}</CheckOutLink>
+            <CheckOutLink href="/projects/react">
+              {t("reactnative:checkOutReactProjects")}
+            </CheckOutLink>
           </Flex>
         </Section>
       </Main>
