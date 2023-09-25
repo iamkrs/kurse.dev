@@ -58,7 +58,10 @@ const SelfServiceTotem: NextPage = () => {
     <div>
       <Head>
         <title>Kurse.dev</title>
-        <meta name="description" content="Kurse is a full stack developer and designer" />
+        <meta
+          name="description"
+          content="Kurse is a full stack developer and designer"
+        />
       </Head>
       <Header />
       <Main ref={scrollRef}>
@@ -81,14 +84,16 @@ const SelfServiceTotem: NextPage = () => {
         <Section width="1106px">
           <DotsStripe left width="32px" />
           <About>
-            <Title style={{ marginBottom: 55 }}>{t("react:projectsAboutTitle")}</Title>
+            <Title style={{ marginBottom: 55 }}>
+              {t("react:projectsAboutTitle")}
+            </Title>
             <Text>
               <Trans i18nKey="react:projectsTotemAboutText">
-                O Grupo Risotolândia possui um app de pedidos de alimentos e teve a necessidade de
-                instalar pontos de autoatendimento em alguns estabelicimentos que oferecem o
-                serviço. <br />
-                <br /> O projeto contou com o desenvolvimento da interface e sua usabilidade, e a
-                implementação de suas funcionalidades.
+                O Grupo Risotolândia possui um app de pedidos de alimentos e
+                teve a necessidade de instalar pontos de autoatendimento em
+                alguns estabelicimentos que oferecem o serviço. <br />
+                <br /> O projeto contou com o desenvolvimento da interface e sua
+                usabilidade, e a implementação de suas funcionalidades.
               </Trans>
             </Text>
             <Credits>
@@ -100,13 +105,16 @@ const SelfServiceTotem: NextPage = () => {
         <Section width="1106px" primaryColor>
           <DotsStripe left width="32px" />
           <Flex column justifyCenter fullHeight>
-            <Title style={{ marginBottom: 55 }}>{t("react:projectsHowWasItDoneTitle")}</Title>
-            <Flex style={{ margin: "auto 0" }} columnOnMobile>
+            <Title style={{ marginBottom: 55 }}>
+              {t("react:projectsHowWasItDoneTitle")}
+            </Title>
+            <Flex columnOnMobile>
               <Text>
                 <Trans i18nKey="react:projectsTotemHowWasItDoneText">
-                  Foi construido utilizando <strong>React</strong> em <strong>typescript</strong>,
-                  com <strong>Redux</strong> para controlar o estado da aplicação. E a estilização
-                  dos componentes feita com <strong>emotion</strong>.
+                  Foi construido utilizando <strong>React</strong> em{" "}
+                  <strong>typescript</strong>, com <strong>Redux</strong> para
+                  controlar o estado da aplicação. E a estilização dos
+                  componentes feita com <strong>emotion</strong>.
                 </Trans>
               </Text>
             </Flex>
@@ -116,8 +124,10 @@ const SelfServiceTotem: NextPage = () => {
         <Section width="1406px">
           <DotsStripe left width="32px" />
           <Flex column justifyCenter fullHeight>
-            <Title style={{ marginBottom: 55 }}>{t("react:projectsGalleryTitle")}</Title>
-            <Flex style={{ margin: "auto 0" }} columnOnMobile>
+            <Title style={{ marginBottom: 55 }}>
+              {t("react:projectsGalleryTitle")}
+            </Title>
+            <Flex columnOnMobile>
               <GalleryItem imageSrc={categoryImage}>
                 {t("react:projectsTotemGalleryCategory")}
               </GalleryItem>
@@ -134,7 +144,9 @@ const SelfServiceTotem: NextPage = () => {
         <Section width="1013px" primaryColor>
           <DotsStripe left width="32px" />
           <Flex column justifyCenter fullHeight>
-            <CheckOutLink href="/projects/react">{t("react:checkOutMoreProjects")}</CheckOutLink>
+            <CheckOutLink href="/projects/react">
+              {t("react:checkOutMoreProjects")}
+            </CheckOutLink>
           </Flex>
         </Section>
       </Main>

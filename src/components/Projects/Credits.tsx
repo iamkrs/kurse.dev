@@ -15,7 +15,6 @@ const Credits = styled.div`
     align-items: center;
     letter-spacing: 1px;
     margin-left: auto;
-    margin-top: initial;
     flex-direction: row;
 
     svg {

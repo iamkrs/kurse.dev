@@ -64,11 +64,18 @@ const SelfServiceTotem: NextPage = () => {
     <div>
       <Head>
         <title>Kurse.dev</title>
-        <meta name="description" content="Kurse is a full stack developer and designer" />
+        <meta
+          name="description"
+          content="Kurse is a full stack developer and designer"
+        />
       </Head>
       <Header />
       <Main ref={scrollRef}>
-        <Section width={`${locale === "en" ? 1145 : 1300}px`} paddingRight="270px" primaryColor>
+        <Section
+          width={`${locale === "en" ? 1145 : 1300}px`}
+          paddingRight="270px"
+          primaryColor
+        >
           <Flex column justifyCenter fullHeight>
             <Project noMargin last>
               <CustomerLoyaltyAppSvg />
@@ -87,7 +94,9 @@ const SelfServiceTotem: NextPage = () => {
         <Section width="1106px">
           <DotsStripe left width="32px" />
           <About>
-            <Title style={{ marginBottom: 55 }}>{t("reactnative:projectsAboutTitle")}</Title>
+            <Title style={{ marginBottom: 55 }}>
+              {t("reactnative:projectsAboutTitle")}
+            </Title>
             <Text>{t("reactnative:projectsCustomerAboutText")}</Text>
             <Credits>
               <Text small>{t("reactnative:projectsCustomerAboutCredits")}</Text>
@@ -98,13 +107,16 @@ const SelfServiceTotem: NextPage = () => {
         <Section width="1106px" primaryColor>
           <DotsStripe left width="32px" />
           <Flex column justifyCenter fullHeight>
-            <Title style={{ marginBottom: 55 }}>{t("reactnative:projectsHowWasItDoneTitle")}</Title>
-            <Flex style={{ margin: "auto 0" }} columnOnMobile>
+            <Title style={{ marginBottom: 55 }}>
+              {t("reactnative:projectsHowWasItDoneTitle")}
+            </Title>
+            <Flex columnOnMobile>
               <Text>
                 <Trans i18nKey="reactnative:projectsCustomerHowWasItDoneText">
-                  Foi construido utilizando <strong>React</strong> em <strong>typescript</strong>,
-                  com <strong>Redux</strong> para controlar o estado da aplicação. E a estilização
-                  dos componentes feita com <strong>emotion</strong>.
+                  Foi construido utilizando <strong>React</strong> em{" "}
+                  <strong>typescript</strong>, com <strong>Redux</strong> para
+                  controlar o estado da aplicação. E a estilização dos
+                  componentes feita com <strong>emotion</strong>.
                 </Trans>
               </Text>
             </Flex>
@@ -114,8 +126,10 @@ const SelfServiceTotem: NextPage = () => {
         <Section width="1206px">
           <DotsStripe left width="32px" />
           <Flex column justifyCenter fullHeight>
-            <Title style={{ marginBottom: 55 }}>{t("reactnative:projectsGalleryTitle")}</Title>
-            <Flex style={{ margin: "auto 0" }} columnOnMobile>
+            <Title style={{ marginBottom: 55 }}>
+              {t("reactnative:projectsGalleryTitle")}
+            </Title>
+            <Flex columnOnMobile>
               <GalleryItem
                 width={galleryDimensions.width}
                 height={galleryDimensions.height}

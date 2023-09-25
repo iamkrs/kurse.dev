@@ -3,7 +3,7 @@ import styled from "styled-components";
 const About = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   height: 100%;
 `;
 

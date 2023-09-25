@@ -63,7 +63,10 @@ const TelemedicineCabin: NextPage = () => {
     <div>
       <Head>
         <title>Kurse.dev</title>
-        <meta name="description" content="Kurse is a full stack developer and designer" />
+        <meta
+          name="description"
+          content="Kurse is a full stack developer and designer"
+        />
       </Head>
       <Header />
       <Main ref={scrollRef}>
@@ -86,16 +89,20 @@ const TelemedicineCabin: NextPage = () => {
         <Section width="1106px">
           <DotsStripe left width="32px" />
           <About>
-            <Title style={{ marginBottom: 55 }}>{t("react:projectsAboutTitle")}</Title>
+            <Title style={{ marginBottom: 55 }}>
+              {t("react:projectsAboutTitle")}
+            </Title>
             <Text>
               <Trans i18nKey="react:projectsCabinAboutText">
-                O projeto Maria é o primeiro protótipo de cabine médica para uso de telemedicina do
-                Brasil. O seu objetivo é levar saúde básica de qualidade para áreas remotas (rurais,
-                interior, nordeste, fronteira) onde existe falta de médico ou dificuldade de atuação
+                O projeto Maria é o primeiro protótipo de cabine médica para uso
+                de telemedicina do Brasil. O seu objetivo é levar saúde básica
+                de qualidade para áreas remotas (rurais, interior, nordeste,
+                fronteira) onde existe falta de médico ou dificuldade de atuação
                 do sistema único de saúde (SUS). <br />
                 <br />
-                De maneira resumida a cabine substitui um posto de saúde e traz um médico virtual
-                para a comunidade. O projeto é uma parceria entre UTFPR & ICI
+                De maneira resumida a cabine substitui um posto de saúde e traz
+                um médico virtual para a comunidade. O projeto é uma parceria
+                entre UTFPR & ICI
               </Trans>
             </Text>
             <Credits>
@@ -107,18 +114,22 @@ const TelemedicineCabin: NextPage = () => {
         <Section width="1106px" primaryColor>
           <DotsStripe left width="32px" />
           <Flex column justifyCenter fullHeight>
-            <Title style={{ marginBottom: 55 }}>{t("react:projectsHowWasItDoneTitle")}</Title>
-            <Flex style={{ margin: "auto 0" }} columnOnMobile>
+            <Title style={{ marginBottom: 55 }}>
+              {t("react:projectsHowWasItDoneTitle")}
+            </Title>
+            <Flex columnOnMobile>
               <Text>
                 <Trans i18nKey="react:projectsCabinHowWasItDoneText">
-                  Foi construido utilizando <strong>React</strong> e <strong>NextJS</strong> em{" "}
-                  <strong>typescript</strong>, com <strong>Redux</strong> para controlar o estado da
-                  aplicação. E a estilização dos componentes feita com <strong>emotion</strong>.{" "}
+                  Foi construido utilizando <strong>React</strong> e{" "}
+                  <strong>NextJS</strong> em <strong>typescript</strong>, com{" "}
+                  <strong>Redux</strong> para controlar o estado da aplicação. E
+                  a estilização dos componentes feita com{" "}
+                  <strong>emotion</strong>. <br />
                   <br />
-                  <br />
-                  Faz uso de websockets para a troca de mensagens e outras funcionalidades
-                  utilizando <strong>Socket.IO</strong>. E para a comunicação em tempo real é
-                  utilizado o <strong>WebRTC</strong>.
+                  Faz uso de websockets para a troca de mensagens e outras
+                  funcionalidades utilizando <strong>Socket.IO</strong>. E para
+                  a comunicação em tempo real é utilizado o{" "}
+                  <strong>WebRTC</strong>.
                   <br />
                   <br />
                   Para o banco de dados é utilizado o <strong>MongoDB</strong>.
@@ -131,8 +142,10 @@ const TelemedicineCabin: NextPage = () => {
         <Section width="1900px">
           <DotsStripe left width="32px" />
           <Flex column justifyCenter fullHeight>
-            <Title style={{ marginBottom: 55 }}>{t("react:projectsGalleryTitle")}</Title>
-            <Flex style={{ margin: "auto 0" }} columnOnMobile>
+            <Title style={{ marginBottom: 55 }}>
+              {t("react:projectsGalleryTitle")}
+            </Title>
+            <Flex columnOnMobile>
               <GalleryItem
                 imageSrc={loginImage}
                 width={galleryDimensions.width}

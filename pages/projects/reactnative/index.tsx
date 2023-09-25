@@ -55,7 +55,10 @@ const ReactNative: NextPage = () => {
     <div>
       <Head>
         <title>Kurse.dev</title>
-        <meta name="description" content="Kurse is a full stack developer and designer" />
+        <meta
+          name="description"
+          content="Kurse is a full stack developer and designer"
+        />
       </Head>
       <Header />
       <Main ref={scrollRef}>
@@ -64,7 +67,9 @@ const ReactNative: NextPage = () => {
             <Flex>
               <MainTitle>React Native</MainTitle>
             </Flex>
-            <Text style={{ marginBottom: 47, maxWidth: 440 }}>{t("reactnative:description")}</Text>
+            <Text style={{ marginBottom: 47, maxWidth: 440 }}>
+              {t("reactnative:description")}
+            </Text>
             <ReactNativeLogos />
           </Flex>
           <ScrollDown />
@@ -73,17 +78,33 @@ const ReactNative: NextPage = () => {
         <Section width="1240px" primaryColor>
           <DotsStripe left width="32px" />
           <Flex column justifyCenter fullHeight>
-            <Title style={{ marginBottom: 77 }}>{t("reactnative:projectsTitle")}</Title>
-            <Flex style={{ margin: "auto 0" }} columnOnMobile>
+            <Title style={{ marginBottom: 77 }}>
+              {t("reactnative:projectsTitle")}
+            </Title>
+            <Flex columnOnMobile>
               <Project last>
                 <CustomerLoyaltyAppSvg />
                 <ProjectDescription>
-                  <Title medium style={{ marginRight: 15, marginBottom: 20, maxWidth: locale === "en" ? 280 : 330 }}>
+                  <Title
+                    medium
+                    style={{
+                      marginRight: 15,
+                      marginBottom: 20,
+                      maxWidth: locale === "en" ? 280 : 330,
+                    }}
+                  >
                     {t("reactnative:projectsCustomerTitle")}
                   </Title>
-                  <Text style={{ marginRight: 15, marginBottom: 33 }}>{t("reactnative:projectsCustomerDescription")}</Text>
-                  <Link href="/projects/reactnative/customerloyaltyapp" passHref>
-                    <Button filled>{t("reactnative:projectsCustomerButton")}</Button>
+                  <Text style={{ marginRight: 15, marginBottom: 33 }}>
+                    {t("reactnative:projectsCustomerDescription")}
+                  </Text>
+                  <Link
+                    href="/projects/reactnative/customerloyaltyapp"
+                    passHref
+                  >
+                    <Button filled>
+                      {t("reactnative:projectsCustomerButton")}
+                    </Button>
                   </Link>
                 </ProjectDescription>
               </Project>
