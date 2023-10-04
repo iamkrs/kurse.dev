@@ -1,19 +1,19 @@
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Link, { LinkProps } from "next/link";
+import { Router, useRouter } from "next/router";
 import { FC } from "react";
 import styled from "styled-components";
 import { useAppDispatch, useAppSelector } from "../../../hooks";
 import { toggleLanguageSwitcher } from "../../../store/slices/app";
 import Item from "../Item";
-import BrazilFlag from "./BrazilFlag";
-import UsaFlag from "./UsaFlag";
+import { useTranslation } from "next-i18next";
+import { UsaFlag } from "./UsaFlag";
+import { BrazilFlag } from "./BrazilFlag";
 
 const SelectContext = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* padding: 0 25px; */
   position: absolute;
   top: var(--header-height);
   right: 0;
@@ -23,23 +23,38 @@ const SelectContext = styled.div`
   z-index: 1;
 `;
 
-const Language: FC = () => {
+const LanguageSwitcher: FC = () => {
   const dispatch = useAppDispatch();
-  const router = useRouter();
-  const { locale } = router;
-  const showLanguageSwitcher = useAppSelector((store) => store.app.showLanguageSwitcher);
+  const { locale, asPath, push } = useRouter();
+  const { i18n } = useTranslation();
+
+  const showLanguageSwitcher = useAppSelector(
+    // TODO: Need selectors?
+    (store) => store.app.showLanguageSwitcher
+  );
+
+  const handleChangeLanguage = (language: string) => (event: any) => {
+    event.preventDefault();
+    push(asPath, undefined, { shallow: true, locale: language });
+    i18n.changeLanguage(language);
+  };
 
   return (
     <AnimatePresence>
       {showLanguageSwitcher && (
-        <SelectContext initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} as={motion.div}>
+        <SelectContext
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          as={motion.div}
+        >
           <Item
             borderLeft
             onClick={() => {
               dispatch(toggleLanguageSwitcher());
             }}
           >
-            <Link href={router.pathname} locale="en" scroll={false}>
+            <Link href={asPath} locale="en" shallow={false}>
               <a>
                 <UsaFlag />
               </a>
@@ -51,7 +66,7 @@ const Language: FC = () => {
               dispatch(toggleLanguageSwitcher());
             }}
           >
-            <Link href={router.pathname} locale="br" scroll={false}>
+            <Link href={asPath} locale="br" shallow={false}>
               <a>
                 <BrazilFlag />
               </a>
@@ -63,11 +78,10 @@ const Language: FC = () => {
   );
 };
 
-export default Language;
+export default LanguageSwitcher;
 
 export const ActiveLanguage: FC = () => {
-  const router = useRouter();
-  const { locale } = router;
+  const { locale } = useRouter();
 
   return (
     <>
