@@ -22,6 +22,8 @@ import Title from "../src/components/Title";
 import Tooltip from "../src/components/Tooltip";
 import { useAppDispatch } from "../src/hooks";
 import { useHorizontalScroll } from "../src/hooks/useHorizontalScroll";
+import ColorBox from "../src/components/ColorBox";
+import DoubleArrow from "../src/components/DoubleArrow";
 
 export async function getStaticProps({ locale }: { locale: string }) {
   if (process.env.NODE_ENV === "development") {
@@ -29,7 +31,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
   }
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["home"])),
+      ...(await serverSideTranslations(locale, ["home", "experiences"])),
     },
   };
 }
@@ -207,7 +209,7 @@ const Home: NextPage = () => {
             <Title style={{ marginBottom: 77 }}>
               {t("home:experienceTitle")}
             </Title>
-            <Flex style={{ marginBottom: 13 }} columnOnMobile>
+            {/* <Flex style={{ marginBottom: 13 }} columnOnMobile>
               <Text style={{ marginRight: 15 }}>
                 2022 {t("home:experienceMar")} <DoubleArrow />{" "}
                 {t("home:experienceNow")}
@@ -218,8 +220,47 @@ const Home: NextPage = () => {
               <Text style={{ marginRight: 15 }}>
                 {t("home:experienceFullStackDev")}
               </Text>
-            </Flex>
+            </Flex> */}
             <Spacing horizontal mobile size="25px" />
+            <Flex alignCenter>
+              <Flex style={{ marginRight: 99 }} column>
+                <Text>
+                  <strong>Hero99</strong>
+                </Text>
+                <Text noWrap style={{ marginBottom: 19 }}>
+                  {t("home:experienceFullStackDev")}
+                </Text>
+                <ColorBox>
+                  <Text primaryColor noWrap>
+                    2022 {t("home:experienceMar")} <DoubleArrow primaryColor />{" "}
+                    {t("home:experienceNow")}
+                  </Text>
+                </ColorBox>
+              </Flex>
+              <Flex column>
+                <Text style={{ marginBottom: 33 }}>
+                  <Trans i18nKey={"experiences:hero99Tests"} />
+                </Text>
+                <Text style={{ marginBottom: 33 }}>
+                  <Trans i18nKey={"experiences:hero99Mobile"} />
+                </Text>
+                <Text>
+                  <Trans i18nKey={"experiences:hero99Social"} />
+                </Text>
+              </Flex>
+            </Flex>
+
+            {/* <Trans i18nKey={"experiences:freelancerWeb"} />
+                <Trans i18nKey={"experiences:freelancerMobile"} />
+                <Trans i18nKey={"experiences:freelancerFigma"} />
+                <Trans i18nKey={"experiences:octoXBSearch"} />
+                <Trans i18nKey={"experiences:octoXBEcommerce"} />
+                <Trans i18nKey={"experiences:octoXBMaintenance"} />
+                <Trans i18nKey={"experiences:octoXBMarketing"} />
+                <Trans i18nKey={"experiences:agenciaMagentoThemes"} />
+                <Trans i18nKey={"experiences:agenciaMagentoUX"} />
+                <Trans i18nKey={"experiences:agenciaMagentoCollaboration"} /> */}
+            {/* <Spacing horizontal mobile size="25px" />
             <Flex style={{ marginBottom: 13 }} columnOnMobile>
               <Text style={{ marginRight: 15 }}>
                 2020 {t("home:experienceJan")} <DoubleArrow /> 2022{" "}
@@ -296,7 +337,7 @@ const Home: NextPage = () => {
               <Text style={{ marginRight: 15 }}>
                 {t("home:experienceDesigner")}
               </Text>
-            </Flex>
+            </Flex>*/}
           </Flex>
           <DotsStripe right />
         </Section>
@@ -1199,23 +1240,6 @@ const MalIcon: FC = () => {
           />
         </clipPath>
       </defs>
-    </svg>
-  );
-};
-
-const DoubleArrow: FC = () => {
-  return (
-    <svg
-      width="37"
-      height="17"
-      viewBox="0 0 37 17"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M27.79 0L26.39 1.4L32.42 7.45H3.81L9.84 1.4L8.44 0L0 8.44L8.44 16.88L9.84 15.48L3.81 9.43H32.42L26.39 15.48L27.79 16.88L36.23 8.44L27.79 0Z"
-        fill="#1B1B1B"
-      />
     </svg>
   );
 };

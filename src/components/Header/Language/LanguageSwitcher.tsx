@@ -27,12 +27,19 @@ const Language: FC = () => {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const { locale } = router;
-  const showLanguageSwitcher = useAppSelector((store) => store.app.showLanguageSwitcher);
+  const showLanguageSwitcher = useAppSelector(
+    (store) => store.app.showLanguageSwitcher
+  );
 
   return (
     <AnimatePresence>
       {showLanguageSwitcher && (
-        <SelectContext initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} as={motion.div}>
+        <SelectContext
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          as={motion.div}
+        >
           <Item
             borderLeft
             onClick={() => {

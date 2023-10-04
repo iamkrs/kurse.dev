@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 type TextProps = {
   small?: boolean;
+  noWrap?: boolean;
+  primaryColor?: boolean;
 };
 
 const StyledText = styled.h1<TextProps>`
@@ -12,9 +14,21 @@ const StyledText = styled.h1<TextProps>`
   ${({ small }) =>
     small &&
     `
-    font-size: 18px;
-    line-height: 18px;
-  `}
+      font-size: 18px;
+      line-height: 18px;
+    `}
+
+  ${({ noWrap }) =>
+    noWrap &&
+    `
+      white-space: nowrap;
+    `}
+
+  ${({ primaryColor }) =>
+    primaryColor &&
+    `
+      color: var(--primary-color);
+    `};
 
   strong {
     font-weight: 700;

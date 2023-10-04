@@ -8,7 +8,7 @@ export interface AppState {
 }
 
 const initialState: AppState = {
-  primaryColor: "#EBFF00",
+  primaryColor: "#f0fc04",
   headerHeight: "137px",
   showLanguageSwitcher: false,
   preventScroll: false,
@@ -33,5 +33,10 @@ export const appSlice = createSlice({
   },
 });
 
-export const { setPrimaryColor, setShowLanguageSwitcher, toggleLanguageSwitcher, setPreventScroll } = appSlice.actions;
+export const {
+  setPrimaryColor,
+  setShowLanguageSwitcher,
+  toggleLanguageSwitcher,
+  setPreventScroll,
+} = appSlice.actions;
 export default appSlice.reducer;
