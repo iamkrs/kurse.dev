@@ -29,7 +29,10 @@ export async function getStaticProps({ locale }: { locale: string }) {
   }
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["reactnative"])),
+      ...(await serverSideTranslations(locale, ["reactnative"], null, [
+        "br",
+        "en",
+      ])),
     },
   };
 }

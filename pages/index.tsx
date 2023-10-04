@@ -27,9 +27,10 @@ export async function getStaticProps({ locale }: { locale: string }) {
   if (process.env.NODE_ENV === "development") {
     await i18n?.reloadResources();
   }
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["home"])),
+      ...(await serverSideTranslations(locale, ["home"], null, ["br", "en"])),
     },
   };
 }
