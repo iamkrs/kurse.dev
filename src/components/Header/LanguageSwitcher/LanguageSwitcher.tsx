@@ -55,9 +55,7 @@ const LanguageSwitcher: FC = () => {
             }}
           >
             <Link href={asPath} locale="en" shallow={false}>
-              <a>
-                <UsaFlag />
-              </a>
+              <UsaFlag />
             </Link>
           </Item>
           <Item
@@ -67,9 +65,7 @@ const LanguageSwitcher: FC = () => {
             }}
           >
             <Link href={asPath} locale="br" shallow={false}>
-              <a>
-                <BrazilFlag />
-              </a>
+              <BrazilFlag />
             </Link>
           </Item>
         </SelectContext>

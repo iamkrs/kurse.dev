@@ -101,14 +101,12 @@ const ReactNative: NextPage = () => {
                   <Text style={{ marginRight: 15, marginBottom: 33 }}>
                     {t("reactnative:projectsCustomerDescription")}
                   </Text>
-                  <Link
+                  <Button
+                    filled
                     href="/projects/reactnative/customerloyaltyapp"
-                    passHref
                   >
-                    <Button filled>
-                      {t("reactnative:projectsCustomerButton")}
-                    </Button>
-                  </Link>
+                    {t("reactnative:projectsCustomerButton")}
+                  </Button>
                 </ProjectDescription>
               </Project>
             </Flex>

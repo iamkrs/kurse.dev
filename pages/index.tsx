@@ -95,15 +95,13 @@ const Home: NextPage = () => {
             </Text>
             <Email>lucas.kurse@hotmail.com</Email>
             <Flex alignCenter>
-              <Link
+              <Button
+                target="_blank"
+                style={{ marginRight: 20 }}
                 href={locale === "en" ? "/kurse-resume.pdf" : "/kurse-cv.pdf"}
-                passHref
-                locale={false}
               >
-                <Button target="_blank" style={{ marginRight: 20 }}>
-                  {t("home:resumeButton")}
-                </Button>
-              </Link>
+                {t("home:resumeButton")}
+              </Button>
               <SocialIcon href="https://github.com/kurserino" target="_blank">
                 <GithubIcon />
               </SocialIcon>
@@ -329,21 +327,18 @@ const Home: NextPage = () => {
                 <Link
                   href="https://www.freecodecamp.org/certification/kurse/javascript-algorithms-and-data-structures"
                   passHref
+                  target="_blank"
+                  style={{
+                    textDecoration: "none",
+                    color: "var(--color-black)",
+                  }}
                 >
-                  <a
-                    target="_blank"
-                    style={{
-                      textDecoration: "none",
-                      color: "var(--color-black)",
-                    }}
-                  >
-                    <Text style={{ marginRight: 15 }}>
-                      {t("home:certificatesJsFreeCodeCampName")}
-                    </Text>
-                    <Text style={{ marginRight: 15, marginBottom: 80 }}>
-                      <strong>freeCodeCamp</strong>
-                    </Text>
-                  </a>
+                  <Text style={{ marginRight: 15 }}>
+                    {t("home:certificatesJsFreeCodeCampName")}
+                  </Text>
+                  <Text style={{ marginRight: 15, marginBottom: 80 }}>
+                    <strong>freeCodeCamp</strong>
+                  </Text>
                 </Link>
               </Flex>
             </Flex>

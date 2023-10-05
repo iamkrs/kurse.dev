@@ -125,9 +125,9 @@ const ReactProjects: NextPage = () => {
                   <Text style={{ marginRight: 15, marginBottom: 33 }}>
                     {t("react:projectsTotemDescription")}
                   </Text>
-                  <Link href="/projects/react/selfservicetotem" passHref>
-                    <Button filled>{t("react:projectsTotemButton")}</Button>
-                  </Link>
+                  <Button filled href="/projects/react/selfservicetotem">
+                    {t("react:projectsTotemButton")}
+                  </Button>
                 </ProjectDescription>
               </Project>
               <Project last>
@@ -142,9 +142,9 @@ const ReactProjects: NextPage = () => {
                   <Text style={{ marginRight: 15, marginBottom: 33 }}>
                     {t("react:projectsCabinDescription")}
                   </Text>
-                  <Link href="/projects/react/telemedicinecabin" passHref>
-                    <Button filled>{t("react:projectsCabinButton")}</Button>
-                  </Link>
+                  <Button filled href="/projects/react/telemedicinecabin">
+                    {t("react:projectsCabinButton")}
+                  </Button>
                 </ProjectDescription>
               </Project>
             </Flex>
