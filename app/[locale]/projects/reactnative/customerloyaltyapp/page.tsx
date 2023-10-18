@@ -1,3 +1,5 @@
+"use client";
+
 import {
   CheckOutLink,
   CustomerLoyaltyAppSvg,
@@ -15,13 +17,11 @@ import {
 } from "app/components";
 import { useHorizontalScroll } from "app/hooks";
 import type { NextPage } from "next";
-import { i18n, Trans } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useLocale, useTranslations } from "next-intl";
 import Head from "next/head";
-import creategiftcardImage from "../../../public/images/customerloyaltyapp/creategiftcard.png";
-import mypointsImage from "../../../public/images/customerloyaltyapp/mypoints.png";
-import orderImage from "../../../public/images/customerloyaltyapp/order.png";
+import creategiftcardImage from "public/images/customerloyaltyapp/creategiftcard.png";
+import mypointsImage from "public/images/customerloyaltyapp/mypoints.png";
+import orderImage from "public/images/customerloyaltyapp/order.png";
 import About from "app/components/Projects/About";
 import Credits from "app/components/Projects/Credits";
 import CreditsSvg from "app/components/Projects/CustomerLoyaltyApp/CreditsSvg";
@@ -35,7 +35,7 @@ const galleryDimensions = {
 const SelfServiceTotem: NextPage = () => {
   const locale = useLocale();
   const scrollRef = useHorizontalScroll();
-  const t = useTranslations();
+  const t = useTranslations("reactnative");
 
   return (
     <div>
@@ -54,12 +54,12 @@ const SelfServiceTotem: NextPage = () => {
           $primaryColor
         >
           <Flex $column $justifyCenter $fullHeight>
-            <Project noMargin $last>
+            <Project $noMargin $last>
               <CustomerLoyaltyAppSvg />
               <ProjectDescription>
-                <MainTitle>{t("reactnative:projectsCustomerTitle")}</MainTitle>
+                <MainTitle>{t("projectsCustomerTitle")}</MainTitle>
                 <Text style={{ marginRight: 15, marginBottom: 33 }}>
-                  {t("reactnative:projectsCustomerDescription")}
+                  {t("projectsCustomerDescription")}
                 </Text>
                 {/* <Button filled>Demo</Button> */}
               </ProjectDescription>
@@ -72,13 +72,11 @@ const SelfServiceTotem: NextPage = () => {
           <DotsStripe $left $width="32px" />
           <About>
             <Title style={{ marginBottom: 55 }}>
-              {t("reactnative:projectsAboutTitle")}
+              {t("projectsAboutTitle")}
             </Title>
-            <Text>{t("reactnative:projectsCustomerAboutText")}</Text>
+            <Text>{t("projectsCustomerAboutText")}</Text>
             <Credits>
-              <Text $small>
-                {t("reactnative:projectsCustomerAboutCredits")}
-              </Text>
+              <Text $small>{t("projectsCustomerAboutCredits")}</Text>
               <CreditsSvg />
             </Credits>
           </About>
@@ -87,16 +85,13 @@ const SelfServiceTotem: NextPage = () => {
           <DotsStripe $left $width="32px" />
           <Flex $column $justifyCenter $fullHeight>
             <Title style={{ marginBottom: 55 }}>
-              {t("reactnative:projectsHowWasItDoneTitle")}
+              {t("projectsHowWasItDoneTitle")}
             </Title>
             <Flex $columnOnMobile>
               <Text>
-                <Trans i18nKey="reactnative:projectsCustomerHowWasItDoneText">
-                  Foi construido utilizando <strong>React</strong> em{" "}
-                  <strong>typescript</strong>, com <strong>Redux</strong> para
-                  controlar o estado da aplicação. E a estilização dos
-                  componentes feita com <strong>emotion</strong>.
-                </Trans>
+                {t.rich("projectsCustomerHowWasItDoneText", {
+                  strong: (chunks) => <strong>{chunks}</strong>,
+                })}
               </Text>
             </Flex>
           </Flex>
@@ -106,7 +101,7 @@ const SelfServiceTotem: NextPage = () => {
           <DotsStripe $left $width="32px" />
           <Flex $column $justifyCenter $fullHeight>
             <Title style={{ marginBottom: 55 }}>
-              {t("reactnative:projectsGalleryTitle")}
+              {t("projectsGalleryTitle")}
             </Title>
             <Flex $columnOnMobile>
               <GalleryItem
@@ -114,14 +109,14 @@ const SelfServiceTotem: NextPage = () => {
                 height={galleryDimensions.height}
                 imageSrc={mypointsImage}
               >
-                {t("reactnative:projectsCustomerGalleryMyPoints")}
+                {t("projectsCustomerGalleryMyPoints")}
               </GalleryItem>
               <GalleryItem
                 width={galleryDimensions.width}
                 height={galleryDimensions.height}
                 imageSrc={orderImage}
               >
-                {t("reactnative:projectsCustomerGalleryCreateGiftCard")}
+                {t("projectsCustomerGalleryCreateGiftCard")}
               </GalleryItem>
               <GalleryItem
                 width={galleryDimensions.width}
@@ -129,7 +124,7 @@ const SelfServiceTotem: NextPage = () => {
                 imageSrc={creategiftcardImage}
                 $isLast
               >
-                {t("reactnative:projectsCustomerGalleryOrder")}
+                {t("projectsCustomerGalleryOrder")}
               </GalleryItem>
             </Flex>
           </Flex>
@@ -139,7 +134,7 @@ const SelfServiceTotem: NextPage = () => {
           <DotsStripe $left $width="32px" />
           <Flex $column $justifyCenter $fullHeight>
             <CheckOutLink href="/projects/react">
-              {t("reactnative:checkOutReactProjects")}
+              {t("checkOutReactProjects")}
             </CheckOutLink>
           </Flex>
         </Section>

@@ -44,7 +44,7 @@ const SelfServiceTotemPage: NextPage = () => {
       <Main ref={scrollRef}>
         <Section $width="1145px" $paddingRight="270px" $primaryColor>
           <Flex $column $justifyCenter $fullHeight>
-            <Project noMargin $last>
+            <Project $noMargin $last>
               <SelfServiceTotemSvg />
               <ProjectDescription>
                 <MainTitle>{t("projectsTotemTitle")}</MainTitle>

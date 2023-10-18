@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Button,
   CheckOutLink,
@@ -22,7 +24,7 @@ import Head from "next/head";
 
 const ReactNative: NextPage = () => {
   const scrollRef = useHorizontalScroll();
-  const t = useTranslations();
+  const t = useTranslations("reactnative");
   const locale = useLocale();
 
   return (
@@ -42,7 +44,7 @@ const ReactNative: NextPage = () => {
               <MainTitle>React Native</MainTitle>
             </Flex>
             <Text style={{ marginBottom: 47, maxWidth: 440 }}>
-              {t("reactnative:description")}
+              {t("description")}
             </Text>
             <ReactNativeLogos />
           </Flex>
@@ -52,9 +54,7 @@ const ReactNative: NextPage = () => {
         <Section $width="1240px" $primaryColor>
           <DotsStripe $left $width="32px" />
           <Flex $column $justifyCenter $fullHeight>
-            <Title style={{ marginBottom: 77 }}>
-              {t("reactnative:projectsTitle")}
-            </Title>
+            <Title style={{ marginBottom: 77 }}>{t("projectsTitle")}</Title>
             <Flex $columnOnMobile>
               <Project $last>
                 <CustomerLoyaltyAppSvg />
@@ -67,16 +67,16 @@ const ReactNative: NextPage = () => {
                       maxWidth: locale === "en" ? 280 : 330,
                     }}
                   >
-                    {t("reactnative:projectsCustomerTitle")}
+                    {t("projectsCustomerTitle")}
                   </Title>
                   <Text style={{ marginRight: 15, marginBottom: 33 }}>
-                    {t("reactnative:projectsCustomerDescription")}
+                    {t("projectsCustomerDescription")}
                   </Text>
                   <Button
                     $filled
                     href="/projects/reactnative/customerloyaltyapp"
                   >
-                    {t("reactnative:projectsCustomerButton")}
+                    {t("projectsCustomerButton")}
                   </Button>
                 </ProjectDescription>
               </Project>
@@ -88,7 +88,7 @@ const ReactNative: NextPage = () => {
           <DotsStripe $left $width="32px" />
           <Flex $column $justifyCenter $fullHeight>
             <CheckOutLink $primaryColor href="/projects/react">
-              {t("reactnative:checkOutReactProjects")}
+              {t("checkOutReactProjects")}
             </CheckOutLink>
           </Flex>
         </Section>

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 type ProjectProps = {
   $last?: boolean;
-  noMargin?: boolean;
+  $noMargin?: boolean;
 };
 
 const Project = styled.div<ProjectProps>`
@@ -12,7 +12,7 @@ const Project = styled.div<ProjectProps>`
 
   @media (min-width: 771px) {
     flex-direction: row;
-    ${({ noMargin }) => !noMargin && `margin: 0 50px;`}
+    ${({ $noMargin }) => !$noMargin && `margin: 0 50px;`}
   }
 
   ${({ $last }) =>
