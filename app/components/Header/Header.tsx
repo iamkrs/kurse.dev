@@ -9,16 +9,9 @@ const Header = () => {
   const dispatch = useDispatch();
   const locale = useLocale();
 
-  console.log({ locale });
-
   return (
     <StyledHeader>
-      <Item
-      // onClick={() => {
-      //   let $primaryColor = getComputedStyle(document.documentElement).getPropertyValue("--primary-color");
-      //   dispatch(set$primaryColor(darken(0.05, $primaryColor)));
-      // }}
-      >
+      <Item>
         <Link href={`/${locale}/`}>
           <svg
             width="60"

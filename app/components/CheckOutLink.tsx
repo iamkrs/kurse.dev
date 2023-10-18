@@ -12,7 +12,6 @@ const StyledLink = styled(Link)<{ $primaryColor?: boolean }>`
   text-decoration: none;
   color: #1c1c1c;
   font-weight: 700;
-  margin: 0 auto;
 
   ${({ $primaryColor }) =>
     $primaryColor &&
