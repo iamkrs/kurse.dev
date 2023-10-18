@@ -9,6 +9,8 @@ const Header = () => {
   const dispatch = useDispatch();
   const locale = useLocale();
 
+  console.log({ locale });
+
   return (
     <StyledHeader>
       <Item
@@ -17,7 +19,7 @@ const Header = () => {
       //   dispatch(set$primaryColor(darken(0.05, $primaryColor)));
       // }}
       >
-        <Link href="/">
+        <Link href={`/${locale}/`}>
           <svg
             width="60"
             height="48"
@@ -41,7 +43,7 @@ const Header = () => {
         </Link>
       </Item>
       <Item>
-        <Link href={`/projects/react`}>
+        <Link href={`/${locale}/projects/react`}>
           <svg
             width="66"
             height="60"
@@ -65,7 +67,7 @@ const Header = () => {
         </Link>
       </Item>
       <Item>
-        <Link href={`/projects/reactnative`}>
+        <Link href={`/${locale}/projects/reactnative`}>
           <svg
             width="48"
             height="73"
