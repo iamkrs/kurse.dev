@@ -1,9 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { useDispatch } from "lib/redux";
 import Image, { StaticImageData } from "next/image";
 import { FC, PropsWithChildren, useState } from "react";
 import styled, { css } from "styled-components";
 import { setPreventScroll } from "../../../lib/redux/slices/appSlice/appSlice";
-import { useDispatch } from "lib/redux";
 
 type GalleryItemProps = PropsWithChildren<{
   imageSrc: string | StaticImageData;

@@ -1,9 +1,11 @@
+"use client";
+
 import { toggleLanguageSwitcher, useDispatch } from "lib/redux";
 import { useLocale } from "next-intl";
 import Link from "next/link";
 import styled from "styled-components";
 import Item from "./Item";
-import { LanguageSwitcher, ActiveLanguage } from "./LanguageSwitcher";
+import { ActiveLanguage, LanguageSwitcher } from "./LanguageSwitcher";
 
 const Header = () => {
   const dispatch = useDispatch();

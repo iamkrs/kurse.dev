@@ -1,3 +1,7 @@
+"use client";
+
+import { useHorizontalScroll } from "app/hooks";
+import { FC, PropsWithChildren } from "react";
 import styled from "styled-components";
 
 const StyledMain = styled.main`
@@ -14,6 +18,12 @@ const StyledMain = styled.main`
   }
 `;
 
-const Main = StyledMain;
+export const Main: FC<PropsWithChildren> = ({ children, ...props }) => {
+  const scrollRef = useHorizontalScroll();
 
-export { Main };
+  return (
+    <StyledMain ref={scrollRef} {...props}>
+      {children}
+    </StyledMain>
+  );
+};

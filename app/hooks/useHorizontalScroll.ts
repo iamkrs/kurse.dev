@@ -1,9 +1,17 @@
+"use client";
+
 import { useSelector } from "lib/redux";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 
 export function useHorizontalScroll() {
   const elRef = useRef<HTMLElement | null>(null);
   const preventScroll = useSelector((store) => store.app.preventScroll);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    elRef.current?.scrollTo({ left: 0, behavior: "instant" });
+  }, [pathname]);
 
   useEffect(() => {
     const el: any = elRef.current;
@@ -30,5 +38,6 @@ export function useHorizontalScroll() {
       return () => el.removeEventListener("wheel", onWheel);
     }
   }, [preventScroll]);
+
   return elRef;
 }

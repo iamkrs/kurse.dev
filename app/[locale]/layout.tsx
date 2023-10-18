@@ -1,10 +1,11 @@
-import { Providers } from "lib/providers";
-import { NextPage } from "next";
-import { notFound } from "next/navigation";
-import StyledComponentsRegistry from "lib/registry";
-import GlobalStyle from "../components/GlobalStyle";
-import { NextIntlClientProvider, useMessages } from "next-intl";
+import { Header, Main } from "app/components";
 import { locales } from "lib/intl";
+import { Providers } from "lib/providers";
+import StyledComponentsRegistry from "lib/registry";
+import { NextPage } from "next";
+import { NextIntlClientProvider, useMessages } from "next-intl";
+import { notFound } from "next/navigation";
+import GlobalStyle from "../components/GlobalStyle";
 
 export const metadata = {
   title: "kurse.dev",
@@ -32,7 +33,8 @@ const LocaleLayout: NextPage<LocaleLayoutProps> = ({
           <Providers>
             <StyledComponentsRegistry>
               <GlobalStyle />
-              {children}
+              <Header />
+              <Main>{children}</Main>
             </StyledComponentsRegistry>
           </Providers>
         </NextIntlClientProvider>

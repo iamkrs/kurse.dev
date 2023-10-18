@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { CSSProperties, FC, PropsWithChildren, forwardRef } from "react";
 import styled from "styled-components";
