@@ -1,16 +1,12 @@
 /** @type {import('next').NextConfig} */
 
-const { i18n } = require("./next-i18next.config");
+const withNextIntl = require("next-intl/plugin")("./i18n.ts");
+
 const urlRewrites = require("./next.url-rewrites.config");
 
-module.exports = {
+module.exports = withNextIntl({
   reactStrictMode: true,
-  i18n,
   async rewrites() {
     return urlRewrites;
   },
-  experimental: {
-    // Enables the styled-components SWC transform
-    styledComponents: true,
-  },
-};
+});
