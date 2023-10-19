@@ -10,7 +10,7 @@ export function useHorizontalScroll() {
   const pathname = usePathname();
 
   useEffect(() => {
-    elRef.current?.scrollTo({ left: 0, behavior: "instant" });
+    elRef.current?.scrollTo({ left: 0, behavior: "instant" as ScrollBehavior });
   }, [pathname]);
 
   useEffect(() => {
