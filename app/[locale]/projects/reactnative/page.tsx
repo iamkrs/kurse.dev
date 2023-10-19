@@ -3,18 +3,20 @@
 import {
   Button,
   CheckOutLink,
-  CustomerLoyaltyAppSvg,
   DotsStripe,
   Flex,
   MainTitle,
-  Project,
-  ProjectDescription,
-  ReactNativeLogos,
   ScrollDown,
   Section,
   Text,
   Title,
 } from "app/components";
+import {
+  CustomerLoyaltyAppSvg,
+  Project,
+  ProjectDescription,
+  ReactNativeLogos,
+} from "app/components/projects";
 import type { NextPage } from "next";
 import { useLocale, useTranslations } from "next-intl";
 

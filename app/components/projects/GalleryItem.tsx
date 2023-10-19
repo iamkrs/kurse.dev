@@ -17,7 +17,7 @@ const measurement = {
   height: 386,
 };
 
-const GalleryItem: FC<GalleryItemProps> = ({
+export const GalleryItem: FC<GalleryItemProps> = ({
   children,
   imageSrc,
   width,
@@ -39,7 +39,6 @@ const GalleryItem: FC<GalleryItemProps> = ({
         <ItemImage>
           <Image
             src={imageSrc}
-            placeholder="blur"
             alt={children as string}
             width={width || measurement.width}
             height={height || measurement.height}
@@ -78,7 +77,6 @@ const GalleryItem: FC<GalleryItemProps> = ({
               <ItemImage>
                 <Image
                   src={imageSrc}
-                  placeholder="blur"
                   alt={children as string}
                   width={(width || measurement.width) * 2}
                   height={(height || measurement.height) * 2}
@@ -92,8 +90,6 @@ const GalleryItem: FC<GalleryItemProps> = ({
     </>
   );
 };
-
-export default GalleryItem;
 
 type ItemWrapperProps = {
   $isLast?: boolean;

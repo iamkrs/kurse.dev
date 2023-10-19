@@ -2,33 +2,34 @@
 
 import {
   CheckOutLink,
-  CustomerLoyaltyAppSvg,
   DotsStripe,
   Flex,
   MainTitle,
-  Project,
-  ProjectDescription,
   ScrollDown,
   Section,
   Text,
   Title,
 } from "app/components";
-import About from "app/components/Projects/About";
-import Credits from "app/components/Projects/Credits";
-import CreditsSvg from "app/components/Projects/CustomerLoyaltyApp/CreditsSvg";
-import GalleryItem from "app/components/Projects/GalleryItem";
+import {
+  About,
+  Credits,
+  CreditsSvg,
+  CustomerLoyaltyAppSvg,
+  GalleryItem,
+  Project,
+  ProjectDescription,
+} from "app/components/projects";
 import type { NextPage } from "next";
 import { useLocale, useTranslations } from "next-intl";
-import creategiftcardImage from "public/images/customerloyaltyapp/creategiftcard.png";
-import mypointsImage from "public/images/customerloyaltyapp/mypoints.png";
-import orderImage from "public/images/customerloyaltyapp/order.png";
+import {
+  CREATE_GIFT_CARD_IMAGE,
+  GALLERY_ITEM_HEIGHT,
+  GALLERY_ITEM_WIDTH,
+  MY_POINTS_IMAGE,
+  ORDER_IMAGE,
+} from "./constants";
 
-const galleryDimensions = {
-  width: 180,
-  height: 386,
-};
-
-const SelfServiceTotem: NextPage = () => {
+const CustomerLoyaltyAppPage: NextPage = () => {
   const locale = useLocale();
   const t = useTranslations("reactnative");
 
@@ -89,23 +90,23 @@ const SelfServiceTotem: NextPage = () => {
           </Title>
           <Flex $columnOnMobile>
             <GalleryItem
-              width={galleryDimensions.width}
-              height={galleryDimensions.height}
-              imageSrc={mypointsImage}
+              width={GALLERY_ITEM_WIDTH}
+              height={GALLERY_ITEM_HEIGHT}
+              imageSrc={MY_POINTS_IMAGE}
             >
               {t("projectsCustomerGalleryMyPoints")}
             </GalleryItem>
             <GalleryItem
-              width={galleryDimensions.width}
-              height={galleryDimensions.height}
-              imageSrc={orderImage}
+              width={GALLERY_ITEM_WIDTH}
+              height={GALLERY_ITEM_HEIGHT}
+              imageSrc={ORDER_IMAGE}
             >
               {t("projectsCustomerGalleryCreateGiftCard")}
             </GalleryItem>
             <GalleryItem
-              width={galleryDimensions.width}
-              height={galleryDimensions.height}
-              imageSrc={creategiftcardImage}
+              width={GALLERY_ITEM_WIDTH}
+              height={GALLERY_ITEM_HEIGHT}
+              imageSrc={CREATE_GIFT_CARD_IMAGE}
               $isLast
             >
               {t("projectsCustomerGalleryOrder")}
@@ -126,4 +127,4 @@ const SelfServiceTotem: NextPage = () => {
   );
 };
 
-export default SelfServiceTotem;
+export default CustomerLoyaltyAppPage;

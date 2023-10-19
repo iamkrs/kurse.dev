@@ -6,22 +6,22 @@ import {
   DotsStripe,
   Flex,
   MainTitle,
-  Project,
-  ProjectDescription,
   ScrollDown,
   Section,
   Text,
   Title,
 } from "app/components";
-import SelfServiceTotemSvg from "app/components/Projects/SelfServiceTotemSvg";
-import TelemedicineCabinSvg from "app/components/Projects/TelemedicineCabinSvg";
-import { useHorizontalScroll } from "app/hooks";
+import {
+  Project,
+  ProjectDescription,
+  SelfServiceTotemSvg,
+  TelemedicineCabinSvg,
+} from "app/components/projects";
 import type { NextPage } from "next";
 import { useLocale, useTranslations } from "next-intl";
 
 const ReactProjectsPage: NextPage = () => {
   const locale = useLocale();
-  const scrollRef = useHorizontalScroll();
   const t = useTranslations("react");
 
   return (
