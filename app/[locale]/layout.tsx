@@ -28,6 +28,12 @@ const LocaleLayout: NextPage<LocaleLayoutProps> = ({
 
   return (
     <html lang={locale}>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Providers>

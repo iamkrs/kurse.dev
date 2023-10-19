@@ -5,6 +5,7 @@ import {
   ButtonIcon,
   CheckOutLink,
   CheckedIcon,
+  ColorBox,
   DotsStripe,
   DoubleArrow,
   Email,
@@ -160,7 +161,43 @@ const HomePage: NextPage = () => {
         <DotsStripe $left $width="32px" />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 77 }}>{t("experienceTitle")}</Title>
-          <Flex style={{ marginBottom: 13 }} $columnOnMobile>
+
+          <Spacing $horizontal $mobile $size="25px" />
+          <Flex $alignCenter>
+            <Flex style={{ marginRight: 99 }} $column>
+              <Text>
+                <strong>Hero99</strong>
+              </Text>
+              <Text $noWrap style={{ marginBottom: 19 }}>
+                {t("experienceFullStackDev")}
+              </Text>
+              <ColorBox>
+                <Text $primaryColor $noWrap>
+                  2022 {t("experienceMar")} <DoubleArrow $primaryColor />{" "}
+                  {t("experienceNow")}
+                </Text>
+              </ColorBox>
+            </Flex>
+            <Flex $column>
+              <Text style={{ marginBottom: 33 }}>
+                {t.rich("experiences.hero99Tests", {
+                  strong: (chunks) => <strong>{chunks}</strong>,
+                })}
+              </Text>
+              <Text style={{ marginBottom: 33 }}>
+                {t.rich("experiences.hero99Mobile", {
+                  strong: (chunks) => <strong>{chunks}</strong>,
+                })}
+              </Text>
+              <Text>
+                {t.rich("experiences.hero99Social", {
+                  strong: (chunks) => <strong>{chunks}</strong>,
+                })}
+              </Text>
+            </Flex>
+          </Flex>
+
+          {/* <Flex style={{ marginBottom: 13 }} $columnOnMobile>
             <Text style={{ marginRight: 15 }}>
               2022 {t("experienceMar")} <DoubleArrow /> {t("experienceNow")}
             </Text>
@@ -242,7 +279,7 @@ const HomePage: NextPage = () => {
               <strong>Duo Design</strong>
             </Text>
             <Text style={{ marginRight: 15 }}>{t("experienceDesigner")}</Text>
-          </Flex>
+          </Flex> */}
         </Flex>
         <DotsStripe $right />
       </Section>
