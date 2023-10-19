@@ -5,23 +5,23 @@ import {
   DotsStripe,
   Flex,
   MainTitle,
-  Project,
-  ProjectDescription,
   ScrollDown,
   Section,
   Text,
   Title,
 } from "app/components";
-import About from "app/components/Projects/About";
-import Credits from "app/components/Projects/Credits";
-import CreditsSvg from "app/components/Projects/CustomerLoyaltyApp/CreditsSvg";
-import GalleryItem from "app/components/Projects/GalleryItem";
-import SelfServiceTotemSvg from "app/components/Projects/SelfServiceTotemSvg";
+import {
+  About,
+  Credits,
+  CreditsSvg,
+  GalleryItem,
+  Project,
+  ProjectDescription,
+  SelfServiceTotemSvg,
+} from "app/components/projects";
 import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
-import categoryImage from "public/images/selfservicetotem/category.png";
-import checkoutImage from "public/images/selfservicetotem/checkout.png";
-import productImage from "public/images/selfservicetotem/product.png";
+import { CATEGORY_IMAGE, CHECKOUT_IMAGE, PRODUCT_IMAGE } from "./constants";
 
 const SelfServiceTotemPage: NextPage = () => {
   const t = useTranslations("react");
@@ -82,13 +82,13 @@ const SelfServiceTotemPage: NextPage = () => {
             {t("projectsGalleryTitle")}
           </Title>
           <Flex $columnOnMobile>
-            <GalleryItem imageSrc={categoryImage}>
+            <GalleryItem imageSrc={CATEGORY_IMAGE}>
               {t("projectsTotemGalleryCategory")}
             </GalleryItem>
-            <GalleryItem imageSrc={productImage}>
+            <GalleryItem imageSrc={PRODUCT_IMAGE}>
               {t("projectsTotemGalleryProduct")}
             </GalleryItem>
-            <GalleryItem imageSrc={checkoutImage} $isLast>
+            <GalleryItem imageSrc={CHECKOUT_IMAGE} $isLast>
               {t("projectsTotemGalleryCheckout")}
             </GalleryItem>
           </Flex>

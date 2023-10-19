@@ -1,4 +1,4 @@
-const CreditsSvg = () => (
+export const CreditsSvg = () => (
   <svg
     width="326"
     height="36"
@@ -190,5 +190,3 @@ const CreditsSvg = () => (
     </defs>
   </svg>
 );
-
-export default CreditsSvg;

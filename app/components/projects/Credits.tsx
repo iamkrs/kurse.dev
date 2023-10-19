@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Credits = styled.div`
+export const Credits = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
@@ -23,5 +23,3 @@ const Credits = styled.div`
     }
   }
 `;
-
-export default Credits;

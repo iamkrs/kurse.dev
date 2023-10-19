@@ -5,28 +5,29 @@ import {
   DotsStripe,
   Flex,
   MainTitle,
-  Project,
-  ProjectDescription,
   ScrollDown,
   Section,
   Text,
   Title,
 } from "app/components";
-import About from "app/components/Projects/About";
-import Credits from "app/components/Projects/Credits";
-import CreditsSvg from "app/components/Projects/CustomerLoyaltyApp/CreditsSvg";
-import GalleryItem from "app/components/Projects/GalleryItem";
-import TelemedicineCabinSvg from "app/components/Projects/TelemedicineCabinSvg";
+import {
+  About,
+  Credits,
+  CreditsSvg,
+  GalleryItem,
+  Project,
+  ProjectDescription,
+  TelemedicineCabinSvg,
+} from "app/components/projects";
 import type { NextPage } from "next";
 import { useTranslations } from "next-intl";
-import consultantImage from "public/images/telemedicinecabin/consultant.png";
-import dashboardImage from "public/images/telemedicinecabin/dashboard.png";
-import loginImage from "public/images/telemedicinecabin/login.png";
-
-const galleryDimensions = {
-  width: 403,
-  height: 253,
-};
+import {
+  CONSULTANT_IMAGE,
+  DASHBOARD_IMAGE,
+  GALLERY_ITEM_HEIGHT,
+  GALLERY_ITEM_WIDTH,
+  LOGIN_IMAGE,
+} from "./constants";
 
 const TelemedicineCabin: NextPage = () => {
   const t = useTranslations("react");
@@ -89,23 +90,23 @@ const TelemedicineCabin: NextPage = () => {
           </Title>
           <Flex $columnOnMobile>
             <GalleryItem
-              imageSrc={loginImage}
-              width={galleryDimensions.width}
-              height={galleryDimensions.height}
+              imageSrc={LOGIN_IMAGE}
+              width={GALLERY_ITEM_WIDTH}
+              height={GALLERY_ITEM_HEIGHT}
             >
               {t("projectsCabinGalleryLogin")}
             </GalleryItem>
             <GalleryItem
-              imageSrc={consultantImage}
-              width={galleryDimensions.width}
-              height={galleryDimensions.height}
+              imageSrc={CONSULTANT_IMAGE}
+              width={GALLERY_ITEM_WIDTH}
+              height={GALLERY_ITEM_HEIGHT}
             >
               {t("projectsCabinGalleryDashboard")}
             </GalleryItem>
             <GalleryItem
-              imageSrc={dashboardImage}
-              width={galleryDimensions.width}
-              height={galleryDimensions.height}
+              imageSrc={DASHBOARD_IMAGE}
+              width={GALLERY_ITEM_WIDTH}
+              height={GALLERY_ITEM_HEIGHT}
               $isLast
             >
               {t("projectsCabinGalleryConsultation")}

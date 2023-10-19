@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const TelemedicineCabinSvg = () => (
+export const TelemedicineCabinSvg = () => (
   <StyledSvg
     style={{ marginRight: 60, marginTop: 15 }}
     width="226"
@@ -140,5 +140,3 @@ const StyledSvg = styled.svg`
     min-width: 226px;
   }
 `;
-
-export default TelemedicineCabinSvg;

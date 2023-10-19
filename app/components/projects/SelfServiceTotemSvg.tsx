@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const SelfServiceTotemSvg = () => (
+export const SelfServiceTotemSvg = () => (
   <StyledSvg
     style={{ marginRight: 60, marginTop: 15 }}
     width="156"
@@ -239,5 +239,3 @@ const StyledSvg = styled.svg`
     min-width: 156px;
   }
 `;
-
-export default SelfServiceTotemSvg;
