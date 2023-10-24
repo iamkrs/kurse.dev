@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useSelector } from "lib/redux";
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
+import { useSelector } from 'lib/redux';
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 
 type GlobalStyleProps = {
   $primaryColor: string;

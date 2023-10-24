@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Hobbie = styled.strong`
   font-weight: 700;

@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { CSSProperties, FC, PropsWithChildren, forwardRef } from "react";
-import styled from "styled-components";
+import Link from 'next/link';
+import { CSSProperties, FC, PropsWithChildren, forwardRef } from 'react';
+import styled from 'styled-components';
 
 type ButtonProps = PropsWithChildren<{
   displayName?: string;
@@ -16,20 +16,20 @@ type ButtonProps = PropsWithChildren<{
 const Button: FC<ButtonProps> = forwardRef<HTMLAnchorElement, ButtonProps>(
   ({ children, $fontRegular, href, ...props }, ref) => {
     return (
-      <StyledButton ref={ref} href={href || "#"} {...props}>
+      <StyledButton ref={ref} href={href || '#'} {...props}>
         <ButtonText $fontRegular={$fontRegular}>{children}</ButtonText>
         <ArrowIcon
-          width="17"
-          height="17"
-          viewBox="0 0 17 17"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+          width='17'
+          height='17'
+          viewBox='0 0 17 17'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
         >
           <path
-            d="M16.1601 1.98273C16.1601 1.35207 15.6437 0.84082 15.0068 0.84082H4.62678C3.98981 0.84082 3.47345 1.35207 3.47345 1.98273C3.47345 2.6134 3.98981 3.12464 4.62678 3.12464H13.8534V12.2599C13.8534 12.8906 14.3698 13.4018 15.0068 13.4018C15.6437 13.4018 16.1601 12.8906 16.1601 12.2599V1.98273ZM2.63107 15.8508L15.8223 2.79019L14.1912 1.17527L1 14.2359L2.63107 15.8508Z"
+            d='M16.1601 1.98273C16.1601 1.35207 15.6437 0.84082 15.0068 0.84082H4.62678C3.98981 0.84082 3.47345 1.35207 3.47345 1.98273C3.47345 2.6134 3.98981 3.12464 4.62678 3.12464H13.8534V12.2599C13.8534 12.8906 14.3698 13.4018 15.0068 13.4018C15.6437 13.4018 16.1601 12.8906 16.1601 12.2599V1.98273ZM2.63107 15.8508L15.8223 2.79019L14.1912 1.17527L1 14.2359L2.63107 15.8508Z'
             style={{
-              fill: "var(--primary-color)",
-              stroke: "var(--primary-color)",
+              fill: 'var(--primary-color)',
+              stroke: 'var(--primary-color)',
             }}
           />
         </ArrowIcon>
@@ -38,7 +38,7 @@ const Button: FC<ButtonProps> = forwardRef<HTMLAnchorElement, ButtonProps>(
   }
 );
 
-Button.displayName = "Button";
+Button.displayName = 'Button';
 
 export { Button };
 
@@ -46,8 +46,8 @@ const ButtonText = styled.div<ButtonProps>`
   display: flex;
   align-items: center;
   /* justify-content: center; */
-  font-weight: ${({ $fontRegular }) => ($fontRegular ? "600" : "900")};
-  font-size: ${({ $fontRegular }) => ($fontRegular ? "18px" : "23px")};
+  font-weight: ${({ $fontRegular }) => ($fontRegular ? '600' : '900')};
+  font-size: ${({ $fontRegular }) => ($fontRegular ? '18px' : '23px')};
 `;
 
 const StyledButton = styled(Link)<ButtonProps>`

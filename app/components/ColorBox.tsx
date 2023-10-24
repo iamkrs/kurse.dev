@@ -1,5 +1,5 @@
-import { FC, PropsWithChildren } from "react";
-import styled from "styled-components";
+import { FC, PropsWithChildren } from 'react';
+import styled from 'styled-components';
 
 type ColorBoxProps = PropsWithChildren<{
   $primaryColor?: boolean;

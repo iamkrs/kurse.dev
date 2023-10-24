@@ -1,5 +1,5 @@
-import { FC } from "react";
-import styled, { css } from "styled-components";
+import { FC } from 'react';
+import styled, { css } from 'styled-components';
 
 type DotsStripeProps = {
   $width?: string;
@@ -17,7 +17,7 @@ const StyledDotsStripe = styled.div<DotsStripeProps>`
   @media screen and (min-width: 771px) {
     left: initial;
     top: 0;
-    width: ${({ $width }) => $width || "68px"};
+    width: ${({ $width }) => $width || '68px'};
     height: 100%;
   }
 
@@ -37,7 +37,9 @@ const StyledDotsStripe = styled.div<DotsStripeProps>`
     `}
 
   background-image: radial-gradient(var(--primary-color) 20%, transparent 20%);
-  background-position: 0 0, 50px 50px;
+  background-position:
+    0 0,
+    50px 50px;
   background-size: 11px 11px;
 
   ${({ $hideOnMobile }) =>
@@ -50,7 +52,7 @@ const StyledDotsStripe = styled.div<DotsStripeProps>`
 `;
 
 const DotsStripe: FC<DotsStripeProps> = ({ ...props }) => (
-  <StyledDotsStripe {...props} className="dotsStripe"></StyledDotsStripe>
+  <StyledDotsStripe {...props} className='dotsStripe'></StyledDotsStripe>
 );
 
 export { DotsStripe };

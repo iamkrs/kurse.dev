@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useHorizontalScroll } from "app/hooks";
-import { FC, PropsWithChildren } from "react";
-import styled from "styled-components";
+import { useHorizontalScroll } from 'app/hooks';
+import { FC, PropsWithChildren } from 'react';
+import styled from 'styled-components';
 
 const StyledMain = styled.main`
   @media screen and (min-width: 771px) {

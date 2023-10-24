@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledMainTitle = styled.h1`
   font-weight: 900;

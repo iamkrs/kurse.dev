@@ -1,9 +1,9 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useDispatch } from "lib/redux";
-import Image, { StaticImageData } from "next/image";
-import { FC, PropsWithChildren, useState } from "react";
-import styled, { css } from "styled-components";
-import { setPreventScroll } from "../../../lib/redux/slices/appSlice/appSlice";
+import { AnimatePresence, motion } from 'framer-motion';
+import { useDispatch } from 'lib/redux';
+import Image, { StaticImageData } from 'next/image';
+import { FC, PropsWithChildren, useState } from 'react';
+import styled, { css } from 'styled-components';
+import { setPreventScroll } from '../../../lib/redux/slices/appSlice/appSlice';
 
 type GalleryItemProps = PropsWithChildren<{
   imageSrc: string | StaticImageData;
@@ -61,15 +61,15 @@ export const GalleryItem: FC<GalleryItemProps> = ({
               }}
             >
               <svg
-                width="41"
-                height="41"
-                viewBox="0 0 41 41"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                width='41'
+                height='41'
+                viewBox='0 0 41 41'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'
               >
                 <path
-                  d="M40.8212 4.11128L36.7099 0L20.4106 16.2993L4.11128 0L0 4.11128L16.2993 20.4106L0 36.7099L4.11128 40.8212L20.4106 24.5219L36.7099 40.8212L40.8212 36.7099L24.5219 20.4106L40.8212 4.11128Z"
-                  style={{ fill: "var(--primary-color)" }}
+                  d='M40.8212 4.11128L36.7099 0L20.4106 16.2993L4.11128 0L0 4.11128L16.2993 20.4106L0 36.7099L4.11128 40.8212L20.4106 24.5219L36.7099 40.8212L40.8212 36.7099L24.5219 20.4106L40.8212 4.11128Z'
+                  style={{ fill: 'var(--primary-color)' }}
                 />
               </svg>
             </ZoomedImageClose>

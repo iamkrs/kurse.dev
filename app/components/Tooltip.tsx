@@ -1,6 +1,6 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { FC, PropsWithChildren, useState } from "react";
-import styled from "styled-components";
+import { AnimatePresence, motion } from 'framer-motion';
+import { FC, PropsWithChildren, useState } from 'react';
+import styled from 'styled-components';
 
 type TooltipProps = PropsWithChildren<{
   title: string;

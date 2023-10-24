@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "paths": { 
+    "paths": {
       "app/*": ["./app/*"],
       "lib/*": ["./lib/*"],
-      "public/*": ["./public/*"] 
+      "public/*": ["./public/*"]
     },
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -25,13 +25,6 @@
       }
     ]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

@@ -1,14 +1,14 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: AppSliceState = {
-  primaryColor: "#EBFF00",
-  headerHeight: "137px",
+  primaryColor: '#EBFF00',
+  headerHeight: '137px',
   showLanguageSwitcher: false,
   preventScroll: false,
 };
 
 export const appSlice = createSlice({
-  name: "app",
+  name: 'app',
   initialState,
   reducers: {
     setPrimaryColor: (state, action: PayloadAction<string>) => {

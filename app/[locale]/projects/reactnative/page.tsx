@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Button,
@@ -10,39 +10,39 @@ import {
   Section,
   Text,
   Title,
-} from "app/components";
+} from 'app/components';
 import {
   CustomerLoyaltyAppSvg,
   Project,
   ProjectDescription,
   ReactNativeLogos,
-} from "app/components/projects";
-import type { NextPage } from "next";
-import { useLocale, useTranslations } from "next-intl";
+} from 'app/components/projects';
+import type { NextPage } from 'next';
+import { useLocale, useTranslations } from 'next-intl';
 
 const ReactNative: NextPage = () => {
-  const t = useTranslations("reactnative");
+  const t = useTranslations('reactnative');
   const locale = useLocale();
 
   return (
     <>
-      <Section $width="1100px" $paddingRight="270px">
+      <Section $width='1100px' $paddingRight='270px'>
         <Flex $column $justifyCenter $fullHeight>
           <Flex>
             <MainTitle>React Native</MainTitle>
           </Flex>
           <Text style={{ marginBottom: 47, maxWidth: 440 }}>
-            {t("description")}
+            {t('description')}
           </Text>
           <ReactNativeLogos />
         </Flex>
         <ScrollDown />
         <DotsStripe $right $hideOnMobile />
       </Section>
-      <Section $width="1240px" $primaryColor>
-        <DotsStripe $left $width="32px" />
+      <Section $width='1240px' $primaryColor>
+        <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
-          <Title style={{ marginBottom: 77 }}>{t("projectsTitle")}</Title>
+          <Title style={{ marginBottom: 77 }}>{t('projectsTitle')}</Title>
           <Flex $columnOnMobile>
             <Project $last>
               <CustomerLoyaltyAppSvg />
@@ -52,16 +52,16 @@ const ReactNative: NextPage = () => {
                   style={{
                     marginRight: 15,
                     marginBottom: 20,
-                    maxWidth: locale === "en" ? 280 : 330,
+                    maxWidth: locale === 'en' ? 280 : 330,
                   }}
                 >
-                  {t("projectsCustomerTitle")}
+                  {t('projectsCustomerTitle')}
                 </Title>
                 <Text style={{ marginRight: 15, marginBottom: 33 }}>
-                  {t("projectsCustomerDescription")}
+                  {t('projectsCustomerDescription')}
                 </Text>
-                <Button $filled href="/projects/reactnative/customerloyaltyapp">
-                  {t("projectsCustomerButton")}
+                <Button $filled href='/projects/reactnative/customerloyaltyapp'>
+                  {t('projectsCustomerButton')}
                 </Button>
               </ProjectDescription>
             </Project>
@@ -69,11 +69,11 @@ const ReactNative: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width="1013px">
-        <DotsStripe $left $width="32px" />
+      <Section $width='1013px'>
+        <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
-          <CheckOutLink $primaryColor href="/projects/react">
-            {t("checkOutReactProjects")}
+          <CheckOutLink $primaryColor href='/projects/react'>
+            {t('checkOutReactProjects')}
           </CheckOutLink>
         </Flex>
       </Section>

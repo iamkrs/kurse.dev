@@ -1,12 +1,12 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { toggleLanguageSwitcher, useDispatch, useSelector } from "lib/redux";
-import { useLocale } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
-import { FC } from "react";
-import styled from "styled-components";
-import Item from "../Item";
-import { BrazilFlag } from "./BrazilFlag";
-import { UsaFlag } from "./UsaFlag";
+import { AnimatePresence, motion } from 'framer-motion';
+import { toggleLanguageSwitcher, useDispatch, useSelector } from 'lib/redux';
+import { useLocale } from 'next-intl';
+import { usePathname, useRouter } from 'next/navigation';
+import { FC } from 'react';
+import styled from 'styled-components';
+import Item from '../Item';
+import { BrazilFlag } from './BrazilFlag';
+import { UsaFlag } from './UsaFlag';
 
 const SelectContext = styled.div`
   display: flex;
@@ -27,7 +27,7 @@ export const LanguageSwitcher: FC = () => {
   const pathname = usePathname();
 
   // regex to remove locale const from pathname
-  const formattedPathname = pathname.replace(/^\/(br|en)/, "/");
+  const formattedPathname = pathname?.replace(/^\/(br|en)/, '/');
 
   const showLanguageSwitcher = useSelector(
     // TODO: Need selectors?
@@ -50,10 +50,10 @@ export const LanguageSwitcher: FC = () => {
           exit={{ opacity: 0 }}
           as={motion.div}
         >
-          <Item $borderLeft onClick={handleChangeLanguage("en")}>
+          <Item $borderLeft onClick={handleChangeLanguage('en')}>
             <UsaFlag />
           </Item>
-          <Item $borderLeft onClick={handleChangeLanguage("br")}>
+          <Item $borderLeft onClick={handleChangeLanguage('br')}>
             <BrazilFlag />
           </Item>
         </SelectContext>
@@ -67,8 +67,8 @@ export const ActiveLanguage: FC = () => {
 
   return (
     <>
-      {locale === "en" && <UsaFlag />}
-      {locale === "br" && <BrazilFlag />}
+      {locale === 'en' && <UsaFlag />}
+      {locale === 'br' && <BrazilFlag />}
     </>
   );
 };

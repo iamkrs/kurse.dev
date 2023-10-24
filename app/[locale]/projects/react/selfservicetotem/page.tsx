@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   CheckOutLink,
@@ -9,7 +9,7 @@ import {
   Section,
   Text,
   Title,
-} from "app/components";
+} from 'app/components';
 import {
   About,
   Credits,
@@ -18,24 +18,24 @@ import {
   Project,
   ProjectDescription,
   SelfServiceTotemSvg,
-} from "app/components/projects";
-import type { NextPage } from "next";
-import { useTranslations } from "next-intl";
-import { CATEGORY_IMAGE, CHECKOUT_IMAGE, PRODUCT_IMAGE } from "./constants";
+} from 'app/components/projects';
+import type { NextPage } from 'next';
+import { useTranslations } from 'next-intl';
+import { CATEGORY_IMAGE, CHECKOUT_IMAGE, PRODUCT_IMAGE } from './constants';
 
 const SelfServiceTotemPage: NextPage = () => {
-  const t = useTranslations("react");
+  const t = useTranslations('react');
 
   return (
     <>
-      <Section $width="1145px" $paddingRight="270px" $primaryColor>
+      <Section $width='1145px' $paddingRight='270px' $primaryColor>
         <Flex $column $justifyCenter $fullHeight>
           <Project $noMargin $last>
             <SelfServiceTotemSvg />
             <ProjectDescription>
-              <MainTitle>{t("projectsTotemTitle")}</MainTitle>
+              <MainTitle>{t('projectsTotemTitle')}</MainTitle>
               <Text style={{ marginRight: 15, marginBottom: 33 }}>
-                {t("projectsTotemDescription")}
+                {t('projectsTotemDescription')}
               </Text>
               {/* <Button filled>Demo</Button> */}
             </ProjectDescription>
@@ -44,30 +44,30 @@ const SelfServiceTotemPage: NextPage = () => {
         <ScrollDown />
         <DotsStripe $right $hideOnMobile />
       </Section>
-      <Section $width="1106px">
-        <DotsStripe $left $width="32px" />
+      <Section $width='1106px'>
+        <DotsStripe $left $width='32px' />
         <About>
-          <Title style={{ marginBottom: 55 }}>{t("projectsAboutTitle")}</Title>
+          <Title style={{ marginBottom: 55 }}>{t('projectsAboutTitle')}</Title>
           <Text>
-            {t.rich("projectsTotemAboutText", {
+            {t.rich('projectsTotemAboutText', {
               strong: (chunks) => <strong>{chunks}</strong>,
             })}
           </Text>
           <Credits>
-            <Text $small>{t("projectsTotemAboutCredits")}</Text>
+            <Text $small>{t('projectsTotemAboutCredits')}</Text>
             <CreditsSvg />
           </Credits>
         </About>
       </Section>
-      <Section $width="1106px" $primaryColor>
-        <DotsStripe $left $width="32px" />
+      <Section $width='1106px' $primaryColor>
+        <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 55 }}>
-            {t("projectsHowWasItDoneTitle")}
+            {t('projectsHowWasItDoneTitle')}
           </Title>
           <Flex $columnOnMobile>
             <Text>
-              {t.rich("projectsTotemHowWasItDoneText", {
+              {t.rich('projectsTotemHowWasItDoneText', {
                 strong: (chunks) => <strong>{chunks}</strong>,
               })}
             </Text>
@@ -75,31 +75,31 @@ const SelfServiceTotemPage: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width="1406px">
-        <DotsStripe $left $width="32px" />
+      <Section $width='1406px'>
+        <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 55 }}>
-            {t("projectsGalleryTitle")}
+            {t('projectsGalleryTitle')}
           </Title>
           <Flex $columnOnMobile>
             <GalleryItem imageSrc={CATEGORY_IMAGE}>
-              {t("projectsTotemGalleryCategory")}
+              {t('projectsTotemGalleryCategory')}
             </GalleryItem>
             <GalleryItem imageSrc={PRODUCT_IMAGE}>
-              {t("projectsTotemGalleryProduct")}
+              {t('projectsTotemGalleryProduct')}
             </GalleryItem>
             <GalleryItem imageSrc={CHECKOUT_IMAGE} $isLast>
-              {t("projectsTotemGalleryCheckout")}
+              {t('projectsTotemGalleryCheckout')}
             </GalleryItem>
           </Flex>
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width="1013px" $primaryColor>
-        <DotsStripe $left $width="32px" />
+      <Section $width='1013px' $primaryColor>
+        <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
-          <CheckOutLink href="/projects/react">
-            {t("checkOutMoreProjects")}
+          <CheckOutLink href='/projects/react'>
+            {t('checkOutMoreProjects')}
           </CheckOutLink>
         </Flex>
       </Section>

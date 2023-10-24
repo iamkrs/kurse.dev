@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   CheckOutLink,
@@ -9,7 +9,7 @@ import {
   Section,
   Text,
   Title,
-} from "app/components";
+} from 'app/components';
 import {
   About,
   Credits,
@@ -18,30 +18,30 @@ import {
   Project,
   ProjectDescription,
   TelemedicineCabinSvg,
-} from "app/components/projects";
-import type { NextPage } from "next";
-import { useTranslations } from "next-intl";
+} from 'app/components/projects';
+import type { NextPage } from 'next';
+import { useTranslations } from 'next-intl';
 import {
   CONSULTANT_IMAGE,
   DASHBOARD_IMAGE,
   GALLERY_ITEM_HEIGHT,
   GALLERY_ITEM_WIDTH,
   LOGIN_IMAGE,
-} from "./constants";
+} from './constants';
 
 const TelemedicineCabin: NextPage = () => {
-  const t = useTranslations("react");
+  const t = useTranslations('react');
 
   return (
     <>
-      <Section $width="1145px" $paddingRight="270px" $primaryColor>
+      <Section $width='1145px' $paddingRight='270px' $primaryColor>
         <Flex $column $justifyCenter $fullHeight>
           <Project $noMargin $last>
             <TelemedicineCabinSvg />
             <ProjectDescription>
-              <MainTitle>{t("projectsCabinTitle")}</MainTitle>
+              <MainTitle>{t('projectsCabinTitle')}</MainTitle>
               <Text style={{ marginRight: 15, marginBottom: 33 }}>
-                {t("projectsCabinDescription")}
+                {t('projectsCabinDescription')}
               </Text>
               {/* <Button filled>Demo</Button> */}
             </ProjectDescription>
@@ -50,30 +50,30 @@ const TelemedicineCabin: NextPage = () => {
         <ScrollDown />
         <DotsStripe $right $hideOnMobile />
       </Section>
-      <Section $width="1106px">
-        <DotsStripe $left $width="32px" />
+      <Section $width='1106px'>
+        <DotsStripe $left $width='32px' />
         <About>
-          <Title style={{ marginBottom: 55 }}>{t("projectsAboutTitle")}</Title>
+          <Title style={{ marginBottom: 55 }}>{t('projectsAboutTitle')}</Title>
           <Text>
-            {t.rich("projectsCabinAboutText", {
+            {t.rich('projectsCabinAboutText', {
               strong: (chunks) => <strong>{chunks}</strong>,
             })}
           </Text>
           <Credits>
-            <Text $small>{t("projectsCabinAboutCredits")}</Text>
+            <Text $small>{t('projectsCabinAboutCredits')}</Text>
             <CreditsSvg />
           </Credits>
         </About>
       </Section>
-      <Section $width="1106px" $primaryColor>
-        <DotsStripe $left $width="32px" />
+      <Section $width='1106px' $primaryColor>
+        <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 55 }}>
-            {t("projectsHowWasItDoneTitle")}
+            {t('projectsHowWasItDoneTitle')}
           </Title>
           <Flex $columnOnMobile>
             <Text>
-              {t.rich("projectsCabinHowWasItDoneText", {
+              {t.rich('projectsCabinHowWasItDoneText', {
                 strong: (chunks) => <strong>{chunks}</strong>,
                 br: () => <br />,
               })}
@@ -82,11 +82,11 @@ const TelemedicineCabin: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width="1900px">
-        <DotsStripe $left $width="32px" />
+      <Section $width='1900px'>
+        <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 55 }}>
-            {t("projectsGalleryTitle")}
+            {t('projectsGalleryTitle')}
           </Title>
           <Flex $columnOnMobile>
             <GalleryItem
@@ -94,14 +94,14 @@ const TelemedicineCabin: NextPage = () => {
               width={GALLERY_ITEM_WIDTH}
               height={GALLERY_ITEM_HEIGHT}
             >
-              {t("projectsCabinGalleryLogin")}
+              {t('projectsCabinGalleryLogin')}
             </GalleryItem>
             <GalleryItem
               imageSrc={CONSULTANT_IMAGE}
               width={GALLERY_ITEM_WIDTH}
               height={GALLERY_ITEM_HEIGHT}
             >
-              {t("projectsCabinGalleryDashboard")}
+              {t('projectsCabinGalleryDashboard')}
             </GalleryItem>
             <GalleryItem
               imageSrc={DASHBOARD_IMAGE}
@@ -109,17 +109,17 @@ const TelemedicineCabin: NextPage = () => {
               height={GALLERY_ITEM_HEIGHT}
               $isLast
             >
-              {t("projectsCabinGalleryConsultation")}
+              {t('projectsCabinGalleryConsultation')}
             </GalleryItem>
           </Flex>
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width="1013px" $primaryColor>
-        <DotsStripe $left $width="32px" />
+      <Section $width='1013px' $primaryColor>
+        <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
-          <CheckOutLink href="/projects/reactnative">
-            {t("checkOutReactNativeProjects")}
+          <CheckOutLink href='/projects/reactnative'>
+            {t('checkOutReactNativeProjects')}
           </CheckOutLink>
         </Flex>
       </Section>

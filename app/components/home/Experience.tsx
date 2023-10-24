@@ -1,20 +1,20 @@
-import { ColorBox, DoubleArrow, Flex, Text } from "app/components";
-import { Experience as ExperienceData } from "app/constants";
-import { format } from "date-fns";
-import { useTranslations } from "next-intl";
-import { FC } from "react";
+import { ColorBox, DoubleArrow, Flex, Text } from 'app/components';
+import { Experience as ExperienceData } from 'app/types';
+import { format } from 'date-fns';
+import { useTranslations } from 'next-intl';
+import { FC } from 'react';
 
 type ExperienceProps = {
   data: ExperienceData;
 };
 
 export const Experience: FC<ExperienceProps> = ({ data, ...props }) => {
-  const t = useTranslations("home");
+  const t = useTranslations('home');
 
   const { name, position, startDate, endDate, description } = data;
 
-  const formattedStartDate = format(new Date(startDate), "yyyy MMM");
-  const formattedEndDate = endDate && format(new Date(endDate), "yyyy MMM");
+  const formattedStartDate = format(new Date(startDate), 'yyyy MMM');
+  const formattedEndDate = endDate && format(new Date(endDate), 'yyyy MMM');
 
   return (
     <Flex $alignCenter>
@@ -27,8 +27,8 @@ export const Experience: FC<ExperienceProps> = ({ data, ...props }) => {
         </Text>
         <ColorBox>
           <Text $primaryColor $noWrap>
-            {formattedStartDate} <DoubleArrow $primaryColor />{" "}
-            {formattedEndDate || t("experienceNow")}
+            {formattedStartDate} <DoubleArrow $primaryColor />{' '}
+            {formattedEndDate || t('experienceNow')}
           </Text>
         </ColorBox>
       </Flex>

@@ -1,15 +1,15 @@
-import { Header, Main } from "app/components";
-import { locales } from "lib/intl";
-import { Providers } from "lib/providers";
-import StyledComponentsRegistry from "lib/registry";
-import { NextPage } from "next";
-import { NextIntlClientProvider, useMessages } from "next-intl";
-import { notFound } from "next/navigation";
-import GlobalStyle from "../components/GlobalStyle";
+import { Header, Main } from 'app/components';
+import { locales } from 'lib/intl';
+import { Providers } from 'lib/providers';
+import StyledComponentsRegistry from 'lib/registry';
+import { NextPage } from 'next';
+import { NextIntlClientProvider, useMessages } from 'next-intl';
+import { notFound } from 'next/navigation';
+import GlobalStyle from '../components/GlobalStyle';
 
 export const metadata = {
-  title: "kurse.dev",
-  description: "Kurse is a full stack developer and designer",
+  title: 'kurse.dev',
+  description: 'Kurse is a full stack developer and designer',
 };
 
 export type LocaleLayoutProps = {
@@ -30,8 +30,8 @@ const LocaleLayout: NextPage<LocaleLayoutProps> = ({
     <html lang={locale}>
       <head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
-          rel="stylesheet"
+          href='https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap'
+          rel='stylesheet'
         />
       </head>
       <body>

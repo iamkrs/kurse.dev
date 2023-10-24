@@ -1,13 +1,13 @@
-const express = require("express");
-const next = require("next");
-const path = require("path");
-const fs = require("fs");
-const https = require("https");
-const http = require("http");
-require("dotenv").config();
+const express = require('express');
+const next = require('next');
+const path = require('path');
+const fs = require('fs');
+const https = require('https');
+const http = require('http');
+require('dotenv').config();
 
 const port = parseInt(process.env.PORT, 10) || 3000;
-const dev = process.env.NODE_ENV !== "production";
+const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
@@ -17,7 +17,7 @@ app.prepare().then(() => {
   // Projects
   // server.use("/os-experiment", express.static(path.join(__dirname, "public/os-experiment")));
 
-  server.all("*", (req, res) => {
+  server.all('*', (req, res) => {
     return handle(req, res);
   });
 
