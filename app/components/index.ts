@@ -2,6 +2,7 @@
 
 export { Button, ButtonIcon } from "./Button";
 export { CheckOutLink } from "./CheckOutLink";
+export { ColorBox } from "./ColorBox";
 export { DotsStripe } from "./DotsStripe";
 export { Email } from "./Email";
 export { Flex } from "./Flex";
@@ -14,6 +15,5 @@ export { Spacing } from "./Spacing";
 export { Text } from "./Text";
 export { Title } from "./Title";
 export { Tooltip } from "./Tooltip";
-export { ColorBox } from "./ColorBox";
 
-export * from "./Home";
+export * from "./home";

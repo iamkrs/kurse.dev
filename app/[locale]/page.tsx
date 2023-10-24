@@ -5,9 +5,7 @@ import {
   ButtonIcon,
   CheckOutLink,
   CheckedIcon,
-  ColorBox,
   DotsStripe,
-  DoubleArrow,
   Email,
   Flex,
   GithubIcon,
@@ -25,6 +23,8 @@ import {
   Title,
   Tooltip,
 } from "app/components";
+import { Experience } from "app/components/home/Experience";
+import { EXPERIENCES } from "app/constants";
 import type { NextPage } from "next";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
@@ -157,129 +157,18 @@ const HomePage: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width="1500px" $primaryColor>
+      <Section $primaryColor>
         <DotsStripe $left $width="32px" />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 77 }}>{t("experienceTitle")}</Title>
 
           <Spacing $horizontal $mobile $size="25px" />
-          <Flex $alignCenter>
-            <Flex style={{ marginRight: 99 }} $column>
-              <Text>
-                <strong>Hero99</strong>
-              </Text>
-              <Text $noWrap style={{ marginBottom: 19 }}>
-                {t("experienceFullStackDev")}
-              </Text>
-              <ColorBox>
-                <Text $primaryColor $noWrap>
-                  2022 {t("experienceMar")} <DoubleArrow $primaryColor />{" "}
-                  {t("experienceNow")}
-                </Text>
-              </ColorBox>
-            </Flex>
-            <Flex $column>
-              <Text style={{ marginBottom: 33 }}>
-                {t.rich("experiences.hero99Tests", {
-                  strong: (chunks) => <strong>{chunks}</strong>,
-                })}
-              </Text>
-              <Text style={{ marginBottom: 33 }}>
-                {t.rich("experiences.hero99Mobile", {
-                  strong: (chunks) => <strong>{chunks}</strong>,
-                })}
-              </Text>
-              <Text>
-                {t.rich("experiences.hero99Social", {
-                  strong: (chunks) => <strong>{chunks}</strong>,
-                })}
-              </Text>
-            </Flex>
-          </Flex>
 
-          {/* <Flex style={{ marginBottom: 13 }} $columnOnMobile>
-            <Text style={{ marginRight: 15 }}>
-              2022 {t("experienceMar")} <DoubleArrow /> {t("experienceNow")}
-            </Text>
-            <Text style={{ marginRight: 15 }}>
-              <strong>Hero99</strong>
-            </Text>
-            <Text style={{ marginRight: 15 }}>
-              {t("experienceFullStackDev")}
-            </Text>
+          <Flex $alignCenter>
+            {EXPERIENCES.map((experience, index) => (
+              <Experience key={index.toString()} data={experience} />
+            ))}
           </Flex>
-          <Spacing $horizontal $mobile $size="25px" />
-          <Flex style={{ marginBottom: 13 }} $columnOnMobile>
-            <Text style={{ marginRight: 15 }}>
-              2020 {t("experienceJan")} <DoubleArrow /> 2022{" "}
-              {t("experienceMar")}
-            </Text>
-            <Text style={{ marginRight: 15 }}>
-              <strong>Freelancer</strong>
-            </Text>
-            <Text style={{ marginRight: 15 }}>
-              {t("experienceFullStackDev")}
-            </Text>
-          </Flex>
-          <Spacing $horizontal $mobile $size="25px" />
-          <Flex style={{ marginBottom: 13 }} $columnOnMobile>
-            <Text style={{ marginRight: 15 }}>
-              2017 {t("experienceAug")} <DoubleArrow /> 2020{" "}
-              {t("experienceJan")}
-            </Text>
-            <Text style={{ marginRight: 15 }}>
-              <strong>OctoXB</strong>
-            </Text>
-            <Text style={{ marginRight: 15 }}>
-              {t("experienceFrontendDev")}
-            </Text>
-          </Flex>
-          <Spacing $horizontal $mobile $size="25px" />
-          <Flex style={{ marginBottom: 13 }} $columnOnMobile>
-            <Text style={{ marginRight: 15 }}>
-              2014 {t("experienceSep")} <DoubleArrow /> 2017{" "}
-              {t("experienceJul")}
-            </Text>
-            <Text style={{ marginRight: 15 }}>
-              <strong>Agência Magento</strong>
-            </Text>
-            <Text style={{ marginRight: 15 }}>
-              {t("experienceFrontendDev")}
-            </Text>
-          </Flex>
-          <Spacing $horizontal $mobile $size="25px" />
-          <Flex style={{ marginBottom: 13 }} $columnOnMobile>
-            <Text style={{ marginRight: 15 }}>
-              2013 {t("experienceOct")} <DoubleArrow /> 2014{" "}
-              {t("experienceAug")}
-            </Text>
-            <Text style={{ marginRight: 15 }}>
-              <strong>Agência Saru</strong>
-            </Text>
-            <Text style={{ marginRight: 15 }}>{t("experienceDesigner")}</Text>
-          </Flex>
-          <Spacing $horizontal $mobile $size="25px" />
-          <Flex style={{ marginBottom: 13 }} $columnOnMobile>
-            <Text style={{ marginRight: 15 }}>
-              2012 {t("experienceJul")} <DoubleArrow /> 2013{" "}
-              {t("experienceSep")}
-            </Text>
-            <Text style={{ marginRight: 15 }}>
-              <strong>AWIN, Animal Welfare Indicators</strong>
-            </Text>
-            <Text style={{ marginRight: 15 }}>{t("experienceDesigner")}</Text>
-          </Flex>
-          <Spacing $horizontal $mobile $size="25px" />
-          <Flex style={{ marginBottom: 13 }} $columnOnMobile>
-            <Text style={{ marginRight: 15 }}>
-              2012 {t("experienceJan")} <DoubleArrow /> 2012{" "}
-              {t("experienceJun")}
-            </Text>
-            <Text style={{ marginRight: 15 }}>
-              <strong>Duo Design</strong>
-            </Text>
-            <Text style={{ marginRight: 15 }}>{t("experienceDesigner")}</Text>
-          </Flex> */}
         </Flex>
         <DotsStripe $right />
       </Section>

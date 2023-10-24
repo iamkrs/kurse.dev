@@ -22,9 +22,6 @@
     "experienceAug": "AGO",
     "experienceSep": "SET",
     "experienceOct": "OUT",
-    "experienceFullStackDev": "Desenvolvedor Full Stack",
-    "experienceFrontendDev": "Desenvolvedor Frontend",
-    "experienceDesigner": "Designer",
     "educationTitle": "Educação",
     "educationDesignDegreeName": "Bacharelado em Design Gráfico",
     "educationDesignDegreeSchool": "Universidade Positivo (Curitiba Brasil)",
@@ -32,6 +29,11 @@
     "certificatesJsFreeCodeCampName": "JavaScript Algorithms and Data Structures",
     "skillsTitle": "Habilidades",
     "checkOutReactProjects": "Confira os projetos React",
+    "positions": {
+      "fullStackDev": "Desenvolvedor Full Stack",
+      "frontendDev": "Desenvolvedor Frontend",
+      "designer": "Designer"
+    },
     "experiences": {
       "hero99Tests": "<strong>Impulsionando Qualidade com Testes Efetivos:</strong> Responsável por realizar testes unitários escritos em Jest, assegurando a qualidade e robustez do código, contribuindo para a entrega de produtos de alta confiabilidade.",
       "hero99Mobile": "<strong>Navegando pelo Universo Mobile:</strong> Encarregado do desenvolvimento de aplicativos móveis utilizando React Native, trazendo ideias criativas à vida e garantindo experiências excepcionais para os usuários.",
