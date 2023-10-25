@@ -23,7 +23,7 @@ import {
   Title,
   Tooltip,
 } from 'app/components';
-import { Experience } from 'app/components/home/Experience';
+import { Experience } from 'app/components/home';
 import { EXPERIENCES } from 'app/constants';
 import type { NextPage } from 'next';
 import { useLocale, useTranslations } from 'next-intl';
@@ -161,12 +161,14 @@ const HomePage: NextPage = () => {
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 77 }}>{t('experienceTitle')}</Title>
-
           <Spacing $horizontal $mobile $size='25px' />
-
           <Flex $alignCenter>
             {EXPERIENCES.map((experience, index) => (
-              <Experience key={index.toString()} data={experience} />
+              <Experience
+                key={index.toString()}
+                data={experience}
+                $isLast={index === EXPERIENCES.length - 1}
+              />
             ))}
           </Flex>
         </Flex>
