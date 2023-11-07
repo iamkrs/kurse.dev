@@ -162,7 +162,7 @@ const HomePage: NextPage = () => {
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 77 }}>{t('experienceTitle')}</Title>
           <Spacing $horizontal $mobile $size='25px' />
-          <Flex $alignCenter>
+          <Flex $alignCenter $columnOnMobile>
             {EXPERIENCES.map((experience, index) => (
               <Experience
                 key={index.toString()}

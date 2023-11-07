@@ -53,6 +53,4 @@ const StyledSection = styled.section<SectionProps>`
   }
 `;
 
-const Section = StyledSection;
-
-export { Section };
+export { StyledSection as Section };

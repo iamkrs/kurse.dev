@@ -18,6 +18,7 @@ const StyledGlobalStyle = createGlobalStyle<GlobalStyleProps>`
   }
 
   html {
+    font-size: 16px;
     box-sizing: border-box;
     overflow-x: hidden;
 
