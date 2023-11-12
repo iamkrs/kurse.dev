@@ -23,8 +23,9 @@ import {
   Title,
   Tooltip,
 } from 'app/components';
-import { Experience } from 'app/components/home';
+import { Experience, ExperienceSection } from 'app/components/home';
 import { EXPERIENCES } from 'app/constants';
+import { useScroll } from 'app/hooks/useScroll';
 import type { NextPage } from 'next';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -32,6 +33,10 @@ import Link from 'next/link';
 const HomePage: NextPage = () => {
   const locale = useLocale();
   const t = useTranslations('home');
+
+  useScroll(({ scroll }) => {
+    console.log({ id: 'HomePage', scroll });
+  });
 
   const experienceTimeUntilNow =
     new Date('2014-09-01').getTime() - new Date().getTime();
@@ -41,7 +46,7 @@ const HomePage: NextPage = () => {
 
   return (
     <>
-      <Section $width='1100px' $paddingRight='270px'>
+      <Section $width={733}>
         <Flex $column $justifyCenter $fullHeight>
           <Flex>
             <MainTitle>Kurse</MainTitle>
@@ -58,7 +63,7 @@ const HomePage: NextPage = () => {
               />
             </CheckedIcon>
           </Flex>
-          <Text style={{ marginBottom: 23 }}>
+          <Text style={{ marginBottom: 23, paddingRight: 100 }}>
             {t('aboutMeText', { experienceYears })}
           </Text>
           <Email>lucas.kurse@hotmail.com</Email>
@@ -84,7 +89,7 @@ const HomePage: NextPage = () => {
         <ScrollDown />
         <DotsStripe $right $hideOnMobile />
       </Section>
-      <Section $width='1110px' $primaryColor>
+      <Section $width={800} $primaryColor>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title>{t('historyTitle')}</Title>
@@ -96,7 +101,7 @@ const HomePage: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width='1313px'>
+      <Section $width={900}>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 77 }}>{t('hobbiesTitle')}</Title>
@@ -119,15 +124,6 @@ const HomePage: NextPage = () => {
                 {t('hobbiesCheckOut')}
               </Title>
               <Flex $flexWrap>
-                {/* <Link href="/projects/react/telemedicinecabin" passHref>
-                    <Button fontRegular target="_blank" style={{ margin: "0 10px 10px 0" }}>
-                      <ButtonIcon>
-                        <SpotifyIcon />
-                      </ButtonIcon>
-
-                      {t("hobbiesMusicButton")}
-                    </Button>
-                  </Link> */}
                 <Button
                   $fontRegular
                   href='https://www.instagram.com/kurserino/'
@@ -157,12 +153,11 @@ const HomePage: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $primaryColor>
-        <DotsStripe $left $width='32px' />
-        <Flex $column $justifyCenter $fullHeight>
+      <ExperienceSection $primaryColor>
+        <Flex $column $fullHeight>
           <Title style={{ marginBottom: 77 }}>{t('experienceTitle')}</Title>
           <Spacing $horizontal $mobile $size='25px' />
-          <Flex $alignCenter $columnOnMobile>
+          <Flex $column>
             {EXPERIENCES.map((experience, index) => (
               <Experience
                 key={index.toString()}
@@ -172,9 +167,8 @@ const HomePage: NextPage = () => {
             ))}
           </Flex>
         </Flex>
-        <DotsStripe $right />
-      </Section>
-      <Section $width='1213px'>
+      </ExperienceSection>
+      <Section>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 77 }}>{t('educationTitle')}</Title>
@@ -189,7 +183,7 @@ const HomePage: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width='1213px' $primaryColor>
+      <Section $primaryColor>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 77 }}>{t('certificatesTitle')}</Title>
@@ -216,7 +210,7 @@ const HomePage: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width='1113px'>
+      <Section $width={1113}>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 77 }}>{t('skillsTitle')}</Title>
@@ -889,7 +883,7 @@ const HomePage: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width='1013px' $primaryColor>
+      <Section $primaryColor>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <CheckOutLink href='/projects/react'>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-type FlexProps = {
+export type FlexProps = {
   $column?: boolean;
   $columnOnMobile?: boolean;
   $hideOnMobile?: boolean;

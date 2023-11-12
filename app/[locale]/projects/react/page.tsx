@@ -26,7 +26,7 @@ const ReactProjectsPage: NextPage = () => {
 
   return (
     <>
-      <Section $width='1100px' $paddingRight='270px'>
+      <Section $width={1100}>
         <Flex $column $justifyCenter $fullHeight>
           <Flex>
             <MainTitle>React</MainTitle>
@@ -71,7 +71,7 @@ const ReactProjectsPage: NextPage = () => {
         <ScrollDown />
         <DotsStripe $right $hideOnMobile />
       </Section>
-      <Section $width='2093px' $primaryColor>
+      <Section $width={2093} $primaryColor>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 77 }}>{t('projectsTitle')}</Title>
@@ -114,7 +114,7 @@ const ReactProjectsPage: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width='1013px'>
+      <Section $width={1013}>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <CheckOutLink $primaryColor href='/projects/reactnative'>

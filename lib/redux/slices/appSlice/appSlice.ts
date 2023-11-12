@@ -1,10 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { SectionPadding } from 'app/types';
+import { getSectionPadding } from 'app/utils';
 
 const initialState: AppSliceState = {
   primaryColor: '#EBFF00',
   headerHeight: '137px',
   showLanguageSwitcher: false,
   preventScroll: false,
+  sectionPadding: getSectionPadding(),
 };
 
 export const appSlice = createSlice({
@@ -23,6 +26,9 @@ export const appSlice = createSlice({
     setPreventScroll: (state, action: PayloadAction<boolean>) => {
       state.preventScroll = action.payload;
     },
+    setSectionPadding: (state, action: PayloadAction<SectionPadding>) => {
+      state.sectionPadding = action.payload;
+    },
   },
 });
 
@@ -31,6 +37,7 @@ export const {
   setShowLanguageSwitcher,
   toggleLanguageSwitcher,
   setPreventScroll,
+  setSectionPadding,
 } = appSlice.actions;
 
 export interface AppSliceState {
@@ -38,4 +45,5 @@ export interface AppSliceState {
   headerHeight: string;
   showLanguageSwitcher: boolean;
   preventScroll: boolean;
+  sectionPadding: SectionPadding;
 }

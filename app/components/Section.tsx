@@ -1,18 +1,36 @@
+import { useMediaQuery } from 'app/hooks';
+import { SectionPadding } from 'app/types';
+import { useSelector } from 'lib/redux';
+import { FC, PropsWithChildren } from 'react';
 import styled, { css } from 'styled-components';
 
-type SectionProps = {
-  $width?: string;
-  $paddingRight?: string;
+export type SectionProps = {
+  $width?: number;
   $primaryColor?: boolean;
+  $padding?: SectionPadding;
+  $desktop?: boolean;
 };
 
-const StyledSection = styled.section<SectionProps>`
+const StyledSection = styled.section.attrs<SectionProps>(
+  ({ $width, $padding, $desktop }) => ({
+    style: {
+      width: $width ? `${$width}px` : 'initial',
+      padding: $desktop
+        ? `${$padding?.y}px ${$padding?.x}px`
+        : '90px 30px 75px 30px',
+    },
+  })
+)<SectionProps>`
   position: relative;
-  padding: 90px 30px 75px 30px;
+  // TODO: remove if will calculate on mobile screens
 
-  @media screen and (min-width: 771px) {
-    padding: 130px 190px;
-  }
+  /* ${({ $padding }) =>
+    $padding &&
+    css`
+      @media screen and (min-width: 771px) {
+        padding: ${$padding.y}px ${$padding.x}px;
+      }
+    `} */
 
   ${({ $primaryColor }) =>
     $primaryColor &&
@@ -38,19 +56,30 @@ const StyledSection = styled.section<SectionProps>`
 
   @media screen and (min-width: 771px) {
     height: 100%;
-
-    ${({ $width }) =>
-      $width &&
-      css`
-        width: ${$width};
-      `}
-
-    ${({ $paddingRight }) =>
-      $paddingRight &&
-      css`
-        padding-right: ${$paddingRight};
-      `}
   }
 `;
 
-export { StyledSection as Section };
+export const Section: FC<PropsWithChildren<SectionProps>> = ({
+  children,
+  $width,
+  ...props
+}) => {
+  const isDesktop = useMediaQuery('(min-width: 771px)');
+  const sectionPadding = useSelector((store) => store.app.sectionPadding);
+  const calculatedWidth = isDesktop
+    ? $width
+      ? $width + sectionPadding.x * 2
+      : undefined
+    : undefined;
+
+  return (
+    <StyledSection
+      {...props}
+      $padding={sectionPadding}
+      $width={calculatedWidth}
+      $desktop={isDesktop}
+    >
+      {children}
+    </StyledSection>
+  );
+};

@@ -160,4 +160,10 @@ export const StyledHeader = styled.header`
   display: flex;
   height: 137px;
   border-bottom: 2px solid var(--primary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #1c1c1c;
 `;

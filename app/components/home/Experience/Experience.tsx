@@ -18,12 +18,7 @@ export const Experience: FC<ExperienceProps> = ({ data, $isLast }) => {
   const formattedEndDate = endDate && format(new Date(endDate), 'yyyy MMM');
 
   return (
-    <Wrapper
-      //  $alignCenter
-      $columnOnMobile
-      $column
-      {...{ $isLast }}
-    >
+    <Wrapper $columnOnMobile $column {...{ $isLast }}>
       <InfoWrapper $column>
         <Text>
           <strong>{name}</strong>
