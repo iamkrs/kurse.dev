@@ -4,6 +4,8 @@ import { useSelector } from 'lib/redux';
 import { FC, PropsWithChildren } from 'react';
 import styled, { css } from 'styled-components';
 
+const MOBILE_PADDING = '90px 30px 75px 30px';
+
 export type SectionProps = {
   $width?: number;
   $primaryColor?: boolean;
@@ -15,22 +17,11 @@ const StyledSection = styled.section.attrs<SectionProps>(
   ({ $width, $padding, $desktop }) => ({
     style: {
       width: $width ? `${$width}px` : 'initial',
-      padding: $desktop
-        ? `${$padding?.y}px ${$padding?.x}px`
-        : '90px 30px 75px 30px',
+      padding: $desktop ? `${$padding?.y}px ${$padding?.x}px` : MOBILE_PADDING,
     },
   })
 )<SectionProps>`
   position: relative;
-  // TODO: remove if will calculate on mobile screens
-
-  /* ${({ $padding }) =>
-    $padding &&
-    css`
-      @media screen and (min-width: 771px) {
-        padding: ${$padding.y}px ${$padding.x}px;
-      }
-    `} */
 
   ${({ $primaryColor }) =>
     $primaryColor &&
@@ -45,10 +36,7 @@ const StyledSection = styled.section.attrs<SectionProps>(
         ) !important;
       }
 
-      .title svg * {
-        fill: #1c1c1c !important;
-      }
-
+      // Todo: Remove and set passing prop
       .scrollDown * {
         fill: #1c1c1c !important;
       }

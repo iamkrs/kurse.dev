@@ -7,7 +7,9 @@ export type FlexProps = {
   $alignCenter?: boolean;
   $justifyCenter?: boolean;
   $fullHeight?: boolean;
+  $fullWidth?: boolean;
   $flexWrap?: boolean;
+  $justifyBetween?: boolean;
 };
 
 const StyledFlex = styled.div<FlexProps>`
@@ -22,7 +24,10 @@ const StyledFlex = styled.div<FlexProps>`
     $hideOnMobile && `@media screen and (max-width: 771px) { display: none; }`}
   ${({ $alignCenter }) => $alignCenter && `align-items: center;`}
   ${({ $justifyCenter }) => $justifyCenter && `justify-content: center;`}
+  ${({ $justifyBetween }) =>
+    $justifyBetween && `justify-content: space-between;`}
   ${({ $fullHeight }) => $fullHeight && `height: 100%;`}
+  ${({ $fullWidth }) => $fullWidth && `width: 100%;`}
   ${({ $flexWrap }) => $flexWrap && `flex-wrap: wrap;`}
 `;
 

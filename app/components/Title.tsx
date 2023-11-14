@@ -1,40 +1,49 @@
-import { CSSProperties, FC, PropsWithChildren } from 'react';
-import styled from 'styled-components';
-import { Flex } from './Flex';
+import { CSSProperties, PropsWithChildren } from 'react';
+import styled, { css } from 'styled-components';
 
 type TitleProps = PropsWithChildren<{
   style?: CSSProperties;
   $small?: boolean;
   $medium?: boolean;
+  $primaryColor?: boolean;
 }>;
 
-const StyledTitle = styled.h1<TitleProps>`
-  font-weight: 900;
-  font-size: ${({ $small, $medium }) =>
-    $small ? '28px' : $medium ? '35px' : '53px'};
-  ${({ $small, $medium }) => !($small || $medium) && `margin-bottom: 13px;`}
-`;
+// TODO: object with font sizes?
+export const HEADING_01_FONT_SIZE = '53px';
+export const HEADING_02_FONT_SIZE = '35px';
+export const HEADING_03_FONT_SIZE = '28px';
 
-const Title: FC<TitleProps> = ({ children, style, ...props }) => {
-  return (
-    <Flex $column style={{ marginBottom: 33, ...style }} className='title'>
-      <StyledTitle {...props}>{children}</StyledTitle>
-      {!(props.$small || props.$medium) && (
-        <svg
-          width='67'
-          height='8'
-          viewBox='0 0 67 8'
-          fill='none'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <rect
-            width='67'
-            height='8'
-            style={{ fill: 'var(--primary-color)' }}
-          />
-        </svg>
-      )}
-    </Flex>
-  );
-};
-export { Title };
+export const Title = styled.h1<TitleProps>`
+  --line-height: 8px;
+  --line-margin: 20px;
+
+  position: relative;
+  font-weight: 900;
+  // TODO: better way to handle this?
+  font-size: ${({ $small, $medium }) =>
+    $small
+      ? HEADING_03_FONT_SIZE
+      : $medium
+      ? HEADING_02_FONT_SIZE
+      : HEADING_01_FONT_SIZE};
+
+  ${({ $small, $medium, $primaryColor }) =>
+    !$small &&
+    !$medium &&
+    css`
+      padding-bottom: calc(var(--line-height) + var(--line-margin));
+      margin-bottom: 55px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 67px;
+        height: var(--line-height);
+        background: var(
+          ${$primaryColor ? '--background-color' : '--primary-color'}
+        );
+      }
+    `}
+`;

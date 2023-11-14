@@ -1,4 +1,5 @@
 import { DotsStripe, Flex, Section, SectionProps } from 'app/components';
+import { EXPERIENCE_TITLE_MARGIN_TOP } from 'app/constants';
 import { useScroll, useWindowSize } from 'app/hooks';
 import { AnimationScope, motion, useAnimate } from 'framer-motion';
 import { clamp, mapRange } from 'lib/maths';
@@ -20,6 +21,7 @@ export const ExperienceSection: FC<PropsWithChildren<SectionProps>> = ({
     useAnimate();
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const sectionPadding = useSelector((store) => store.app.sectionPadding);
+  const { primaryColor, headerHeight } = useSelector((store) => store.app);
   const isDesktop = windowSize.width > 770;
 
   useScroll(({ scroll }) => {
@@ -34,7 +36,8 @@ export const ExperienceSection: FC<PropsWithChildren<SectionProps>> = ({
     }
 
     const start = scroll + wrapperRect.left;
-    const end = start + (wrapperRect.width - windowSize.width);
+    const widthDifference = wrapperRect.width - windowSize.width;
+    const end = start + widthDifference - sectionPadding.y;
 
     const canAnimate = scroll > start && scroll < end;
     if (!canAnimate) return;
@@ -46,9 +49,17 @@ export const ExperienceSection: FC<PropsWithChildren<SectionProps>> = ({
     const offset = end + windowSize.width - elementWidth;
     const x = (scroll > offset ? offset : scroll) - start;
 
-    let y = progress * elementRect.height * -1.0;
-    const maxScrollYpos = -(elementRect.height - sectionPadding.y);
-    y = clamp(maxScrollYpos, y, elementRect.height);
+    const titleMarginTopPercentage = EXPERIENCE_TITLE_MARGIN_TOP * 0.01;
+    const titleMarginTop = windowSize.height * titleMarginTopPercentage;
+    const topOffset = titleMarginTop + sectionPadding.y + headerHeight;
+    const innerContentHeight = windowSize.height - topOffset - sectionPadding.y;
+    const maxScrollYpos = -(elementRect.height - innerContentHeight);
+
+    const y = clamp(
+      maxScrollYpos,
+      progress * elementRect.height * -1.0,
+      elementRect.height
+    );
 
     animate(animationRef.current, { y, x }, { duration: 0 });
   });

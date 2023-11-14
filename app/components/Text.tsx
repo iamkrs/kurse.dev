@@ -1,21 +1,29 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 type TextProps = {
   $small?: boolean;
+  $medium?: boolean;
   $noWrap?: boolean;
   $primaryColor?: boolean;
 };
 
-const StyledText = styled.h1<TextProps>`
+const StyledText = styled.span<TextProps>`
   font-weight: 400;
   font-size: 29px;
   line-height: 37px;
 
   ${({ $small }) =>
     $small &&
-    `
-      font-size: 18px;
+    css`
+      font-size: 14px;
       line-height: 18px;
+    `}
+
+  ${({ $medium }) =>
+    $medium &&
+    css`
+      font-size: 26px;
+      line-height: 30px;
     `}
 
   ${({ $noWrap }) =>

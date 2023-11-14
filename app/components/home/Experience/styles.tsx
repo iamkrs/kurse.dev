@@ -7,9 +7,7 @@ export const Wrapper = styled(Flex)<WrapperProps>`
     ${({ $isLast }) =>
       !$isLast &&
       css`
-        /* TODO: Remove? */
-        /* margin-right: 150px; */
-        /* border-right: 1px solid #1c1c1c; */
+        margin-bottom: 66px;
       `}
   }
 `;
@@ -19,13 +17,17 @@ export const DescriptionsGrid = styled(Flex)`
 `;
 
 export const Description = styled(Text)<DescriptionProps>`
-  padding: 17px 44px 17px 0;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   line-height: 2rem;
+
+  margin-bottom: 10px;
+
+  strong {
+    // TODO: medium font weight
+    font-weight: 600;
+  }
 `;
 
 export const InfoWrapper = styled(Flex)`
-  @media screen and (min-width: 771px) {
-    margin-right: 99px;
-  }
+  margin-bottom: 33px;
 `;

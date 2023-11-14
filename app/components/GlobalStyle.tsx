@@ -6,26 +6,24 @@ import reset from 'styled-reset';
 
 type GlobalStyleProps = {
   $primaryColor: string;
-  $headerHeight: string;
+  $backgroundColor: string;
+  $headerHeight: number;
+  $preventScroll: boolean;
 };
 
 const StyledGlobalStyle = createGlobalStyle<GlobalStyleProps>`
   ${reset}
   
   :root{
-    --primary-color: ${(props) => props.$primaryColor};
-    --header-height: ${(props) => props.$headerHeight};
+    --primary-color: ${({ $primaryColor }) => $primaryColor};
+    --background-color: ${({ $backgroundColor }) => $backgroundColor};
+    --header-height: ${({ $headerHeight }) => $headerHeight}px;
   }
 
   html {
     font-size: 16px;
     box-sizing: border-box;
-    overflow-x: hidden;
-
-    @media screen and (min-width: 771px) {
-      overflow-y: hidden;
-      overflow-x: initial;
-    }
+    overflow: hidden;
   }
 
   *, *:before, *:after {
@@ -40,12 +38,15 @@ const StyledGlobalStyle = createGlobalStyle<GlobalStyleProps>`
 `;
 
 const GlobalStyle = () => {
-  const { primaryColor, headerHeight } = useSelector((store) => store.app);
+  const { primaryColor, headerHeight, preventScroll, backgroundColor } =
+    useSelector((store) => store.app);
 
   return (
     <StyledGlobalStyle
       $primaryColor={primaryColor}
       $headerHeight={headerHeight}
+      $preventScroll={preventScroll}
+      $backgroundColor={backgroundColor}
     />
   );
 };

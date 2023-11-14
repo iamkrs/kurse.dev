@@ -2,6 +2,7 @@ export { CheckedIcon } from './CheckedIcon';
 export { DoubleArrow } from './DoubleArrow';
 export { Experience } from './Experience';
 export { ExperienceSection } from './ExperienceSection';
+export { ExperienceTitle } from './ExperienceTitle';
 export { GithubIcon } from './GithubIcon';
 export { Hobbie } from './Hobbie';
 export { HobbiesTriangles } from './HobbiesTriangles';

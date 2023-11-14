@@ -23,7 +23,11 @@ import {
   Title,
   Tooltip,
 } from 'app/components';
-import { Experience, ExperienceSection } from 'app/components/home';
+import {
+  Experience,
+  ExperienceSection,
+  ExperienceTitle,
+} from 'app/components/home';
 import { EXPERIENCES } from 'app/constants';
 import { useScroll } from 'app/hooks/useScroll';
 import type { NextPage } from 'next';
@@ -40,6 +44,7 @@ const HomePage: NextPage = () => {
 
   const experienceTimeUntilNow =
     new Date('2014-09-01').getTime() - new Date().getTime();
+
   const experienceYears = Math.abs(
     new Date(experienceTimeUntilNow).getUTCFullYear() - 1970
   );
@@ -92,7 +97,7 @@ const HomePage: NextPage = () => {
       <Section $width={800} $primaryColor>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
-          <Title>{t('historyTitle')}</Title>
+          <Title $primaryColor>{t('historyTitle')}</Title>
           <Text>
             {t.rich('historyText', {
               strong: (chunks) => <strong>{chunks}</strong>,
@@ -104,7 +109,7 @@ const HomePage: NextPage = () => {
       <Section $width={900}>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
-          <Title style={{ marginBottom: 77 }}>{t('hobbiesTitle')}</Title>
+          <Title>{t('hobbiesTitle')}</Title>
           <Flex $columnOnMobile>
             <Flex $column>
               <HobbiesTriangles />
@@ -155,7 +160,9 @@ const HomePage: NextPage = () => {
       </Section>
       <ExperienceSection $primaryColor>
         <Flex $column $fullHeight>
-          <Title style={{ marginBottom: 77 }}>{t('experienceTitle')}</Title>
+          <ExperienceTitle $primaryColor>
+            {t('experienceTitle')}
+          </ExperienceTitle>
           <Spacing $horizontal $mobile $size='25px' />
           <Flex $column>
             {EXPERIENCES.map((experience, index) => (
@@ -171,7 +178,7 @@ const HomePage: NextPage = () => {
       <Section>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
-          <Title style={{ marginBottom: 77 }}>{t('educationTitle')}</Title>
+          <Title>{t('educationTitle')}</Title>
           <Flex $column>
             <Text style={{ marginRight: 15 }}>
               {t('educationDesignDegreeName')}
@@ -186,7 +193,7 @@ const HomePage: NextPage = () => {
       <Section $primaryColor>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
-          <Title style={{ marginBottom: 77 }}>{t('certificatesTitle')}</Title>
+          <Title $primaryColor>{t('certificatesTitle')}</Title>
           <Flex $column>
             <Flex $column>
               <Link

@@ -1,5 +1,7 @@
 import { Experience } from 'app/types';
 
+export const EXPERIENCE_TITLE_MARGIN_TOP = 18;
+
 export const EXPERIENCES: Experience[] = [
   {
     name: 'Hero99',
