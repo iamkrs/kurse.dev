@@ -1,4 +1,3 @@
-import { useLenis } from 'lib/lenis';
 import { useEffect } from 'react';
 
 type UseScroll = (
@@ -7,15 +6,15 @@ type UseScroll = (
 ) => void;
 
 export const useScroll: UseScroll = (callback, deps = []) => {
-  const lenis = useLenis();
-
   useEffect(() => {
-    if (!lenis) return;
-    lenis.on('scroll', callback);
-    lenis.emit();
+    const scrollEventHandler = (e: Event) => {
+      callback({ scroll: window.scrollX });
+    };
+
+    window.addEventListener('scroll', scrollEventHandler);
 
     return () => {
-      lenis.off('scroll', callback);
+      window.removeEventListener('scroll', scrollEventHandler);
     };
-  }, [lenis, callback, [...deps]]);
+  }, [callback, [...deps]]);
 };

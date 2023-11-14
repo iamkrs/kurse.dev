@@ -21,10 +21,12 @@ export const ExperienceSection: FC<PropsWithChildren<SectionProps>> = ({
     useAnimate();
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const sectionPadding = useSelector((store) => store.app.sectionPadding);
-  const { primaryColor, headerHeight } = useSelector((store) => store.app);
+  const { headerHeight } = useSelector((store) => store.app);
   const isDesktop = windowSize.width > 770;
 
   useScroll(({ scroll }) => {
+    console.log({ scroll });
+
     const elementRect = animationRef.current?.getBoundingClientRect();
     const wrapperRect = wrapperRef.current?.getBoundingClientRect();
 
@@ -37,7 +39,7 @@ export const ExperienceSection: FC<PropsWithChildren<SectionProps>> = ({
 
     const start = scroll + wrapperRect.left;
     const widthDifference = wrapperRect.width - windowSize.width;
-    const end = start + widthDifference - sectionPadding.y;
+    const end = start + widthDifference - sectionPadding.x;
 
     const canAnimate = scroll > start && scroll < end;
     if (!canAnimate) return;

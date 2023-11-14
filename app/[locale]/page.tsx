@@ -178,7 +178,7 @@ const HomePage: NextPage = () => {
             <Text style={{ marginRight: 15 }}>
               {t('educationDesignDegreeName')}
             </Text>
-            <Text style={{ marginRight: 15, marginBottom: 80 }}>
+            <Text style={{ marginRight: 15 }}>
               <strong>{t('educationDesignDegreeSchool')}</strong>
             </Text>
           </Flex>

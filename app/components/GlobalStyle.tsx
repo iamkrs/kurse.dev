@@ -38,15 +38,14 @@ const StyledGlobalStyle = createGlobalStyle<GlobalStyleProps>`
 `;
 
 const GlobalStyle = () => {
-  const { primaryColor, headerHeight, preventScroll, backgroundColor } =
-    useSelector((store) => store.app);
+  const appState = useSelector((store) => store.app);
 
   return (
     <StyledGlobalStyle
-      $primaryColor={primaryColor}
-      $headerHeight={headerHeight}
-      $preventScroll={preventScroll}
-      $backgroundColor={backgroundColor}
+      $primaryColor={appState.primaryColor}
+      $headerHeight={appState.headerHeight}
+      $preventScroll={appState.preventScroll}
+      $backgroundColor={appState.backgroundColor}
     />
   );
 };

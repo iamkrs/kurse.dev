@@ -2,10 +2,9 @@
 
 import { useSelector } from 'lib/redux';
 import { usePathname } from 'next/navigation';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 export function useHorizontalScroll() {
-  const elRef = useRef<HTMLElement | null>(null);
   const preventScroll = useSelector((store) => store.app.preventScroll);
   const pathname = usePathname();
 
@@ -19,9 +18,9 @@ export function useHorizontalScroll() {
       const onWheel = (e: any) => {
         if (window.innerWidth > 771) {
           if (e.deltaY == 0) return;
-
           if (!preventScroll) {
-            el.scrollTo(el.scrollX + e.deltaY, 0);
+            e.preventDefault();
+            el.scrollTo(el.scrollX + e.deltaY * 0.333, 0);
           }
         } else {
           if (!preventScroll) {
@@ -33,10 +32,8 @@ export function useHorizontalScroll() {
           }
         }
       };
-      el.addEventListener('wheel', onWheel, { passive: true });
+      el.addEventListener('wheel', onWheel, { passive: false });
       return () => el.removeEventListener('wheel', onWheel);
     }
   }, [preventScroll]);
-
-  return elRef;
 }
