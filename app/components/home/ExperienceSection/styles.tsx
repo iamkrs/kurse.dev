@@ -15,6 +15,6 @@ export const ChildrenWrapper = styled(Flex)`
 
 export const ContentWrapper = styled(Flex)`
   @media screen and (min-width: 771px) {
-    padding-right: 3333px;
+    padding-right: 6000px;
   }
 `;

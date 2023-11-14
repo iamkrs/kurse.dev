@@ -29,7 +29,6 @@ import {
   ExperienceTitle,
 } from 'app/components/home';
 import { EXPERIENCES } from 'app/constants';
-import { useScroll } from 'app/hooks/useScroll';
 import type { NextPage } from 'next';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -37,10 +36,6 @@ import Link from 'next/link';
 const HomePage: NextPage = () => {
   const locale = useLocale();
   const t = useTranslations('home');
-
-  useScroll(({ scroll }) => {
-    console.log({ id: 'HomePage', scroll });
-  });
 
   const experienceTimeUntilNow =
     new Date('2014-09-01').getTime() - new Date().getTime();

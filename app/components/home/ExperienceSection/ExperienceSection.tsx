@@ -45,6 +45,8 @@ export const ExperienceSection: FC<PropsWithChildren<SectionProps>> = ({
     let progress = mapRange(start, end, scroll, 0, 1);
     progress = clamp(0, progress, 1);
 
+    console.log({ progress });
+
     const elementWidth = elementRect.width + sectionPadding.x * 2;
     const offset = end + windowSize.width - elementWidth;
     const x = (scroll > offset ? offset : scroll) - start;
