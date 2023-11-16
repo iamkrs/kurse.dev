@@ -14,7 +14,6 @@ import {
   InstagramIcon,
   MainTitle,
   MalIcon,
-  ScrollDown,
   Section,
   Skill,
   SocialIcon,
@@ -23,6 +22,7 @@ import {
   Title,
   Tooltip,
 } from 'app/components';
+import { ScrollDownFlex } from 'app/components/ScrollDownFlex';
 import {
   Experience,
   ExperienceSection,
@@ -46,8 +46,8 @@ const HomePage: NextPage = () => {
 
   return (
     <>
-      <Section $width={733}>
-        <Flex $column $justifyCenter $fullHeight>
+      <Section>
+        <ScrollDownFlex $column $justifyCenter $fullHeight>
           <Flex>
             <MainTitle>Kurse</MainTitle>
             <CheckedIcon
@@ -63,7 +63,7 @@ const HomePage: NextPage = () => {
               />
             </CheckedIcon>
           </Flex>
-          <Text style={{ marginBottom: 23, paddingRight: 100 }}>
+          <Text style={{ marginBottom: 23 }}>
             {t('aboutMeText', { experienceYears })}
           </Text>
           <Email>lucas.kurse@hotmail.com</Email>
@@ -85,11 +85,10 @@ const HomePage: NextPage = () => {
               <InstagramIcon />
             </SocialIcon>
           </Flex>
-        </Flex>
-        <ScrollDown />
+        </ScrollDownFlex>
         <DotsStripe $right $hideOnMobile />
       </Section>
-      <Section $width={800} $primaryColor>
+      <Section $primaryColor>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title $primaryColor>{t('historyTitle')}</Title>
@@ -101,7 +100,7 @@ const HomePage: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width={900}>
+      <Section>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title>{t('hobbiesTitle')}</Title>
@@ -212,7 +211,7 @@ const HomePage: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width={1113}>
+      <Section>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 77 }}>{t('skillsTitle')}</Title>

@@ -5,12 +5,7 @@ export type WindowSize = {
   height: number;
 };
 
-// export const getWindowSize: () => WindowSize = () => ({
-//   width: typeof window !== 'undefined' ? window.innerWidth : 0,
-//   height: typeof window !== 'undefined' ? window.innerHeight : 0,
-// });
-
 export const getWindowSize: () => WindowSize = () => ({
-  width: window.innerWidth,
-  height: window.innerHeight,
+  width: typeof window !== 'undefined' ? window.innerWidth : 0,
+  height: typeof window !== 'undefined' ? window.innerHeight : 0,
 });

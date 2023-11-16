@@ -35,7 +35,7 @@ const CustomerLoyaltyAppPage: NextPage = () => {
 
   return (
     <>
-      <Section $width={locale === 'en' ? 1145 : 1300} $primaryColor>
+      <Section $primaryColor>
         <Flex $column $justifyCenter $fullHeight>
           <Project $noMargin $last>
             <CustomerLoyaltyAppSvg />
@@ -51,7 +51,7 @@ const CustomerLoyaltyAppPage: NextPage = () => {
         <ScrollDown />
         <DotsStripe $right $hideOnMobile />
       </Section>
-      <Section $width={1106}>
+      <Section>
         <DotsStripe $left $width='32px' />
         <About>
           <Title style={{ marginBottom: 55 }}>{t('projectsAboutTitle')}</Title>
@@ -62,7 +62,7 @@ const CustomerLoyaltyAppPage: NextPage = () => {
           </Credits>
         </About>
       </Section>
-      <Section $width={1106} $primaryColor>
+      <Section $primaryColor>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 55 }}>
@@ -78,7 +78,7 @@ const CustomerLoyaltyAppPage: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width={1206}>
+      <Section>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 55 }}>
@@ -111,7 +111,7 @@ const CustomerLoyaltyAppPage: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width={1013} $primaryColor>
+      <Section $primaryColor>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <CheckOutLink href='/projects/react'>

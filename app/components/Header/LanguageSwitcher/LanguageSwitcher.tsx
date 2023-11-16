@@ -1,8 +1,13 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { toggleLanguageSwitcher, useDispatch, useSelector } from 'lib/redux';
+import {
+  selectShowLanguageSwitcher,
+  toggleLanguageSwitcher,
+  useDispatch,
+  useSelector,
+} from 'lib/redux';
 import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
-import { FC } from 'react';
+import { FC, MouseEvent } from 'react';
 import styled from 'styled-components';
 import Item from '../Item';
 import { BrazilFlag } from './BrazilFlag';
@@ -29,17 +34,15 @@ export const LanguageSwitcher: FC = () => {
   // regex to remove locale const from pathname
   const formattedPathname = pathname?.replace(/^\/(br|en)/, '/');
 
-  const showLanguageSwitcher = useSelector(
-    // TODO: Need selectors?
-    (store) => store.app.showLanguageSwitcher
-  );
+  const showLanguageSwitcher = useSelector(selectShowLanguageSwitcher);
 
-  const handleChangeLanguage = (language: string) => (event: any) => {
-    event.preventDefault();
+  const handleChangeLanguage =
+    (language: string) => (e: MouseEvent<HTMLDivElement>) => {
+      e.preventDefault();
 
-    dispatch(toggleLanguageSwitcher());
-    router.push(`/${language}${formattedPathname}`);
-  };
+      dispatch(toggleLanguageSwitcher());
+      router.push(`/${language}${formattedPathname}`);
+    };
 
   return (
     <AnimatePresence>

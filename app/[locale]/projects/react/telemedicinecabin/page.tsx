@@ -34,7 +34,7 @@ const TelemedicineCabin: NextPage = () => {
 
   return (
     <>
-      <Section $width={1145} $primaryColor>
+      <Section $primaryColor>
         <Flex $column $justifyCenter $fullHeight>
           <Project $noMargin $last>
             <TelemedicineCabinSvg />
@@ -50,7 +50,7 @@ const TelemedicineCabin: NextPage = () => {
         <ScrollDown />
         <DotsStripe $right $hideOnMobile />
       </Section>
-      <Section $width={1106}>
+      <Section>
         <DotsStripe $left $width='32px' />
         <About>
           <Title style={{ marginBottom: 55 }}>{t('projectsAboutTitle')}</Title>
@@ -65,7 +65,7 @@ const TelemedicineCabin: NextPage = () => {
           </Credits>
         </About>
       </Section>
-      <Section $width={1106} $primaryColor>
+      <Section $primaryColor>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 55 }}>
@@ -82,7 +82,7 @@ const TelemedicineCabin: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width={1900}>
+      <Section>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 55 }}>
@@ -115,7 +115,7 @@ const TelemedicineCabin: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width={1013} $primaryColor>
+      <Section $primaryColor>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <CheckOutLink href='/projects/reactnative'>

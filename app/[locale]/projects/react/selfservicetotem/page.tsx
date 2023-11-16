@@ -28,7 +28,7 @@ const SelfServiceTotemPage: NextPage = () => {
 
   return (
     <>
-      <Section $width={1145} $primaryColor>
+      <Section $primaryColor>
         <Flex $column $justifyCenter $fullHeight>
           <Project $noMargin $last>
             <SelfServiceTotemSvg />
@@ -44,7 +44,7 @@ const SelfServiceTotemPage: NextPage = () => {
         <ScrollDown />
         <DotsStripe $right $hideOnMobile />
       </Section>
-      <Section $width={1106}>
+      <Section>
         <DotsStripe $left $width='32px' />
         <About>
           <Title style={{ marginBottom: 55 }}>{t('projectsAboutTitle')}</Title>
@@ -59,7 +59,7 @@ const SelfServiceTotemPage: NextPage = () => {
           </Credits>
         </About>
       </Section>
-      <Section $width={1106} $primaryColor>
+      <Section $primaryColor>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 55 }}>
@@ -75,7 +75,7 @@ const SelfServiceTotemPage: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width={1406}>
+      <Section>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 55 }}>
@@ -95,7 +95,7 @@ const SelfServiceTotemPage: NextPage = () => {
         </Flex>
         <DotsStripe $right />
       </Section>
-      <Section $width={1013} $primaryColor>
+      <Section $primaryColor>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <CheckOutLink href='/projects/react'>

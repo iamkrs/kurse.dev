@@ -25,7 +25,7 @@ export const useAnimationFrame = (
     const deltaTime = timestamp - previousTimeRef.current;
 
     if (deltaTime > frameDuration) {
-      callback(deltaTime);
+      callback(timestamp);
       previousTimeRef.current = timestamp;
     }
   };

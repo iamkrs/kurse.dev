@@ -2,7 +2,7 @@ import { CSSProperties, FC, PropsWithChildren } from 'react';
 import styled, { css } from 'styled-components';
 
 type ItemProps = PropsWithChildren<{
-  onClick?: (e?: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
   style?: CSSProperties;
   $borderLeft?: boolean;
   $chevronDown?: boolean;

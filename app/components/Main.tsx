@@ -1,6 +1,5 @@
 'use client';
 
-import { useHorizontalScroll, useSectionPadding } from 'app/hooks';
 import { FC, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
@@ -16,8 +15,5 @@ const StyledMain = styled.main`
 `;
 
 export const Main: FC<PropsWithChildren> = ({ children, ...props }) => {
-  useHorizontalScroll();
-  useSectionPadding();
-
   return <StyledMain {...props}>{children}</StyledMain>;
 };
