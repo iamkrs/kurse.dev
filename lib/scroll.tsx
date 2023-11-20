@@ -1,10 +1,11 @@
 'use client';
 
+import { useWindowSize } from 'app/hooks';
 import { selectPreventScroll, useSelector } from 'lib/redux';
 import { usePathname } from 'next/navigation';
+import normalizeWheel from 'normalize-wheel';
 import {
   FC,
-  MutableRefObject,
   PropsWithChildren,
   createContext,
   useContext,
@@ -20,36 +21,47 @@ export const ScrollProvider: FC<PropsWithChildren> = ({ children }) => {
   const listeners = useRef<((params: { scroll: number }) => void)[]>([]);
   const preventScroll = useSelector(selectPreventScroll);
   const pathname = usePathname();
+  const windowSize = useWindowSize();
 
   useEffect(() => {
     window.scrollTo({ left: 0, behavior: 'instant' });
   }, [pathname]);
 
   useEffect(() => {
-    const isDesktop = window.innerWidth > 771;
-
     if (typeof window !== 'undefined') {
-      const handleScrollEvent = (e: Event) => {
-        if (isDesktop) {
-          listeners.current.forEach((cb) => cb({ scroll: window.scrollX }));
-        }
+      const isDesktop = windowSize.width > 771;
+
+      const handleScrollEvent = () => {
+        const { scrollX, scrollY } = window;
+        listeners.current.forEach((cb) =>
+          cb({ scroll: isDesktop ? scrollX : scrollY })
+        );
       };
 
       const handleWheelEvent = (e: WheelEvent) => {
         if (isDesktop && !preventScroll) {
-          window.scrollTo(window.scrollX + e.deltaY, 0);
+          // TODO - persist scroll on resize
+          // when (desktop <-> mobile)
+          // invert (x, y)
+          const normalizedEvent = normalizeWheel(e);
+          const deltaY = normalizedEvent.pixelY;
+          const scrollX = window.scrollX + deltaY;
+          window.scrollTo(scrollX + e.deltaY, 0);
         }
       };
 
       window.addEventListener('scroll', handleScrollEvent, { passive: true });
       window.addEventListener('wheel', handleWheelEvent, { passive: true });
 
+      handleWheelEvent({ deltaY: 0 } as WheelEvent);
+      handleScrollEvent();
+
       return () => {
         window.removeEventListener('scroll', handleScrollEvent);
-        window.removeEventListener('wheel', handleScrollEvent);
+        window.removeEventListener('wheel', handleWheelEvent);
       };
     }
-  }, [preventScroll]);
+  }, [preventScroll, windowSize]);
 
   return (
     <ScrollContext.Provider
@@ -87,5 +99,5 @@ export const useScroll = (
 type ScrollCallback = (params: { scroll: number }) => void;
 
 type ScrollContextProps = {
-  listeners: MutableRefObject<ScrollCallback[]>;
+  listeners: React.MutableRefObject<ScrollCallback[]>;
 };

@@ -9,7 +9,6 @@ export const useWindowSize = () => {
   useLayoutEffect(() => {
     const handleSize = () => {
       setWindowSize(getWindowSize);
-      console.log(getWindowSize());
     };
 
     handleSize();

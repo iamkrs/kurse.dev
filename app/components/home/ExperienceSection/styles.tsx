@@ -18,3 +18,14 @@ export const ContentWrapper = styled(Flex)`
     padding-right: 6000px;
   }
 `;
+
+export const Content = styled(Flex)`
+  left: 0;
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+
+  @media screen and (min-width: 771px) {
+    width: calc(100vw - 32vw);
+  }
+`;
