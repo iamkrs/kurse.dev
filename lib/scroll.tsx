@@ -41,8 +41,7 @@ export const ScrollProvider: FC<PropsWithChildren> = ({ children }) => {
       const handleWheelEvent = (e: WheelEvent) => {
         if (isDesktop && !preventScroll) {
           // TODO - persist scroll on resize
-          // when (desktop <-> mobile)
-          // invert (x, y)
+          // (desktop <-> mobile) invert (x, y)
           const normalizedEvent = normalizeWheel(e);
           const deltaY = normalizedEvent.pixelY;
           const scrollX = window.scrollX + deltaY;
@@ -81,12 +80,10 @@ export const useScroll = (
 
   useEffect(() => {
     if (callback) {
-      listeners.current.push(callback);
+      const index = listeners.current.push(callback) - 1;
 
       return () => {
-        listeners.current = listeners.current.filter(
-          (cb: (params: { scroll: number }) => void) => cb !== callback
-        );
+        listeners.current.splice(index, 1);
       };
     }
   }, [callback]);
