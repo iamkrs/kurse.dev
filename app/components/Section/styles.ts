@@ -1,12 +1,7 @@
-'use client';
-
 import styled, { css } from 'styled-components';
+import { SectionProps } from './Section';
 
-export type SectionProps = {
-  $primaryColor?: boolean;
-};
-
-export const Section = styled.section<SectionProps>`
+export const Wrapper = styled.section<SectionProps>`
   position: relative;
   padding: 90px 30px 75px 30px;
 
@@ -32,5 +27,15 @@ export const Section = styled.section<SectionProps>`
   @media screen and (min-width: 771px) {
     height: 100%;
     padding: 6vw 16vw;
+    width: calc(clamp(20rem, 100vw, 120rem) - 137px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+export const ChildrenWrapper = styled.div`
+  @media screen and (min-width: 1800px) {
+    max-width: clamp(20rem, 40vw, 52rem);
   }
 `;

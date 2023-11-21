@@ -1,4 +1,5 @@
-import { DotsStripe, Section, SectionProps } from 'app/components';
+import { DotsStripe, SectionProps } from 'app/components';
+import { ChildrenWrapper } from 'app/components/Section/styles';
 import { useWindowSize } from 'app/hooks';
 import { getSectionPadding } from 'app/utils/getSectionPadding';
 import { motion, useAnimate } from 'framer-motion';
@@ -7,7 +8,7 @@ import { useSelector } from 'lib/redux';
 import { useScroll } from 'lib/scroll';
 import { FC, PropsWithChildren, useRef } from 'react';
 import { ANIMATION_DURATION } from './constants';
-import { ChildrenWrapper, Content, ContentWrapper, Wrapper } from './styles';
+import { Content, ContentWrapper, StyledSection, Wrapper } from './styles';
 import { getCurrentPos, getProgressPos, getThreshold } from './utils';
 
 type WindowSize = {
@@ -78,9 +79,11 @@ export const ExperienceSection: FC<PropsWithChildren<SectionProps>> = ({
     animate(animationRef.current, { x, y }, ANIMATION_DURATION);
   });
 
+  console.log({ id: 'experience-section', props });
+
   return (
     <Wrapper ref={wrapperRef}>
-      <Section {...props}>
+      <StyledSection {...props}>
         <DotsStripe $left $width='32px' />
 
         <ContentWrapper>
@@ -89,7 +92,7 @@ export const ExperienceSection: FC<PropsWithChildren<SectionProps>> = ({
           </Content>
         </ContentWrapper>
         <DotsStripe $right />
-      </Section>
+      </StyledSection>
     </Wrapper>
   );
 };

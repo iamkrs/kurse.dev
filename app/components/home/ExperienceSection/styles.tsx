@@ -1,15 +1,10 @@
-import { Flex } from 'app/components';
+import { Flex, SectionProps } from 'app/components';
+import { Wrapper as SectionWrapper } from 'app/components/Section/styles';
 import styled from 'styled-components';
 import { WrapperProps } from './types';
 
 export const Wrapper = styled(Flex)<WrapperProps>`
   @media screen and (min-width: 771px) {
-  }
-`;
-
-export const ChildrenWrapper = styled(Flex)`
-  @media screen and (min-width: 1800px) {
-    max-width: 40vw;
   }
 `;
 
@@ -27,5 +22,11 @@ export const Content = styled(Flex)`
 
   @media screen and (min-width: 771px) {
     width: calc(100vw - 32vw);
+  }
+`;
+
+export const StyledSection = styled(SectionWrapper)<SectionProps>`
+  @media screen and (min-width: 771px) {
+    width: initial;
   }
 `;
