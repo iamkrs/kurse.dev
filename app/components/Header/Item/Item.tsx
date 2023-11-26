@@ -1,7 +1,8 @@
 import { CSSProperties, FC, PropsWithChildren } from 'react';
-import styled, { css } from 'styled-components';
+import { Wrapper } from './Wrapper';
+import { ChevronDown } from './styles';
 
-type ItemProps = PropsWithChildren<{
+export type ItemProps = PropsWithChildren<{
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
   style?: CSSProperties;
   $borderLeft?: boolean;
@@ -9,45 +10,9 @@ type ItemProps = PropsWithChildren<{
   $last?: boolean;
 }>;
 
-const StyledItem = styled.div<ItemProps>`
-  height: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: ${({ $chevronDown }) => ($chevronDown ? '137px' : '137px')};
-  ${({ $borderLeft }) =>
-    $borderLeft
-      ? css`
-          border-left: 2px solid var(--primary-color);
-        `
-      : css`
-          border-right: 2px solid var(--primary-color);
-        `}
-  cursor: pointer;
-
-  ${({ $last }) =>
-    $last &&
-    css`
-      margin-left: auto !important;
-
-      @media screen and (max-width: 771px) {
-        border-left: none !important;
-      }
-    `}
-
-  a {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-`;
-
-const Item: FC<ItemProps> = ({ children, ...props }) => {
+export const Item: FC<ItemProps> = ({ children, ...props }) => {
   return (
-    <StyledItem {...props}>
+    <Wrapper {...props}>
       {children}
       {props.$chevronDown && (
         <ChevronDown
@@ -65,12 +30,6 @@ const Item: FC<ItemProps> = ({ children, ...props }) => {
           />
         </ChevronDown>
       )}
-    </StyledItem>
+    </Wrapper>
   );
 };
-
-export default Item;
-
-const ChevronDown = styled.svg`
-  margin-left: 7px;
-`;

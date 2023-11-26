@@ -71,7 +71,7 @@ const ReactProjectsPage: NextPage = () => {
         <ScrollDown />
         <DotsStripe $right $hideOnMobile />
       </Section>
-      <Section $primaryColor>
+      <Section $primaryColor $autoWidth>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 77 }}>{t('projectsTitle')}</Title>

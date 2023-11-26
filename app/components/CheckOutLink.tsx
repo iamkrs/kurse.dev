@@ -8,7 +8,7 @@ type CheckOutLinkProps = PropsWithChildren<{
 }>;
 
 const StyledLink = styled(Link)<{ $primaryColor?: boolean }>`
-  font-size: 29px;
+  font-size: 2rem;
   text-decoration: none;
   color: #1c1c1c;
   font-weight: 700;

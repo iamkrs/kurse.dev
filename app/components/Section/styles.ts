@@ -31,11 +31,24 @@ export const Wrapper = styled.section<SectionProps>`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    ${({ $autoWidth }) =>
+      $autoWidth &&
+      css`
+        width: auto;
+      `}
   }
 `;
 
-export const ChildrenWrapper = styled.div`
+export const ChildrenWrapper = styled.div<SectionProps>`
   @media screen and (min-width: 1800px) {
+    width: 100%;
     max-width: clamp(20rem, 40vw, 52rem);
+
+    ${({ $autoWidth }) =>
+      $autoWidth &&
+      css`
+        max-width: initial;
+      `}
   }
 `;

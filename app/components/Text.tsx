@@ -9,8 +9,8 @@ type TextProps = {
 
 const StyledText = styled.span<TextProps>`
   font-weight: 400;
-  font-size: 29px;
-  line-height: 37px;
+  font-size: 2rem;
+  line-height: 2.6rem;
 
   ${({ $small }) =>
     $small &&

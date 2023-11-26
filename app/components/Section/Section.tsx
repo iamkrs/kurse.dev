@@ -5,6 +5,7 @@ import { ChildrenWrapper, Wrapper } from './styles';
 
 export type SectionProps = {
   $primaryColor?: boolean;
+  $autoWidth?: boolean;
 };
 
 export const Section: FC<PropsWithChildren<SectionProps>> = ({
@@ -13,7 +14,7 @@ export const Section: FC<PropsWithChildren<SectionProps>> = ({
 }) => {
   return (
     <Wrapper {...props}>
-      <ChildrenWrapper>{children}</ChildrenWrapper>
+      <ChildrenWrapper {...props}>{children}</ChildrenWrapper>
     </Wrapper>
   );
 };

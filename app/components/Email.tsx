@@ -6,9 +6,10 @@ const StyledEmail = styled.div`
   align-items: center;
   justify-content: center;
   font-weight: 400;
-  font-size: 29px;
-  line-height: 37px;
-  margin-bottom: 30px;
+  font-size: 2rem;
+  line-height: 2.31rem;
+  margin-bottom: 2.666rem;
+  font-weight: 700;
 
   @media (max-width: 484px) {
     font-size: 6vw;

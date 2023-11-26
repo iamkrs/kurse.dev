@@ -3,16 +3,16 @@
 import { toggleLanguageSwitcher, useDispatch } from 'lib/redux';
 import { useLocale } from 'next-intl';
 import Link from 'next/link';
-import styled from 'styled-components';
-import Item from './Item';
+import { Item } from './Item';
 import { ActiveLanguage, LanguageSwitcher } from './LanguageSwitcher';
+import { Wrapper } from './styles';
 
-const Header = () => {
+export const Header = () => {
   const dispatch = useDispatch();
   const locale = useLocale();
 
   return (
-    <StyledHeader>
+    <Wrapper>
       <Item>
         <Link href={`/${locale}/`}>
           <svg
@@ -150,20 +150,6 @@ const Header = () => {
         <ActiveLanguage />
       </Item>
       <LanguageSwitcher />
-    </StyledHeader>
+    </Wrapper>
   );
 };
-
-export { Header };
-
-export const StyledHeader = styled.header`
-  display: flex;
-  height: 137px;
-  border-bottom: 2px solid var(--primary-color);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  background-color: #1c1c1c;
-`;

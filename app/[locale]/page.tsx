@@ -51,8 +51,6 @@ const HomePage: NextPage = () => {
           <Flex>
             <MainTitle>Kurse</MainTitle>
             <CheckedIcon
-              width='34'
-              height='32'
               viewBox='0 0 34 32'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
@@ -63,7 +61,7 @@ const HomePage: NextPage = () => {
               />
             </CheckedIcon>
           </Flex>
-          <Text style={{ marginBottom: 23 }}>
+          <Text style={{ marginBottom: '2.444rem' }}>
             {t('aboutMeText', { experienceYears })}
           </Text>
           <Email>lucas.kurse@hotmail.com</Email>

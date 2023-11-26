@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 const initialState: AppSliceState = {
   primaryColor: '#EBFF00',
   backgroundColor: '#1C1C1C',
-  headerHeight: 137,
+  headerHeight: 8.56,
   showLanguageSwitcher: false,
   preventScroll: false,
 };

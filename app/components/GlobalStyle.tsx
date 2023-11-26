@@ -17,11 +17,11 @@ const StyledGlobalStyle = createGlobalStyle<GlobalStyleProps>`
   :root{
     --primary-color: ${({ $primaryColor }) => $primaryColor};
     --background-color: ${({ $backgroundColor }) => $backgroundColor};
-    --header-height: ${({ $headerHeight }) => $headerHeight}px;
+    --header-height: ${({ $headerHeight }) => $headerHeight}rem;
   }
 
   html {
-    font-size: 16px;
+    font-size: clamp(11px, 1vh, 16px);
     box-sizing: border-box;
     overflow-x: hidden;
 

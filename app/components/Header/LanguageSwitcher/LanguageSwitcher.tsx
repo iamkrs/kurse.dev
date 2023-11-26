@@ -9,7 +9,7 @@ import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import { FC, MouseEvent } from 'react';
 import styled from 'styled-components';
-import Item from '../Item';
+import Item from '../Item/Item';
 import { BrazilFlag } from './BrazilFlag';
 import { UsaFlag } from './UsaFlag';
 
