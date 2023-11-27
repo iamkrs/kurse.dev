@@ -12,6 +12,7 @@ const Project = styled.div<ProjectProps>`
 
   @media (min-width: 771px) {
     flex-direction: row;
+    min-width: 66rem;
     ${({ $noMargin }) => !$noMargin && `margin: 0 50px;`}
   }
 

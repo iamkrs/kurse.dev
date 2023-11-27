@@ -10,6 +10,7 @@ export { Header } from './Header/Header';
 export { Main } from './Main';
 export { MainTitle } from './MainTitle';
 export { ScrollDown } from './ScrollDown';
+export { ScrollDownFlex } from './ScrollDownFlex';
 export { Section, type SectionProps } from './Section/Section';
 export { Spacing } from './Spacing';
 export { Text } from './Text';

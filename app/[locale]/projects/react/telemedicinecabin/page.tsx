@@ -5,7 +5,7 @@ import {
   DotsStripe,
   Flex,
   MainTitle,
-  ScrollDown,
+  ScrollDownFlex,
   Section,
   Text,
   Title,
@@ -35,7 +35,7 @@ const TelemedicineCabin: NextPage = () => {
   return (
     <>
       <Section $primaryColor>
-        <Flex $column $justifyCenter $fullHeight>
+        <ScrollDownFlex $column $justifyCenter $fullHeight>
           <Project $noMargin $last>
             <TelemedicineCabinSvg />
             <ProjectDescription>
@@ -46,8 +46,7 @@ const TelemedicineCabin: NextPage = () => {
               {/* <Button filled>Demo</Button> */}
             </ProjectDescription>
           </Project>
-        </Flex>
-        <ScrollDown />
+        </ScrollDownFlex>
         <DotsStripe $right $hideOnMobile />
       </Section>
       <Section>

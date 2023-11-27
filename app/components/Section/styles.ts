@@ -26,9 +26,8 @@ export const Wrapper = styled.section<SectionProps>`
 
   @media screen and (min-width: 771px) {
     height: 100%;
-    padding: clamp(1rem, 16vw, 10rem);
     padding: 10rem;
-    width: calc(clamp(88rem, 100vw, 120rem) - 137px);
+    min-width: calc(88rem);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,10 +41,9 @@ export const Wrapper = styled.section<SectionProps>`
 `;
 
 export const ChildrenWrapper = styled.div<SectionProps>`
-  /* @media screen and (min-width: 1800px) { */
   @media screen and (min-width: 771px) {
     width: 100%;
-    max-width: clamp(66rem, 40vw, 66rem);
+    max-width: clamp(69rem, 40vw, 69rem);
 
     ${({ $autoWidth }) =>
       $autoWidth &&

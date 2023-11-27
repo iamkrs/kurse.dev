@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { CSSProperties, FC, PropsWithChildren, forwardRef } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 type ButtonProps = PropsWithChildren<{
   displayName?: string;
@@ -19,8 +19,6 @@ const Button: FC<ButtonProps> = forwardRef<HTMLAnchorElement, ButtonProps>(
       <StyledButton ref={ref} href={href || '#'} {...props}>
         <ButtonText $fontRegular={$fontRegular}>{children}</ButtonText>
         <ArrowIcon
-          width='17'
-          height='17'
           viewBox='0 0 17 17'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
@@ -45,9 +43,8 @@ export { Button };
 const ButtonText = styled.div<ButtonProps>`
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   font-weight: ${({ $fontRegular }) => ($fontRegular ? '600' : '900')};
-  font-size: ${({ $fontRegular }) => ($fontRegular ? '18px' : '23px')};
+  font-size: ${({ $fontRegular }) => ($fontRegular ? '1.55rem' : '1.99rem')};
 `;
 
 const StyledButton = styled(Link)<ButtonProps>`
@@ -55,31 +52,33 @@ const StyledButton = styled(Link)<ButtonProps>`
   display: flex;
   align-items: flex-start;
   border: 2px solid var(--primary-color);
-  padding: 20px calc(26px + 15px) 20px 26px;
+  padding: 1.4rem 2.6rem 1.2rem 1.6rem;
   cursor: pointer;
   text-decoration: none;
   color: var(--primary-color);
 
   ${({ $filled }) =>
     $filled &&
-    `
-    border-color: #1C1C1C;
-    background-color: #1C1C1C;
-    color: var(--primary-color);
+    css`
+      border-color: #1c1c1c;
+      background-color: #1c1c1c;
+      color: var(--primary-color);
 
-    svg path{
-      stroke: var(--primary-color) !important;
-      fill: var(--primary-color) !important;
-    }
-  `}
+      svg path {
+        stroke: var(--primary-color) !important;
+        fill: var(--primary-color) !important;
+      }
+    `}
 `;
 
 const ArrowIcon = styled.svg`
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 1rem;
+  right: 1rem;
+  width: 1rem;
+  height: 1rem;
 `;
 
 export const ButtonIcon = styled.div`
-  margin: -50% 11px -50% -12px;
+  margin: -50% 0.8rem -50% -0.8rem;
 `;

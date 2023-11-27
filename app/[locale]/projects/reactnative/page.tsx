@@ -6,7 +6,7 @@ import {
   DotsStripe,
   Flex,
   MainTitle,
-  ScrollDown,
+  ScrollDownFlex,
   Section,
   Text,
   Title,
@@ -27,7 +27,7 @@ const ReactNative: NextPage = () => {
   return (
     <>
       <Section>
-        <Flex $column $justifyCenter $fullHeight>
+        <ScrollDownFlex $column $justifyCenter $fullHeight>
           <Flex>
             <MainTitle>React Native</MainTitle>
           </Flex>
@@ -35,14 +35,15 @@ const ReactNative: NextPage = () => {
             {t('description')}
           </Text>
           <ReactNativeLogos />
-        </Flex>
-        <ScrollDown />
+        </ScrollDownFlex>
         <DotsStripe $right $hideOnMobile />
       </Section>
       <Section $primaryColor>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
-          <Title style={{ marginBottom: 77 }}>{t('projectsTitle')}</Title>
+          <Title $primaryColor style={{ marginBottom: 77 }}>
+            {t('projectsTitle')}
+          </Title>
           <Flex $columnOnMobile>
             <Project $last>
               <CustomerLoyaltyAppSvg />

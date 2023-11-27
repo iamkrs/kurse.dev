@@ -14,6 +14,7 @@ import {
   InstagramIcon,
   MainTitle,
   MalIcon,
+  ScrollDownFlex,
   Section,
   Skill,
   SocialIcon,
@@ -22,7 +23,6 @@ import {
   Title,
   Tooltip,
 } from 'app/components';
-import { ScrollDownFlex } from 'app/components/ScrollDownFlex';
 import {
   Experience,
   ExperienceSection,

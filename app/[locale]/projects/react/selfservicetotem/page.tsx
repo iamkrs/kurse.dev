@@ -5,7 +5,7 @@ import {
   DotsStripe,
   Flex,
   MainTitle,
-  ScrollDown,
+  ScrollDownFlex,
   Section,
   Text,
   Title,
@@ -29,7 +29,7 @@ const SelfServiceTotemPage: NextPage = () => {
   return (
     <>
       <Section $primaryColor>
-        <Flex $column $justifyCenter $fullHeight>
+        <ScrollDownFlex $column $justifyCenter $fullHeight>
           <Project $noMargin $last>
             <SelfServiceTotemSvg />
             <ProjectDescription>
@@ -40,8 +40,7 @@ const SelfServiceTotemPage: NextPage = () => {
               {/* <Button filled>Demo</Button> */}
             </ProjectDescription>
           </Project>
-        </Flex>
-        <ScrollDown />
+        </ScrollDownFlex>
         <DotsStripe $right $hideOnMobile />
       </Section>
       <Section>

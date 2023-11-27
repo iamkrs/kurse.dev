@@ -6,7 +6,7 @@ import {
   DotsStripe,
   Flex,
   MainTitle,
-  ScrollDown,
+  ScrollDownFlex,
   Section,
   Text,
   Title,
@@ -27,7 +27,7 @@ const ReactProjectsPage: NextPage = () => {
   return (
     <>
       <Section>
-        <Flex $column $justifyCenter $fullHeight>
+        <ScrollDownFlex $column $justifyCenter $fullHeight>
           <Flex>
             <MainTitle>React</MainTitle>
           </Flex>
@@ -67,14 +67,15 @@ const ReactProjectsPage: NextPage = () => {
               style={{ fill: 'var(--primary-color)' }}
             />
           </svg>
-        </Flex>
-        <ScrollDown />
+        </ScrollDownFlex>
         <DotsStripe $right $hideOnMobile />
       </Section>
       <Section $primaryColor $autoWidth>
         <DotsStripe $left $width='32px' />
         <Flex $column $justifyCenter $fullHeight>
-          <Title style={{ marginBottom: 77 }}>{t('projectsTitle')}</Title>
+          <Title $primaryColor style={{ marginBottom: 77 }}>
+            {t('projectsTitle')}
+          </Title>
           <Flex $columnOnMobile>
             <Project>
               <SelfServiceTotemSvg />
