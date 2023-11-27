@@ -32,12 +32,8 @@ export const Wrapper = styled.div<ItemProps>`
       }
     `}
 
-  a {
+  svg {
     height: calc(${HEADER_HEIGHT}rem - ${HEADER_PADDING * 2}rem);
-
-    svg {
-      height: 100%;
-      width: 100%;
-    }
+    width: 100%;
   }
 `;

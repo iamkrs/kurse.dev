@@ -1,7 +1,7 @@
 import { DotsStripe, SectionProps } from 'app/components';
 import { ChildrenWrapper } from 'app/components/Section/styles';
 import { useWindowSize } from 'app/hooks';
-import { getSectionPadding } from 'app/utils/getSectionPadding';
+import { getSectionPadding } from 'app/utils';
 import { motion, useAnimate } from 'framer-motion';
 import { clamp, mapRange } from 'lib/maths';
 import { useSelector } from 'lib/redux';

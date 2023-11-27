@@ -17,10 +17,10 @@ export const DescriptionsGrid = styled(Flex)`
 `;
 
 export const Description = styled(Text)<DescriptionProps>`
-  font-size: 1.3rem;
-  line-height: 2rem;
+  /* font-size: 1.3rem; */
+  /* line-height: 2rem; */
 
-  margin-bottom: 10px;
+  margin-bottom: 1.333rem;
 
   strong {
     // TODO: medium font weight

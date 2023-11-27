@@ -1,13 +1,9 @@
 'use client';
 
-import { WindowSize, getWindowSize } from './getWindowSize';
+import { getRem } from './getRem';
 
-export const getSectionPadding = (windowSize: WindowSize = getWindowSize()) => {
-  const factor = 0.166;
-  const sectionPadding = {
-    x: Math.floor(windowSize.width * factor),
-    y: Math.floor((windowSize.width * factor) / 2),
-  };
+export const getSectionPadding = () => {
+  const x = 10 * getRem();
 
-  return sectionPadding;
+  return { x, y: x };
 };

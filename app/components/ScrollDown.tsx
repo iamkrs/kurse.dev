@@ -39,7 +39,8 @@ const StyledScrollDown = styled.svg`
   transform: translateY(-50%);
   top: 50%;
   // right: calc(-sectionPadding + dotStripWidth + elementMargin);
-  right: calc(-16vw + 68px + 66px);
+  // right: calc(-16vw + 68px + 66px);
+  right: clamp(-1rem, -16vw, -10rem);
 
   @media screen and (min-width: 771px) {
     display: block;

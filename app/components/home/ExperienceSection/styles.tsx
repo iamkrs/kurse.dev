@@ -21,7 +21,7 @@ export const Content = styled(Flex)`
   justify-content: center;
 
   @media screen and (min-width: 771px) {
-    width: calc(100vw - 32vw);
+    width: calc(100vw - 20rem);
   }
 `;
 
