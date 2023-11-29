@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { FC, PropsWithChildren } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 type CheckOutLinkProps = PropsWithChildren<{
   href: string;
@@ -15,13 +15,16 @@ const StyledLink = styled(Link)<{ $primaryColor?: boolean }>`
 
   ${({ $primaryColor }) =>
     $primaryColor &&
-    `
-    color: var(--primary-color);
-    svg path { fill: var(--primary-color); }
-  `}
+    css`
+      color: var(--primary-color);
+
+      svg path {
+        fill: var(--primary-color);
+      }
+    `}
 
   @media screen and (max-width: 771px) {
-    max-width: 326px;
+    max-width: 20.333rem;
   }
 `;
 

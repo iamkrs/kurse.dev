@@ -10,14 +10,14 @@ type DotsStripeProps = {
 
 const StyledDotsStripe = styled.div<DotsStripeProps>`
   position: absolute;
-  left: -10px;
-  height: 33px;
+  left: -0.625rem;
+  height: 2rem;
   top: 0;
 
   @media screen and (min-width: 771px) {
     left: initial;
     top: 0;
-    width: ${({ $width }) => $width || '68px'};
+    width: ${({ $width }) => $width || css`4.25rem`};
     height: 100%;
   }
 
@@ -37,10 +37,8 @@ const StyledDotsStripe = styled.div<DotsStripeProps>`
     `}
 
   background-image: radial-gradient(var(--primary-color) 20%, transparent 20%);
-  background-position:
-    0 0,
-    50px 50px;
-  background-size: 11px 11px;
+  background-position: 0 0 3.13rem 3.13rem;
+  background-size: 0.688rem 0.688rem;
 
   ${({ $hideOnMobile }) =>
     $hideOnMobile &&

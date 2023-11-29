@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 type ProjectProps = {
   $last?: boolean;
@@ -13,16 +13,20 @@ const Project = styled.div<ProjectProps>`
   @media (min-width: 771px) {
     flex-direction: row;
     min-width: 66rem;
-    ${({ $noMargin }) => !$noMargin && `margin: 0 50px;`}
+    ${({ $noMargin }) =>
+      !$noMargin &&
+      css`
+        margin: 0 3.125rem;
+      `}
   }
 
   ${({ $last }) =>
     !$last &&
-    `
-    @media (max-width: 771px) {
-      margin-bottom: 60px;
-    }
-  `}
+    css`
+      @media (max-width: 771px) {
+        margin-bottom: 3.75rem;
+      }
+    `}
 `;
 
 export { Project };

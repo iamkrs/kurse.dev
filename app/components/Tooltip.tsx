@@ -43,15 +43,12 @@ const Content = styled.div``;
 const Label = styled.div`
   position: absolute;
   z-index: 1;
-  /* background-color: var(--primary-color); */
-  /* color: #1c1c1c; */
-  /* border: 2px solid #1c1c1c; */
   background-color: #1c1c1c;
   color: var(--primary-color);
   border: 2px solid var(--primary-color);
   font-weight: 700;
-  font-size: 23px;
-  padding: 10px;
+  font-size: 1.44rem;
+  padding: 0.62rem;
   left: 50%;
   transform: translate(-50%, 15px);
 `;

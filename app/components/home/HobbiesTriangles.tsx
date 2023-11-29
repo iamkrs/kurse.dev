@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledHobbiesTriangles = styled.svg`
   @media screen and (max-width: 771px) {
-    margin-bottom: 43px;
+    margin-bottom: 2.688rem;
   }
 `;
 

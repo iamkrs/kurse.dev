@@ -104,19 +104,19 @@ const ItemWraper = styled.div<ItemWrapperProps>`
   ${({ $isLast }) =>
     !$isLast &&
     css`
-      margin-bottom: 44px;
+      margin-bottom: 2.75rem;
     `}
 
   @media screen and (min-width: 771px) {
-    margin-right: 66px;
+    margin-right: 4.13rem;
   }
 `;
 
 const ItemImage = styled.div`
-  border: 3px solid var(--primary-color);
-  border-radius: 6px;
-  padding: 7px 6px;
-  margin-bottom: 12px;
+  border: 0.188rem solid var(--primary-color);
+  border-radius: 0.375rem;
+  padding: 0.438rem 0.375rem;
+  margin-bottom: 0.75rem;
 `;
 
 const ZoomedImageWrapper = styled.div`
@@ -135,13 +135,13 @@ const ZoomedImageWrapper = styled.div`
 
   > div:nth-child(2) {
     cursor: initial;
-    margin: 40px;
+    margin: 2.5rem;
   }
 `;
 
 const ZoomedImageClose = styled.div`
   position: absolute;
-  top: 35px;
-  right: 35px;
+  top: 2.2rem;
+  right: 2.2rem;
   cursor: pointer;
 `;

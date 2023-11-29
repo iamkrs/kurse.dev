@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 type DoubleArrowProps = {
   $primaryColor?: boolean;
@@ -7,13 +7,14 @@ type DoubleArrowProps = {
 };
 
 const StyledDoubleArrow = styled.svg<DoubleArrowProps>`
-  margin-right: 3px;
-
-  ${({ $primaryColor }) =>
-    $primaryColor &&
-    `
-      * { fill: var(--primary-color) }
-    `};
+  margin-right: 0.18rem
+    ${({ $primaryColor }) =>
+      $primaryColor &&
+      css`
+        * {
+          fill: var(--primary-color);
+        }
+      `};
 `;
 
 export const DoubleArrow: FC<DoubleArrowProps> = ({ ...props }) => {

@@ -55,7 +55,7 @@ const Email: FC<PropsWithChildren> = ({ children }) => (
 );
 
 const EmailIcon = styled.svg`
-  margin-right: 10px;
+  margin-right: 0.625rem;
 `;
 
 export { Email };

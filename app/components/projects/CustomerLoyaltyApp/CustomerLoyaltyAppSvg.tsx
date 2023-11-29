@@ -94,7 +94,7 @@ const CustomerLoyaltyAppSvg = () => {
 
 const StyledSvg = styled.svg`
   @media screen and (min-width: 771px) {
-    min-width: 145px;
+    min-width: 9.063rem;
   }
 `;
 

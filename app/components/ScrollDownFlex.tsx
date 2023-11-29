@@ -5,7 +5,7 @@ import { ScrollDown } from './ScrollDown';
 
 export const StyledScrollDownFlex = styled(Flex)`
   @media screen and (min-width: 771px) {
-    padding-right: 100px;
+    padding-right: 6.25rem;
   }
 `;
 

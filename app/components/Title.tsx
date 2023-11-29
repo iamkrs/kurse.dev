@@ -14,8 +14,8 @@ export const HEADING_02_FONT_SIZE = '35px';
 export const HEADING_03_FONT_SIZE = '28px';
 
 export const Title = styled.h1<TitleProps>`
-  --line-height: 8px;
-  --line-margin: 20px;
+  --line-height: 0.5rem;
+  --line-margin: 1.25rem;
 
   position: relative;
   font-weight: 900;
@@ -32,14 +32,14 @@ export const Title = styled.h1<TitleProps>`
     !$medium &&
     css`
       padding-bottom: calc(var(--line-height) + var(--line-margin));
-      margin-bottom: 55px;
+      margin-bottom: 3.44rem;
 
       &:after {
         content: '';
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 67px;
+        width: 4.2rem;
         height: var(--line-height);
         background: var(
           ${$primaryColor ? '--background-color' : '--primary-color'}

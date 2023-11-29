@@ -15,26 +15,26 @@ const StyledText = styled.span<TextProps>`
   ${({ $small }) =>
     $small &&
     css`
-      font-size: 14px;
-      line-height: 18px;
+      font-size: 0.875rem;
+      line-height: 1.125rem;
     `}
 
   ${({ $medium }) =>
     $medium &&
     css`
-      font-size: 26px;
-      line-height: 30px;
+      font-size: 1.625rem;
+      line-height: 1.875rem;
     `}
 
   ${({ $noWrap }) =>
     $noWrap &&
-    `
+    css`
       white-space: nowrap;
     `}
 
   ${({ $primaryColor }) =>
     $primaryColor &&
-    `
+    css`
       color: var(--primary-color);
     `};
 

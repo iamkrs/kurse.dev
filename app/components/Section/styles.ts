@@ -3,7 +3,7 @@ import { SectionProps } from './Section';
 
 export const Wrapper = styled.section<SectionProps>`
   position: relative;
-  padding: 90px 30px 75px 30px;
+  padding: 5.625rem 1.875rem 4.6875rem 1.875rem;
 
   ${({ $primaryColor }) =>
     $primaryColor &&

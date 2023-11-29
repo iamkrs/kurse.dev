@@ -137,6 +137,6 @@ export const TelemedicineCabinSvg = () => (
 
 const StyledSvg = styled.svg`
   @media screen and (min-width: 771px) {
-    min-width: 226px;
+    min-width: 14.125rem;
   }
 `;

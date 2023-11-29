@@ -7,7 +7,7 @@ export const Wrapper = styled(Flex)<WrapperProps>`
     ${({ $isLast }) =>
       !$isLast &&
       css`
-        margin-bottom: 66px;
+        margin-bottom: 4.13rem;
       `}
   }
 `;
@@ -17,17 +17,13 @@ export const DescriptionsGrid = styled(Flex)`
 `;
 
 export const Description = styled(Text)<DescriptionProps>`
-  /* font-size: 1.3rem; */
-  /* line-height: 2rem; */
-
   margin-bottom: 1.333rem;
 
   strong {
-    // TODO: medium font weight
     font-weight: 600;
   }
 `;
 
 export const InfoWrapper = styled(Flex)`
-  margin-bottom: 33px;
+  margin-bottom: 2rem;
 `;

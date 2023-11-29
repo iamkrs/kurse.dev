@@ -10,7 +10,7 @@ export const Wrapper = styled(Flex)<WrapperProps>`
 
 export const ContentWrapper = styled(Flex)`
   @media screen and (min-width: 771px) {
-    padding-right: 6000px;
+    padding-right: 375rem;
   }
 `;
 

@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 type ColorBoxProps = PropsWithChildren<{
   $primaryColor?: boolean;
@@ -8,17 +8,17 @@ type ColorBoxProps = PropsWithChildren<{
 
 const StyledColorBox = styled.div<ColorBoxProps>`
   background-color: #1c1c1c;
-  padding: 10px;
+  padding: 0.666rem;
 
   ${({ $primaryColor }) =>
     $primaryColor &&
-    `
+    css`
       background-color: var(--primary-color);
     `};
 
   ${({ $border }) =>
     $border &&
-    `
+    css`
       border: 3px solid #1c1c1c;
     `};
 `;
