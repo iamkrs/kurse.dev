@@ -1,10 +1,10 @@
 import { FC } from 'react';
 
-export const InstagramIcon: FC<{ width?: number }> = ({ width }) => {
+export const InstagramIcon: FC<{ width?: string }> = ({ width }) => {
   return (
     <svg
-      width={width || 35}
-      height={width || 35}
+      width={width || '2.1875rem'}
+      height={width || '2.1875rem'}
       viewBox='0 0 35 35'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'

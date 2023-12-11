@@ -8,10 +8,10 @@ type TitleProps = PropsWithChildren<{
   $primaryColor?: boolean;
 }>;
 
-// TODO: object with font sizes?
-export const HEADING_01_FONT_SIZE = '53px';
-export const HEADING_02_FONT_SIZE = '35px';
-export const HEADING_03_FONT_SIZE = '28px';
+// TODO: better way to handle this?
+export const HEADING_01_FONT_SIZE = '3.3125rem';
+export const HEADING_02_FONT_SIZE = '2.1875rem';
+export const HEADING_03_FONT_SIZE = '1.75rem';
 
 export const Title = styled.h1<TitleProps>`
   --line-height: 0.5rem;

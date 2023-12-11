@@ -51,7 +51,7 @@ const CustomerLoyaltyAppPage: NextPage = () => {
         <DotsStripe $right $hideOnMobile />
       </Section>
       <Section>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <About>
           <Title style={{ marginBottom: 55 }}>{t('projectsAboutTitle')}</Title>
           <Text>{t('projectsCustomerAboutText')}</Text>
@@ -62,7 +62,7 @@ const CustomerLoyaltyAppPage: NextPage = () => {
         </About>
       </Section>
       <Section $primaryColor>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 55 }}>
             {t('projectsHowWasItDoneTitle')}
@@ -78,7 +78,7 @@ const CustomerLoyaltyAppPage: NextPage = () => {
         <DotsStripe $right />
       </Section>
       <Section>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 55 }}>
             {t('projectsGalleryTitle')}
@@ -111,7 +111,7 @@ const CustomerLoyaltyAppPage: NextPage = () => {
         <DotsStripe $right />
       </Section>
       <Section $primaryColor>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <Flex $column $justifyCenter $fullHeight>
           <CheckOutLink href='/projects/react'>
             {t('checkOutReactProjects')}

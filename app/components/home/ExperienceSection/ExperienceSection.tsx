@@ -84,7 +84,7 @@ export const ExperienceSection: FC<PropsWithChildren<SectionProps>> = ({
   return (
     <Wrapper ref={wrapperRef}>
       <StyledSection {...props}>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
 
         <ContentWrapper>
           <Content ref={animationRef} as={motion.div}>

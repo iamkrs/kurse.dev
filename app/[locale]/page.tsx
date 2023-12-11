@@ -87,7 +87,7 @@ const HomePage: NextPage = () => {
         <DotsStripe $right $hideOnMobile />
       </Section>
       <Section $primaryColor>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <Flex $column $justifyCenter $fullHeight>
           <Title $primaryColor>{t('historyTitle')}</Title>
           <Text>
@@ -99,7 +99,7 @@ const HomePage: NextPage = () => {
         <DotsStripe $right />
       </Section>
       <Section>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <Flex $column $justifyCenter $fullHeight>
           <Title>{t('hobbiesTitle')}</Title>
           <Flex $columnOnMobile>
@@ -125,10 +125,10 @@ const HomePage: NextPage = () => {
                   $fontRegular
                   href='https://www.instagram.com/kurserino/'
                   target='_blank'
-                  style={{ margin: '0 10px 10px 0' }}
+                  style={{ margin: '0 0.625rem 0.625rem 0' }}
                 >
                   <ButtonIcon>
-                    <InstagramIcon width={27} />
+                    <InstagramIcon width='1.6875rem' />
                   </ButtonIcon>
                   {t('hobbiesIllustrationButton')}
                 </Button>
@@ -137,7 +137,7 @@ const HomePage: NextPage = () => {
                   href='https://myanimelist.net/mangalist/kurseinsomnia?order=5&status=1'
                   $fontRegular
                   target='_blank'
-                  style={{ margin: '0 10px 10px 0' }}
+                  style={{ margin: '0 0.625rem 0.625rem 0' }}
                 >
                   <ButtonIcon>
                     <MalIcon />
@@ -155,7 +155,7 @@ const HomePage: NextPage = () => {
           <ExperienceTitle $primaryColor>
             {t('experienceTitle')}
           </ExperienceTitle>
-          <Spacing $horizontal $mobile $size='25px' />
+          <Spacing $horizontal $mobile $size='1.5625rem' />
           <Flex $column>
             {EXPERIENCES.map((experience, index) => (
               <Experience
@@ -168,7 +168,7 @@ const HomePage: NextPage = () => {
         </Flex>
       </ExperienceSection>
       <Section>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <Flex $column $justifyCenter $fullHeight>
           <Title>{t('educationTitle')}</Title>
           <Flex $column>
@@ -183,7 +183,7 @@ const HomePage: NextPage = () => {
         <DotsStripe $right />
       </Section>
       <Section $primaryColor>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <Flex $column $justifyCenter $fullHeight>
           <Title $primaryColor>{t('certificatesTitle')}</Title>
           <Flex $column>
@@ -210,7 +210,7 @@ const HomePage: NextPage = () => {
         <DotsStripe $right />
       </Section>
       <Section>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 77 }}>{t('skillsTitle')}</Title>
           <Flex $flexWrap>
@@ -883,7 +883,7 @@ const HomePage: NextPage = () => {
         <DotsStripe $right />
       </Section>
       <Section $primaryColor>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <Flex $column $justifyCenter $fullHeight>
           <CheckOutLink href='/projects/react'>
             {t('checkOutReactProjects')}

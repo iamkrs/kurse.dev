@@ -39,7 +39,7 @@ const ReactNative: NextPage = () => {
         <DotsStripe $right $hideOnMobile />
       </Section>
       <Section $primaryColor>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <Flex $column $justifyCenter $fullHeight>
           <Title $primaryColor style={{ marginBottom: 77 }}>
             {t('projectsTitle')}
@@ -71,7 +71,7 @@ const ReactNative: NextPage = () => {
         <DotsStripe $right />
       </Section>
       <Section>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <Flex $column $justifyCenter $fullHeight>
           <CheckOutLink $primaryColor href='/projects/react'>
             {t('checkOutReactProjects')}

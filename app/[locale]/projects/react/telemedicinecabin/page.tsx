@@ -50,7 +50,7 @@ const TelemedicineCabin: NextPage = () => {
         <DotsStripe $right $hideOnMobile />
       </Section>
       <Section>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <About>
           <Title style={{ marginBottom: 55 }}>{t('projectsAboutTitle')}</Title>
           <Text>
@@ -65,7 +65,7 @@ const TelemedicineCabin: NextPage = () => {
         </About>
       </Section>
       <Section $primaryColor>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 55 }}>
             {t('projectsHowWasItDoneTitle')}
@@ -82,7 +82,7 @@ const TelemedicineCabin: NextPage = () => {
         <DotsStripe $right />
       </Section>
       <Section>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <Flex $column $justifyCenter $fullHeight>
           <Title style={{ marginBottom: 55 }}>
             {t('projectsGalleryTitle')}
@@ -115,7 +115,7 @@ const TelemedicineCabin: NextPage = () => {
         <DotsStripe $right />
       </Section>
       <Section $primaryColor>
-        <DotsStripe $left $width='32px' />
+        <DotsStripe $left $width='2rem' />
         <Flex $column $justifyCenter $fullHeight>
           <CheckOutLink href='/projects/reactnative'>
             {t('checkOutReactNativeProjects')}
